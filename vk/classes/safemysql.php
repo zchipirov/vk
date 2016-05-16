@@ -17,7 +17,7 @@ class SafeMySQL
 		
 		'host'      => 'mysql.hostinger.ru',
 		'user'      => 'u539948691_root',
-		'pass'      => '',		
+		'pass'      => '123123',		
 		'db'        => 'u539948691_vkdb',
 		//*/
 		
