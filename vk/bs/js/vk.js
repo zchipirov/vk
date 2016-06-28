@@ -19,7 +19,7 @@ getMembers('ansarsharia');
 // получаем информацию о группе и её участников
 function getMembers(gr_id) {
 	alert(gr_id);
-	VK.Api.call('groups.getById', {group_id: "'"+gr_id+"'", fields: 'photo_50,members_count', v: '5.52'}, function(r) {
+	VK.Api.call('groups.getById', {group_id: gr_id, fields: 'photo_50,members_count', v: '5.52'}, function(r) {
 			if(r.response) {
 				alert(r.response[0].members_count);
 				getMembers20k(gr_id, r.response[0].members_count); // получаем участников группы и пишем в массив membersGroups
@@ -37,7 +37,7 @@ function getMembers20k(group_id, members_count) {
 				+	'offset = offset + 1000;' // увеличиваем сдвиг на 1000
 			+	'};'
 			+	'return members;'; // вернуть массив members
-	
+	alert(code);
 	VK.Api.call("execute", {code: code}, function(data) {
 		if (data.response) {
 			membersGroups = membersGroups.concat(JSON.parse("[" + data.response + "]")); // запишем это в массив
