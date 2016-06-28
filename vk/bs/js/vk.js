@@ -17,12 +17,12 @@ var membersGroups = []; // массив участников группы
 getMembers('ansarsharia');
 
 // получаем информацию о группе и её участников
-function getMembers(group_id) {
-	alert(group_id);
-	VK.Api.call('groups.getById', {group_id: group_id, fields: 'photo_50,members_count', v: '5.52'}, function(r) {
+function getMembers(gr_id) {
+	alert(gr_id);
+	VK.Api.call('groups.getById', {group_id: gr_id, fields: 'photo_50,members_count', v: '5.52'}, function(r) {
 			if(r.response) {
 				alert(r.response[0].members_count);
-				getMembers20k(group_id, r.response[0].members_count); // получаем участников группы и пишем в массив membersGroups
+				getMembers20k(gr_id, r.response[0].members_count); // получаем участников группы и пишем в массив membersGroups
 			}
 	});
 }
