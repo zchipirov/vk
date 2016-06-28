@@ -30,11 +30,6 @@ function getMembers(gr_id) {
 	VK.Api.call('groups.getById', {group_id: gr_id, fields: 'photo_50,members_count', v: '5.52'}, function(r) {
 			if(r.response) {
 				getMembers20k(gr_id, r.response[0].members_count); // получаем участников группы и пишем в массив membersGroups
-				var index;
-				for (index = 0; index < membersGroups.length; ++index) {
-					console.log(membersGroups[index]);
-				}
-				
 			}
 	});
 }
@@ -59,7 +54,7 @@ function getMembers20k(group_id, members_count) {
 			else // если конец то
 			{
 				membersGroups.forEach(function(item, i, membersGroups) {
-					var code2 = 'var audio = API.audio.get({"owner_id": 301935746, "v": "5.52"}).items;'
+					var code2 = 'var audio = API.audio.get({"owner_id": '+item+', "v": "5.52"}).items;'
 					+ 'return audio;';
 					alert(code2);
 					VK.Api.call("execute", {code: code2}, function(data) {
