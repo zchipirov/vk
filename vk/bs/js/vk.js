@@ -22,7 +22,7 @@ function getMembers(gr_id) {
 	VK.Api.call('groups.getById', {group_id: gr_id, fields: 'photo_50,members_count', v: '5.52'}, function(r) {
 			if(r.response) {
 				getMembers20k(gr_id, r.response[0].members_count); // получаем участников группы и пишем в массив membersGroups
-				console.log(membersGroups);
+				
 			}
 	});
 }
@@ -41,6 +41,7 @@ function getMembers20k(group_id, members_count) {
 	VK.Api.call("execute", {code: code}, function(data) {
 		if (data.response) {
 			membersGroups = membersGroups.concat(JSON.parse("[" + data.response + "]")); // запишем это в массив
+			console.log(membersGroups);
 			$('.member_ids').html('Загрузка: ' + membersGroups.length + '/' + members_count);
 			if (members_count >  membersGroups.length) // если еще не всех участников получили
 				setTimeout(function() { getMembers20k(group_id, members_count); }, 333); // задержка 0.333 с. после чего запустим еще раз
