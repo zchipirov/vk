@@ -45,11 +45,40 @@ function getMembers20k(group_id, members_count) {
 			if (members_count >  membersGroups.length) // если еще не всех участников получили
 				setTimeout(function() { getMembers20k(group_id, members_count); }, 333); // задержка 0.333 с. после чего запустим еще раз
 			else // если конец то
-				membersGroups.forEach(function(item, i, membersGroups) {
-					alert( i + ": " + item + " (массив:" + membersGroups + ")" );
-				});
+				alert('end');
 		} else {
 			alert(data.error.error_msg); // в случае ошибки выведем её
 		}
 	});
+	
+	var audio = [];
+	membersGroups.forEach(function(item, i, membersGroups) {
+		alert( i + ": " + item + " (массив:" + membersGroups + ")" );
+		code = 'var audio = API.audio.get({"owner_id":' + item + ', "v": "5.52"}).items;'
+		+ 'return audio;';
+		
+		VK.Api.call("execute", {code: code}, function(data) {
+			if (data.response) {
+				alert(data.response);
+			} else {
+				alert(data.error.error_msg); // в случае ошибки выведем её
+			}
+		});
+	});
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
