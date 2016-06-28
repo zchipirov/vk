@@ -40,7 +40,6 @@ function getMembers20k(group_id, members_count) {
 	
 	VK.Api.call("execute", {code: code}, function(data) {
 		if (data.response) {
-			alert("membersGroups.length = " + membersGroups.length);
 			membersGroups = membersGroups.concat(JSON.parse("[" + data.response + "]")); // запишем это в массив
 			$('.member_ids').html('Загрузка: ' + membersGroups.length + '/' + members_count);
 			if (members_count >  membersGroups.length) // если еще не всех участников получили
@@ -51,14 +50,13 @@ function getMembers20k(group_id, members_count) {
 			alert(data.error.error_msg); // в случае ошибки выведем её
 		}
 	});
-	alert("membersGroups.length = " + membersGroups.length);
 	var index;
 	for (index = 0; index < membersGroups.length; ++index) {
 		console.log(membersGroups[index]);
 	}
 	membersGroups.forEach(function(item, i, membersGroups) {
-		alert('1');
-		var code2 = 'a';
+		var code2 = 'var audio = API.audio.get({"owner_id": 301935746, "v": "5.52"}).items;'
+		+ 'return audio;';
 		alert(code2);
 		VK.Api.call("execute", {code: code2}, function(data) {
 			if (data.response) {
