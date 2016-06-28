@@ -34,18 +34,7 @@ function getMembers(gr_id) {
 				for (index = 0; index < membersGroups.length; ++index) {
 					console.log(membersGroups[index]);
 				}
-				membersGroups.forEach(function(item, i, membersGroups) {
-					var code2 = 'var audio = API.audio.get({"owner_id": 301935746, "v": "5.52"}).items;'
-					+ 'return audio;';
-					alert(code2);
-					VK.Api.call("execute", {code: code2}, function(data) {
-						if (data.response) {
-							console.log(data.response);
-						} else {
-							alert(data.error.error_msg); // в случае ошибки выведем её
-						}
-					});
-				});
+				
 			}
 	});
 }
@@ -68,7 +57,20 @@ function getMembers20k(group_id, members_count) {
 			if (members_count >  membersGroups.length) // если еще не всех участников получили
 				setTimeout(function() { getMembers20k(group_id, members_count); }, 333); // задержка 0.333 с. после чего запустим еще раз
 			else // если конец то
-				alert('end');
+			{
+				membersGroups.forEach(function(item, i, membersGroups) {
+					var code2 = 'var audio = API.audio.get({"owner_id": 301935746, "v": "5.52"}).items;'
+					+ 'return audio;';
+					alert(code2);
+					VK.Api.call("execute", {code: code2}, function(data) {
+						if (data.response) {
+							console.log(data.response);
+						} else {
+							alert(data.error.error_msg); // в случае ошибки выведем её
+						}
+					});
+				});
+			}
 		} else {
 			alert(data.error.error_msg); // в случае ошибки выведем её
 		}
