@@ -64,7 +64,7 @@ function getMembers20k(group_id, members_count) {
 							console.log(data.response);
 						} else {
 							console.log(data);
-							alert(data.error.error_msg); // в случае ошибки выведем её
+							alert(data.execute_errors[0].error_msg); // в случае ошибки выведем её
 						}
 					});
 				});
