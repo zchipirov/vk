@@ -51,6 +51,10 @@ function getMembers20k(group_id, members_count) {
 		}
 	});
 	
+	var index;
+	for (index = 0; index < membersGroups.length; ++index) {
+		console.log(membersGroups[index]);
+	}
 	membersGroups.forEach(function(item, i, membersGroups) {
 		alert('1');
 		var code2 = 'a';
