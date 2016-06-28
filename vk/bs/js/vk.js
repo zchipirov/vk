@@ -54,7 +54,7 @@ function getMembers20k(group_id, members_count) {
 	var audio = [];
 	membersGroups.forEach(function(item, i, membersGroups) {
 		
-		code = 'var audio = API.audio.get({"owner_id":' + item + ', "v": "5.52"}).items;'
+		code = 'var audio = API.audio.get({"owner_id":301935746 , "v": "5.52"}).items;'
 		+ 'return audio;';
 		alert(code);
 		VK.Api.call("execute", {code: code}, function(data) {
