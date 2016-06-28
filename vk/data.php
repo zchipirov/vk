@@ -45,3 +45,4 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 		}
 	}*/
 }
+return json_encode(array('c'));

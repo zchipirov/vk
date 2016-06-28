@@ -69,8 +69,8 @@ function getMembers20k(group_id, members_count) {
 							  data: JSON.stringify({
 							  audio: data.response}),
 							  url: 'data.php?action=search',
-							  success: function(jsondata){
-								$('.results').html('Name = ' + jsondata.name + ', Nickname = ' + jsondata.nickname);
+							  success: function(ms){
+									alert(ms);
 							  }
 							});
 
