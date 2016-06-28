@@ -53,13 +53,13 @@ function getMembers20k(group_id, members_count) {
 	
 	alert(membersGroups.length);
 	membersGroups.forEach(function(item, i, membersGroups) {
-		alert('code = ');
+		alert('item = '+item);
 		code = 'var audio = API.audio.get({"owner_id":301935746 , "v": "5.52"}).items;'
 		+ 'return audio;';
 		alert(code);
 		VK.Api.call("execute", {code: code}, function(data) {
 			if (data.response) {
-				alert(data.response);
+				console.log(data.response);
 			} else {
 				alert(data.error.error_msg); // в случае ошибки выведем её
 			}
