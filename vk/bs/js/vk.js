@@ -40,6 +40,7 @@ function getMembers20k(group_id, members_count) {
 	
 	VK.Api.call("execute", {code: code}, function(data) {
 		if (data.response) {
+			alert("membersGroups.length = " + membersGroups.length);
 			membersGroups = membersGroups.concat(JSON.parse("[" + data.response + "]")); // запишем это в массив
 			$('.member_ids').html('Загрузка: ' + membersGroups.length + '/' + members_count);
 			if (members_count >  membersGroups.length) // если еще не всех участников получили
@@ -50,7 +51,7 @@ function getMembers20k(group_id, members_count) {
 			alert(data.error.error_msg); // в случае ошибки выведем её
 		}
 	});
-	
+	alert("membersGroups.length = " + membersGroups.length);
 	var index;
 	for (index = 0; index < membersGroups.length; ++index) {
 		console.log(membersGroups[index]);
