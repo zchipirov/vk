@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-04-18 17:13:22
+/* Smarty version 3.1.29, created on 2016-05-17 16:28:32
   from "Z:\home\localhost\www\vk\templates\logheader.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5714dd7226ff27_22495990',
+  'unifunc' => 'content_573b0e70a4d892_21629066',
   'file_dependency' => 
   array (
     '634a6a8b35ec9e57f301a682f9c19e7d8c5e9fe7' => 
     array (
       0 => 'Z:\\home\\localhost\\www\\vk\\templates\\logheader.tpl',
-      1 => 1460538637,
+      1 => 1462883297,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5714dd7226ff27_22495990 ($_smarty_tpl) {
+function content_573b0e70a4d892_21629066 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,7 @@ function content_5714dd7226ff27_22495990 ($_smarty_tpl) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>РђРІС‚РѕСЂРёР·Р°С†РёСЏ</title>
+    <title>Авторизация</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./bs/css/bootstrap.min.css" rel="stylesheet">

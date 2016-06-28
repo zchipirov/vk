@@ -1,7 +1,7 @@
 ﻿{config_load file="test.conf" section="setup"}
 {include file="header.tpl" title=foo}
 
-<h2 class="sub-header">Поиск по группам VK</h2>
+<h2 class="sub-header">Поиск по пользователю VK</h2>
   <form method="POST" action="index.php" name="form_indx" id="form_indx">
 		<input type="hidden" name="action" id="action" value=""/>
 		<div class="btn-group" role="group" aria-label="...">
@@ -34,36 +34,15 @@
 			  <label><input type="radio" value="5" name="inf" id="groups">&nbsp;Группы</label>&nbsp;
 			</div>
 			<div class="input-group" style="width: 30%;">
+				
+			</div>
+			<div class="input-group" style="width: 50%;">
+			<span class="input-group-addon" id="basic-addon4">ID пользователя:</span>
+				<input type="text" class="form-control" id="userid" name="userid" aria-describedby="basic-addon4" placeholder="Обязательный параметр"/>
 				<span class="input-group-addon" id="basic-addon3">Город:</span>
-				<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"/>
+				<input type="text" class="form-control" id="city" name="city" aria-describedby="basic-addon3" placeholder="Необязательный параметр"/>
 			</div>
 		  </div>
-		</div>
-		
-		<div class="table-responsive">
-			<table class="table table-striped">
-			  <thead>
-				<tr>
-				  <th>#</th>
-				  <th>Название</th>
-				  <th>ID</th>
-				  <th>Пользователь</th>
-				  <th>Дата добавления</th>
-				</tr>
-			  </thead>
-			  <tbody>
-				{foreach $groups as $gr}
-					<tr>
-					  <td><input type='radio' name='rb[]' value='{$gr["id"]}'></td>
-					  <td>{$gr['title']}</td>
-					  <td>{$gr['group_id']}</td>
-					  <td>{$gr['u_id']}</td>
-					  <td>{$gr['dt']}</td>
-					</tr>
-				{/foreach}
-				
-			  </tbody>
-			</table>
 		</div>
   </form>
 {include file="footer.tpl"}

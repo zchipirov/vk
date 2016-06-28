@@ -1,22 +1,22 @@
-{include file="header.tpl" title=foo}
+п»ї{include file="header.tpl" title=foo}
 
-<h2 class="sub-header">Списки</h2>
+<h2 class="sub-header">РЎРїРёСЃРєРё</h2>
 <form method="POST" action="lists.php" name="form_ls" id="form_ls">
 	<input type="hidden" name="action" id="action" value=""/>
 	<div class="btn-group" role="group" aria-label="...">
-		<button type="button" class="btn btn-success" onclick="$('#action').val('add');$('#form_ls').submit();">Добавить</button>
-		<button type="button" class="btn btn-info" onclick="$('#action').val('edit');$('#form_ls').submit();">Редактировать</button>
-		<button type="button" class="btn btn-warning" onclick="$('#action').val('open');$('#form_ls').submit();">Открыть</button>
-		<button type="button" class="btn btn-danger" onclick="$('#action').val('del');$('#form_ls').submit();">Удалить</button>
+		<button type="button" class="btn btn-success" onclick="$('#action').val('add');$('#form_ls').submit();">Р”РѕР±Р°РІРёС‚СЊ</button>
+		<button type="button" class="btn btn-info" onclick="$('#action').val('edit');$('#form_ls').submit();">Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ</button>
+		<button type="button" class="btn btn-warning" onclick="$('#action').val('open');$('#form_ls').submit();">РћС‚РєСЂС‹С‚СЊ</button>
+		<button type="button" class="btn btn-danger" onclick="$('#action').val('del');$('#form_ls').submit();">РЈРґР°Р»РёС‚СЊ</button>
 	</div>
 	<div class="table-responsive">
 		<table class="table table-striped">
 		  <thead>
 			<tr>
 			  <th>#</th>
-			  <th>Название</th>
-			  <th>Пользователь</th>
-			  <th>Дата добавления</th>
+			  <th>РќР°Р·РІР°РЅРёРµ</th>
+			  <th>РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ</th>
+			  <th>Р”Р°С‚Р° РґРѕР±Р°РІР»РµРЅРёСЏ</th>
 			</tr>
 		  </thead>
 		  <tbody>

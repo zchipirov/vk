@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+п»ї<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -7,23 +7,23 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
-    <title>Поиск и анализ информации в социальной сети vk.com</title>
+    <title>РџРѕРёСЃРє Рё Р°РЅР°Р»РёР· РёРЅС„РѕСЂРјР°С†РёРё РІ СЃРѕС†РёР°Р»СЊРЅРѕР№ СЃРµС‚Рё vk.com</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./bs/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="./bs/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="./bs/css/bootstrap-select.css">
+	
     <!-- Custom styles for this template -->
     <link href="./bs/css/dashboard.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="./bs/js/ie-emulation-modes-warning.js"></script>
-
+  
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -46,10 +46,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./groups.php">Группы</a></li>
-            <li><a href="./lists.php">Списки</a></li>
-            <li><a href="./settings.php">Настройки</a></li>
-            <li><a href="./auth.php?logout=1">Выход</a></li>
+            <li><a href="./groups.php">Р“СЂСѓРїРїС‹</a></li>
+            <li><a href="./lists.php">РЎРїРёСЃРєРё</a></li>
+            <li><a href="./settings.php">РќР°СЃС‚СЂРѕР№РєРё</a></li>
+            <li><a href="./auth.php?logout=1">Р’С‹С…РѕРґ</a></li>
           </ul>
         </div>
       </div>
@@ -59,17 +59,18 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="index.php">Поиск по группам <span class="sr-only">(current)</span></a></li>
+            <li {if isset($home)}class="active"{/if}><a href="index.php">РџРѕРёСЃРє РїРѕ РіСЂСѓРїРїР°Рј <span class="sr-only">(current)</span></a></li>
+			<li {if isset($user)}class="active"{/if}><a href="index2.php">РџРѕРёСЃРє РїРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ <span class="sr-only">(current)</span></a></li>
           </ul>
-          <ul class="nav nav-sidebar">
-            <li>Поиск на странице пользователя:</li>
-            <li><a href="">- по стене</a></li>
-            <li><a href="">- по аудио</a></li>
-            <li><a href="">- по видео</a></li>
-            <li><a href="">- по документам</a></li>
-			<li><a href="">- по друзьям</a></li>
-			<li><a href="">- по группам</a></li>
-          </ul>
+          <!--<ul class="nav nav-sidebar">
+            <li>РџРѕРёСЃРє РЅР° СЃС‚СЂР°РЅРёС†Рµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ:</li>
+            <li><a href="">- РїРѕ СЃС‚РµРЅРµ</a></li>
+            <li><a href="">- РїРѕ Р°СѓРґРёРѕ</a></li>
+            <li><a href="">- РїРѕ РІРёРґРµРѕ</a></li>
+            <li><a href="">- РїРѕ РґРѕРєСѓРјРµРЅС‚Р°Рј</a></li>
+			<li><a href="">- РїРѕ РґСЂСѓР·СЊСЏРј</a></li>
+			<li><a href="">- РїРѕ РіСЂСѓРїРїР°Рј</a></li>
+          </ul>-->
         </div>
 		<script>
 		function CloseMessagePanel() {

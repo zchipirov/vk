@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-10 18:48:33
+/* Smarty version 3.1.29, created on 2016-06-01 17:23:59
   from "Z:\home\localhost\www\vk\templates\groups.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5731f4c1ec54c5_84183815',
+  'unifunc' => 'content_574ee1ef9df9d0_34536572',
   'file_dependency' => 
   array (
     'ac46037ea51020c1f044cfd723c3d08ed871b058' => 
     array (
       0 => 'Z:\\home\\localhost\\www\\vk\\templates\\groups.tpl',
-      1 => 1462891712,
+      1 => 1464787435,
       2 => 'file',
     ),
   ),
@@ -21,28 +21,28 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5731f4c1ec54c5_84183815 ($_smarty_tpl) {
+function content_574ee1ef9df9d0_34536572 ($_smarty_tpl) {
 $_smarty_tpl->smarty->ext->_subtemplate->render($_smarty_tpl, "file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>'foo'), 0, false);
 ?>
 
 
-  <h2 class="sub-header">Группы VK</h2>
+  <h2 class="sub-header">Р“СЂСѓРїРїС‹ VK</h2>
   <form method="POST" action="groups.php" name="form_gr" id="form_gr">
 		<input type="hidden" name="action" id="action" value=""/>
 		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-success" onclick="$('#action').val('add');$('#form_gr').submit();">Добавить</button>
-			<button type="button" class="btn btn-info" onclick="$('#action').val('edit');$('#form_gr').submit();">Редактировать</button>
-			<button type="button" class="btn btn-danger" onclick="$('#action').val('del');$('#form_gr').submit();">Удалить</button>
+			<button type="button" class="btn btn-success" onclick="$('#action').val('add');$('#form_gr').submit();">Р”РѕР±Р°РІРёС‚СЊ</button>
+			<button type="button" class="btn btn-info" onclick="$('#action').val('edit');$('#form_gr').submit();">Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ</button>
+			<button type="button" class="btn btn-danger" onclick="$('#action').val('del');$('#form_gr').submit();">РЈРґР°Р»РёС‚СЊ</button>
 		</div>
 		<div class="table-responsive">
 			<table class="table table-striped">
 			  <thead>
 				<tr>
 				  <th>#</th>
-				  <th>Название</th>
+				  <th>РќР°Р·РІР°РЅРёРµ</th>
 				  <th>ID</th>
-				  <th>Пользователь</th>
-				  <th>Дата добавления</th>
+				  <th>РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ</th>
+				  <th>Р”Р°С‚Р° РґРѕР±Р°РІР»РµРЅРёСЏ</th>
 				</tr>
 			  </thead>
 			  <tbody>

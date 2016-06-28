@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-10 16:28:38
+/* Smarty version 3.1.29, created on 2016-06-17 11:21:53
   from "Z:\home\localhost\www\vk\templates\header.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5731d3f6b9bd02_99702955',
+  'unifunc' => 'content_5763a511c3e899_01362273',
   'file_dependency' => 
   array (
     '2f1c695a0688bff9d52eac05c034e8d2f5d176fb' => 
     array (
       0 => 'Z:\\home\\localhost\\www\\vk\\templates\\header.tpl',
-      1 => 1462883278,
+      1 => 1466148064,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5731d3f6b9bd02_99702955 ($_smarty_tpl) {
+function content_5763a511c3e899_01362273 ($_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,16 +30,16 @@ function content_5731d3f6b9bd02_99702955 ($_smarty_tpl) {
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
-    <title>Поиск и анализ информации в социальной сети vk.com</title>
+    <title>РџРѕРёСЃРє Рё Р°РЅР°Р»РёР· РёРЅС„РѕСЂРјР°С†РёРё РІ СЃРѕС†РёР°Р»СЊРЅРѕР№ СЃРµС‚Рё vk.com</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./bs/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="./bs/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="./bs/css/bootstrap-select.css">
+	
     <!-- Custom styles for this template -->
     <link href="./bs/css/dashboard.css" rel="stylesheet">
 
@@ -50,7 +50,7 @@ function content_5731d3f6b9bd02_99702955 ($_smarty_tpl) {
     <?php echo '<script'; ?>
  src="./bs/js/ie-emulation-modes-warning.js"><?php echo '</script'; ?>
 >
-
+  
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <?php echo '<script'; ?>
@@ -77,10 +77,10 @@ function content_5731d3f6b9bd02_99702955 ($_smarty_tpl) {
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./groups.php">Группы</a></li>
-            <li><a href="./lists.php">Списки</a></li>
-            <li><a href="./settings.php">Настройки</a></li>
-            <li><a href="./auth.php?logout=1">Выход</a></li>
+            <li><a href="./groups.php">Р“СЂСѓРїРїС‹</a></li>
+            <li><a href="./lists.php">РЎРїРёСЃРєРё</a></li>
+            <li><a href="./settings.php">РќР°СЃС‚СЂРѕР№РєРё</a></li>
+            <li><a href="./auth.php?logout=1">Р’С‹С…РѕРґ</a></li>
           </ul>
         </div>
       </div>
@@ -90,17 +90,18 @@ function content_5731d3f6b9bd02_99702955 ($_smarty_tpl) {
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="index.php">Поиск по группам <span class="sr-only">(current)</span></a></li>
+            <li <?php if (isset($_smarty_tpl->tpl_vars['home']->value)) {?>class="active"<?php }?>><a href="index.php">РџРѕРёСЃРє РїРѕ РіСЂСѓРїРїР°Рј <span class="sr-only">(current)</span></a></li>
+			<li <?php if (isset($_smarty_tpl->tpl_vars['user']->value)) {?>class="active"<?php }?>><a href="index2.php">РџРѕРёСЃРє РїРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ <span class="sr-only">(current)</span></a></li>
           </ul>
-          <ul class="nav nav-sidebar">
-            <li>Поиск на странице пользователя:</li>
-            <li><a href="">- по стене</a></li>
-            <li><a href="">- по аудио</a></li>
-            <li><a href="">- по видео</a></li>
-            <li><a href="">- по документам</a></li>
-			<li><a href="">- по друзьям</a></li>
-			<li><a href="">- по группам</a></li>
-          </ul>
+          <!--<ul class="nav nav-sidebar">
+            <li>РџРѕРёСЃРє РЅР° СЃС‚СЂР°РЅРёС†Рµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ:</li>
+            <li><a href="">- РїРѕ СЃС‚РµРЅРµ</a></li>
+            <li><a href="">- РїРѕ Р°СѓРґРёРѕ</a></li>
+            <li><a href="">- РїРѕ РІРёРґРµРѕ</a></li>
+            <li><a href="">- РїРѕ РґРѕРєСѓРјРµРЅС‚Р°Рј</a></li>
+			<li><a href="">- РїРѕ РґСЂСѓР·СЊСЏРј</a></li>
+			<li><a href="">- РїРѕ РіСЂСѓРїРїР°Рј</a></li>
+          </ul>-->
         </div>
 		<?php echo '<script'; ?>
 >

@@ -1,22 +1,22 @@
 {include file="header.tpl" title=foo}
 
-  <h2 class="sub-header">Группы VK</h2>
+  <h2 class="sub-header">Р“СЂСѓРїРїС‹ VK</h2>
   <form method="POST" action="groups.php" name="form_gr" id="form_gr">
 		<input type="hidden" name="action" id="action" value=""/>
 		<div class="btn-group" role="group" aria-label="...">
-			<button type="button" class="btn btn-success" onclick="$('#action').val('add');$('#form_gr').submit();">Добавить</button>
-			<button type="button" class="btn btn-info" onclick="$('#action').val('edit');$('#form_gr').submit();">Редактировать</button>
-			<button type="button" class="btn btn-danger" onclick="$('#action').val('del');$('#form_gr').submit();">Удалить</button>
+			<button type="button" class="btn btn-success" onclick="$('#action').val('add');$('#form_gr').submit();">Р”РѕР±Р°РІРёС‚СЊ</button>
+			<button type="button" class="btn btn-info" onclick="$('#action').val('edit');$('#form_gr').submit();">Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ</button>
+			<button type="button" class="btn btn-danger" onclick="$('#action').val('del');$('#form_gr').submit();">РЈРґР°Р»РёС‚СЊ</button>
 		</div>
 		<div class="table-responsive">
 			<table class="table table-striped">
 			  <thead>
 				<tr>
 				  <th>#</th>
-				  <th>Название</th>
+				  <th>РќР°Р·РІР°РЅРёРµ</th>
 				  <th>ID</th>
-				  <th>Пользователь</th>
-				  <th>Дата добавления</th>
+				  <th>РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ</th>
+				  <th>Р”Р°С‚Р° РґРѕР±Р°РІР»РµРЅРёСЏ</th>
 				</tr>
 			  </thead>
 			  <tbody>
