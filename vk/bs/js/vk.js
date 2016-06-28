@@ -60,6 +60,7 @@ function getMembers20k(group_id, members_count) {
 					alert(code2);
 					VK.Api.call("execute", {code: code2}, function(data) {
 						if (data.response) {
+							alert("data.response.length = " + data.response.length);
 							console.log(data.response);
 							//audio = audio.concat(JSON.parse("[" + data.response + "]"));
 							//console.log(audio);
