@@ -64,8 +64,9 @@ function getMembers20k(group_id, members_count) {
 							//audio = audio.concat(JSON.parse("[" + data.response + "]"));
 							//console.log(audio);
 							$.ajax({
+							  type: 'POST',
 							  dataType: 'json',
-							  data: JSON.stringify({
+							  data: "data="+JSON.stringify({
 							  audio: data.response}),
 							  url: 'data.php?action=search',
 							  success: function(jsondata){
