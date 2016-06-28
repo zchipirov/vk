@@ -23,7 +23,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 			var_dump($_POST['audio']);
 			return;
 	}
-	return;
+	return json_decode("");
 	for ($i = 0; $i < count($data['response']['items']); $i++) {
 		$userid = $data['response']['items'][$i];
 		
