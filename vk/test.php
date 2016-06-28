@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ru">
 	<head>
+		<meta charset="utf-8">
 		<script src="http://vk.com/js/api/openapi.js" type="text/javascript"></script>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	</head>
