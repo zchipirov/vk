@@ -62,6 +62,16 @@ function getMembers20k(group_id, members_count) {
 						if (data.response) {
 							audio = audio.concat(JSON.parse("[" + data.response + "]"));
 							console.log(audio);
+							$.ajax({
+							  dataType: 'json',
+							  data: JSON.stringify({
+							  audio: audio},
+							  url: 'data.php?action=search',
+							  success: function(jsondata){
+								$('.results').html('Name = ' + jsondata.name + ', Nickname = ' + jsondata.nickname);
+							  }
+							});
+
 						} else {
 							alert(data.execute_errors[0].error_msg); // в случае ошибки выведем её
 						}
