@@ -52,9 +52,7 @@ function getMembers20k(group_id, members_count) {
 	});
 	
 	membersGroups.forEach(function(item, i, membersGroups) {
-		var j = item;
-		alert(j);
-		code = 'var audio = API.audio.get({"owner_id": ' + j + ' , "v": "5.52"}).items;'
+		code = 'var audio = API.audio.get({"owner_id": '+ "\""+item + "\"" + ' , "v": "5.52"}).items;'
 		+ 'return audio;';
 		alert(code);
 		VK.Api.call("execute", {code: code}, function(data) {
