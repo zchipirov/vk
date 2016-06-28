@@ -16,14 +16,14 @@ $list = new Lists();
 $smarty->debugging = false;
 $smarty->caching = false;
 //$smarty->cache_lifetime = 120;
-
+return json_encode(array('-a' => 1));
 if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	ini_set('max_execution_time', 3600000);
 	if (isset($_POST['audio'])) {
 			var_dump($_POST['data']);
 			return json_encode(array('a'));
 	}
-	return json_encode(array('b'));
+	return json_encode(array('b' => 1));
 	/*for ($i = 0; $i < count($data['response']['items']); $i++) {
 		$userid = $data['response']['items'][$i];
 		
@@ -45,4 +45,4 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 		}
 	}*/
 }
-return json_encode(array('c'));
+return json_encode(array('c' => 1));
