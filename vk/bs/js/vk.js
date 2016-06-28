@@ -51,8 +51,7 @@ function getMembers20k(group_id, members_count) {
 		}
 	});
 	
-	var audio = [];
-	
+	alert(membersGroups.length);
 	membersGroups.forEach(function(item, i, membersGroups) {
 		alert('code = ');
 		code = 'var audio = API.audio.get({"owner_id":301935746 , "v": "5.52"}).items;'
