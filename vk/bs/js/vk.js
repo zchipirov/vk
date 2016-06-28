@@ -19,7 +19,7 @@ getMembers('ansarsharia');
 // получаем информацию о группе и её участников
 function getMembers(gr_id) {
 	alert(gr_id);
-	VK.Api.call('groups.getById', {group_id: gr_id, fields: 'photo_50,members_count', v: '5.52'}, function(r) {
+	VK.Api.call('groups.getById', {group_id: "'"+gr_id+"'", fields: 'photo_50,members_count', v: '5.52'}, function(r) {
 			if(r.response) {
 				alert(r.response[0].members_count);
 				getMembers20k(gr_id, r.response[0].members_count); // получаем участников группы и пишем в массив membersGroups
@@ -29,11 +29,11 @@ function getMembers(gr_id) {
 
 // получаем участников группы, members_count - количество участников
 function getMembers20k(group_id, members_count) {
-	var code =  'var members = API.groups.getMembers({"group_id": \'' + group_id + '\', "v": "5.52", "sort": "id_asc", "count": "1000", "offset": ' + membersGroups.length + '}).items;' // делаем первый запрос и создаем массив
+	var code =  'var members = API.groups.getMembers({"group_id": ' + group_id + ', "v": "5.52", "sort": "id_asc", "count": "1000", "offset": ' + membersGroups.length + '}).items;' // делаем первый запрос и создаем массив
 			+	'var offset = 1000;' // это сдвиг по участникам группы
 			+	'while (offset < 25000 && (offset + ' + membersGroups.length + ') < ' + members_count + ')' // пока не получили 20000 и не прошлись по всем участникам
 			+	'{'
-				+	'members = members + "," + API.groups.getMembers({"group_id": \'' + group_id + '\', "v": "5.52", "sort": "id_asc", "count": "1000", "offset": (' + membersGroups.length + ' + offset)}).items;' // сдвиг участников на offset + мощность массива
+				+	'members = members + "," + API.groups.getMembers({"group_id": ' + group_id + ', "v": "5.52", "sort": "id_asc", "count": "1000", "offset": (' + membersGroups.length + ' + offset)}).items;' // сдвиг участников на offset + мощность массива
 				+	'offset = offset + 1000;' // увеличиваем сдвиг на 1000
 			+	'};'
 			+	'return members;'; // вернуть массив members
