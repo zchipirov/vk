@@ -19,8 +19,6 @@ VK.Auth.getLoginStatus(function(response) {
   }
 });
 
-alert('connected');
-
 var membersGroups = []; // массив участников группы
 //getMembers('ansarsharia', 3);
 
@@ -83,8 +81,9 @@ function getMembers20k(group_id, members_count, list_id) {
 												} else {
 												  // вывести результат
 												  //console.log( xhr.responseText ); // responseText -- текст ответа.
-												  var audio = JSON.parse("[" + xhr.responseText + "]");
 												  console.log(xhr.responseText);
+												  var obj = jQuery.parseJSON(xhr.responseText);
+												  alert(obj.length);
 												  _ajax_request(j + 100);
 												}
 											}
