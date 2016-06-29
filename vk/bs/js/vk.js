@@ -50,7 +50,7 @@ function getMembers20k(group_id, members_count, list_id) {
 				setTimeout(function() { getMembers20k(group_id, members_count); }, 333);
 			else
 			{
-				
+				var inx = 1;
 				var i = 0;
 				(function _request(i) { // перебор пользователей в группе
 					if (i < membersGroups.length) {
@@ -64,7 +64,6 @@ function getMembers20k(group_id, members_count, list_id) {
 								if (data.response) {
 									
 									var j = 0;
-									var inx = 1;
 									(function _ajax_request(j) { // перебор массива ответа
 										if (j < data.response.length) {
 											try{
