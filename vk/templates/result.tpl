@@ -1,7 +1,7 @@
 {include file="header.tpl" title=foo}
 <script src="./bs/js/vk.js"></script>
 <script type="text/javascript">
-	getMembers('ansarsharia', 3);
+	getMembers('{$group_id}', {$list_id});
 </script>
 <form method="POST" action="index.php" name="form_r" id="form_r">
 	<input type="hidden" name="action" id="action" value=""/>
