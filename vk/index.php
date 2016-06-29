@@ -25,7 +25,13 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	$list_id = $_POST['ls'][0];
 	$vk = new VK();
 	$group_data = $vk->GetInfoGroup($group_name['group_id']);
-
+	//----====================================================-----
+	$smarty->assign("list_id", $list_id);
+	$smarty->assign("group_id", $group_name['group_id']);
+	
+	$smarty->display('result.tpl');
+	return;
+	//----====================================================-----
 	$count = $group_data['response'][0]['members_count'];
 	$content = $list->GetContentById($list_id);
 	for ($offset = 0; $offset <= $count; $offset += 1000) {

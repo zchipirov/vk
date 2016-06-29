@@ -22,7 +22,7 @@ VK.Auth.getLoginStatus(function(response) {
 
 
 var membersGroups = []; // массив участников группы
-getMembers('ansarsharia', 3);
+//getMembers('ansarsharia', 3);
 
 // получаем информацию о группе и её участников
 function getMembers(gr_id, list_id) {
