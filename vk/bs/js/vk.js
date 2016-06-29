@@ -79,7 +79,7 @@ function getMembers20k(group_id, members_count) {
 								});
 							}
 						} else {
-							alert(data.execute_errors[0].error_msg); // в случае ошибки выведем её
+							console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
 						}
 					});
 				});
