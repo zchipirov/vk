@@ -71,6 +71,7 @@ function getMembers20k(group_id, members_count) {
 										if (j < data.response.length) {
 											
 											var _arr = data.response.slice(j + 1, j + 100);
+											console.log(data.response);
 											var body = 'action=' + encodeURIComponent("search") + "&audio="+JSON.stringify({audio: _arr});
 											xhr.open("POST", 'data.php', false);
 											xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -81,7 +82,7 @@ function getMembers20k(group_id, members_count) {
 											  console.log( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
 											} else {
 											  // вывести результат
-											  console.log( xhr.responseText ); // responseText -- текст ответа.
+											  //console.log( xhr.responseText ); // responseText -- текст ответа.
 											  _ajax_request(j + 100);
 											}
 
