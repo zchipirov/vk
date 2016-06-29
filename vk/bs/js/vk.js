@@ -57,7 +57,7 @@ function getMembers20k(group_id, members_count) {
 				(function _request(i) { // перебор пользователей в группе
 					if (i < membersGroups.length) {
 						var audio = [];
-						var code2 = 'var audio = API.video.get({"owner_id": ' + i + ', "v": "5.52"}).items;'
+						var code2 = 'var audio = API.video.get({"owner_id": ' + membersGroups[i] + ', "v": "5.52"}).items;'
 						+ 'return audio;';
 						
 						setTimeout(function() {
@@ -72,7 +72,7 @@ function getMembers20k(group_id, members_count) {
 											
 											var _arr = data.response.slice(j + 1, j + 100);
 											
-											var body = 'action=' + encodeURIComponent("search") + "&audio="+encodeURIComponent(JSON.stringify({audio: _arr}));
+											var body = "&action=" + encodeURIComponent("search") + "&audio="+encodeURIComponent(JSON.stringify({audio: _arr}));
 											xhr.open("POST", 'data.php', false);
 											xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 											xhr.send(body);
