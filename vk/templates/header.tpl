@@ -73,10 +73,33 @@
 			<li><a href="">- по группам</a></li>
           </ul>-->
         </div>
-		<script>
-		function CloseMessagePanel() {
-			$("#panel").hide(300);
-		}
+		<script type="text/javascript">
+			VK.init({
+				apiId: 5382063
+			});
+
+			// VK.Auth.logout(function(response) {});
+
+			VK.Auth.getLoginStatus(function(response) {
+			  if (response.session) {
+				/* Авторизованный в Open API пользователь, response.status="connected" */
+			  } else {
+					VK.Auth.login(function(response) {
+					  if (response.session) {
+						/* Пользователь успешно авторизовался */
+						if (response.settings) {
+						  /* Выбранные настройки доступа пользователя, если они были запрошены */
+						}
+					  } else {
+						/* Пользователь нажал кнопку Отмена в окне авторизации */
+					  }
+					}, 8+2+262144+131072+16);
+			  }
+			});
+			
+			function CloseMessagePanel() {
+				$("#panel").hide(300);
+			}
 		</script>
 		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 		{if isset($info) || isset($errors)}<script>setTimeout(CloseMessagePanel, 3000);</script><div class="alert alert-{if isset($info)}success{elseif isset($errors)}danger{/if}" role="alert" name="panel" id="panel">{if isset($info)}{$info}{elseif isset($errors)}{$errors}{/if}</div>{/if}

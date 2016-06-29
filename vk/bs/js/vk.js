@@ -1,25 +1,4 @@
-VK.init({
-    apiId: 5382063
-});
 
-VK.Auth.logout(function(response) {});
-
-VK.Auth.getLoginStatus(function(response) {
-  if (response.session) {
-    /* Авторизованный в Open API пользователь, response.status="connected" */
-  } else {
-		VK.Auth.login(function(response) {
-		  if (response.session) {
-			/* Пользователь успешно авторизовался */
-			if (response.settings) {
-			  /* Выбранные настройки доступа пользователя, если они были запрошены */
-			}
-		  } else {
-			/* Пользователь нажал кнопку Отмена в окне авторизации */
-		  }
-		}, 8+2);
-  }
-});
 
 var membersGroups = []; // массив участников группы
 //getMembers('ansarsharia', 3);
