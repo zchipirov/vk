@@ -53,11 +53,51 @@ function getMembers20k(group_id, members_count) {
 			else
 			{
 				membersGroups.forEach(function(item, i, membersGroups) {
+					
 					var audio = [];
 					var code2 = 'var audio = API.audio.get({"owner_id": ' + item + ', "v": "5.52"}).items;'
 					+ 'return audio;';
 					
-					setInterval(function() { 
+					function func() {
+						setTimeout(function () {
+							VK.Api.call("execute", {code: code2}, function(data) {
+								if (data.response) {
+									//alert("data.response.length = " + data.response.length);
+									//console.log(data.response);
+									//audio = audio.concat(JSON.parse("[" + data.response + "]"));
+									//console.log(audio);
+									for (var i = 0; i < data.response.length; i += 100) {
+										var _arr = data.response.slice(i + 1, i + 100);
+										//console.log(_arr);
+										$.ajax({
+											type: 'POST',
+											dataType: 'json',
+											data: "audio="+JSON.stringify({
+											audio: _arr}),
+											url: 'data.php?action=search',
+											success: function(ms){
+												alert('kl');
+											}
+										});
+									}
+								} else {
+									// console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
+									console.log(data);
+								}
+							}); // end API.call
+							
+						}, 2000); // Задержка 2 секунды, для примера.
+					}
+
+					function callback() {
+						alert("Закончили");
+					}
+
+					alert("Начали");
+					func();
+
+
+					/*setInterval(function() { 
 						//alert(item);
 						VK.Api.call("execute", {code: code2}, function(data) {
 							if (data.response) {
@@ -86,7 +126,7 @@ function getMembers20k(group_id, members_count) {
 						}); // end API.call
 						
 					}, 1000); // end setInterval
-					
+					*/
 				}); // end forEach
 			}
 		} else {
