@@ -84,11 +84,11 @@ function getMembers20k(group_id, members_count, list_id) {
 													console.log(xhr.responseText);
 													var obj = jQuery.parseJSON(xhr.responseText);
 													alert(obj.length);
-													$.each(obj, function(i, item) {
+													/*$.each(obj, function(i, item) {
 														alert(obj[i].user_id);
 														alert(obj[i].owner_id);
 														alert(obj[i].title);
-													});​
+													});​*/
 													_ajax_request(j + 100);
 												}
 											}
