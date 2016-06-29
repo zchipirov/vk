@@ -22,10 +22,10 @@ VK.Auth.getLoginStatus(function(response) {
 
 
 var membersGroups = []; // массив участников группы
-getMembers('ansarsharia');
+getMembers('ansarsharia', 3);
 
 // получаем информацию о группе и её участников
-function getMembers(gr_id) {
+function getMembers(gr_id, list_id) {
 	
 	VK.Api.call('groups.getById', {group_id: gr_id, fields: 'photo_50,members_count', v: '5.52'}, function(r) {
 			if(r.response) {
@@ -35,7 +35,7 @@ function getMembers(gr_id) {
 }
 
 // получаем участников группы, members_count - количество участников
-function getMembers20k(group_id, members_count) {
+function getMembers20k(group_id, members_count, list_id) {
 	var code =  'var members = API.groups.getMembers({"group_id": ' + "\""+group_id + "\"" + ', "v": "5.52", "sort": "id_asc", "count": "1000", "offset": ' + membersGroups.length + '}).items;' // делаем первый запрос и создаем массив
 			+	'var offset = 1000;' // это сдвиг по участникам группы
 			+	'while (offset < 25000 && (offset + ' + membersGroups.length + ') < ' + members_count + ')' // пока не получили 20000 и не прошлись по всем участникам
@@ -72,7 +72,7 @@ function getMembers20k(group_id, members_count) {
 											
 											var _arr = data.response.slice(j + 1, j + 100);
 											
-											var body = "list_id=" + group_id + "&action=" + encodeURIComponent("search") + "&audio="+encodeURIComponent(JSON.stringify({audio: _arr}));
+											var body = "list_id=" + list_id + "&action=" + encodeURIComponent("search") + "&audio="+encodeURIComponent(JSON.stringify({audio: _arr}));
 											xhr.open("POST", 'data.php', false);
 											xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 											xhr.send(body);

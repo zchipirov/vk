@@ -21,7 +21,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	ini_set('max_execution_time', 3600000);
 	if (isset($_POST['audio'])) {
 		$audio = json_decode($_POST['audio']);
-		$list_id = $list->GetListByTitle($_POST['list_id']);
+		$list_id = $_POST['list_id'];
 		$content = $list->GetContentById($list_id);
 		var_dump($content[0]);
 		foreach($audio as $key => $record) { 
