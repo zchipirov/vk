@@ -59,29 +59,31 @@ function getMembers20k(group_id, members_count) {
 						var code2 = 'var audio = API.audio.get({"owner_id": ' + i + ', "v": "5.52"}).items;'
 						+ 'return audio;';
 						
-						VK.Api.call("execute", {code: code2}, function(data) {
-							if (data.response) {
-								console.log(data.response);
-								/*for (var i = 0; i < data.response.length; i += 100) {
-									var _arr = data.response.slice(i + 1, i + 100);
-									//console.log(_arr);
-									$.ajax({
-										type: 'POST',
-										dataType: 'json',
-										data: "audio="+JSON.stringify({
-										audio: _arr}),
-										url: 'data.php?action=search',
-										success: function(ms){
-											alert('kl');
-										}
-									});
-								}*/
-							} else {
-								// console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
-								console.log(data);
-							}
-							_request(i + 1);
-						}); // end API.call
+						setTimeout(function() { 
+							VK.Api.call("execute", {code: code2}, function(data) {
+								if (data.response) {
+									console.log(data.response);
+									/*for (var i = 0; i < data.response.length; i += 100) {
+										var _arr = data.response.slice(i + 1, i + 100);
+										//console.log(_arr);
+										$.ajax({
+											type: 'POST',
+											dataType: 'json',
+											data: "audio="+JSON.stringify({
+											audio: _arr}),
+											url: 'data.php?action=search',
+											success: function(ms){
+												alert('kl');
+											}
+										});
+									}*/
+								} else {
+									// console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
+									console.log(data);
+								}
+								_request(i + 1);
+							}); // end API.call
+						}, 1000); // end setInterval
 					}
 				})(0);
 				
