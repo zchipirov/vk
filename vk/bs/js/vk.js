@@ -44,7 +44,7 @@ function getMembers20k(group_id, members_count, list_id) {
 				+	'offset = offset + 1000;' // увеличиваем сдвиг на 1000
 			+	'};'
 			+	'return members;'; // вернуть массив members
-	
+	alert(list_id);
 	VK.Api.call("execute", {code: code}, function(data) {
 		if (data.response) {
 			membersGroups = membersGroups.concat(JSON.parse("[" + data.response + "]"));			
