@@ -84,7 +84,7 @@ function getMembers20k(group_id, members_count, list_id) {
 												  // вывести результат
 												  //console.log( xhr.responseText ); // responseText -- текст ответа.
 												  var audio = JSON.parse("[" + xhr.responseText + "]");
-												  console.log(audio.length);
+												  console.log(xhr.responseText);
 												  _ajax_request(j + 100);
 												}
 											}
