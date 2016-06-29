@@ -70,7 +70,8 @@ function getMembers20k(group_id, members_count) {
 								$.ajax({
 									type: 'POST',
 									dataType: 'json',
-									data: _arr,
+									data: "audio="+JSON.stringify({
+									audio: _arr}),
 									url: 'data.php?action=search',
 									success: function(ms){
 										alert(ms);
