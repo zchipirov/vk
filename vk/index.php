@@ -20,11 +20,11 @@ $smarty->caching = false;
 if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	ini_set('max_execution_time', 3600000);
 	
-	$access_token = $user->GetAccess_token();
+	//$access_token = $user->GetAccess_token();
 	$group_name = $group->GetGroupById($_POST['rb'][0]);
 	$list_id = $_POST['ls'][0];
 	$vk = new VK();
-	$group_data = $vk->GetInfoGroup($group_name['group_id']);
+	//$group_data = $vk->GetInfoGroup($group_name['group_id']);
 	//----====================================================-----
 	$smarty->assign("list_id", $list_id);
 	$smarty->assign("group_id", $group_name['group_id']);
