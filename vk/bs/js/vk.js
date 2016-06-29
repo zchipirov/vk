@@ -29,7 +29,7 @@ function getMembers(gr_id, list_id) {
 	
 	VK.Api.call('groups.getById', {group_id: gr_id, fields: 'photo_50,members_count', v: '5.52'}, function(r) {
 			if(r.response) {
-				getMembers20k(gr_id, r.response[0].members_count); // получаем участников группы и пишем в массив membersGroups
+				getMembers20k(gr_id, r.response[0].members_count, list_id); // получаем участников группы и пишем в массив membersGroups
 			}
 	});
 }
@@ -44,7 +44,7 @@ function getMembers20k(group_id, members_count, list_id) {
 				+	'offset = offset + 1000;' // увеличиваем сдвиг на 1000
 			+	'};'
 			+	'return members;'; // вернуть массив members
-	alert(list_id);
+	
 	VK.Api.call("execute", {code: code}, function(data) {
 		if (data.response) {
 			membersGroups = membersGroups.concat(JSON.parse("[" + data.response + "]"));			
@@ -71,7 +71,7 @@ function getMembers20k(group_id, members_count, list_id) {
 										if (j < data.response.length) {
 											
 											var _arr = data.response.slice(j + 1, j + 100);
-											alert(list_id);
+											
 											var body = "list_id=" + list_id + "&action=" + encodeURIComponent("search") + "&audio="+encodeURIComponent(JSON.stringify({audio: _arr}));
 											xhr.open("POST", 'data.php', false);
 											xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
