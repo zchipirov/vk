@@ -65,7 +65,7 @@ function getMembers20k(group_id, members_count) {
 							//audio = audio.concat(JSON.parse("[" + data.response + "]"));
 							//console.log(audio);
 							for (var i = 0; i < data.response.length; i += 100) {
-								var _arr = data.response.slice(i + 1, i + 101);
+								var _arr = data.response.slice(i + 1, i + 100);
 								console.log(_arr);
 								$.ajax({
 									type: 'POST',
@@ -74,7 +74,7 @@ function getMembers20k(group_id, members_count) {
 									audio: _arr}),
 									url: 'data.php?action=search',
 									success: function(ms){
-										alert(ms);
+										alert('kl');
 									}
 								});
 							}
