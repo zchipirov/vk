@@ -20,8 +20,8 @@ $smarty->caching = false;
 if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	ini_set('max_execution_time', 3600000);
 	if (isset($_POST['audio'])) {
-		
-		$audio = json_decode($_POST['audio']['audio']);
+		var_dump($_POST['audio']);
+		$audio = json_decode($_POST['audio']);
 			var_dump($audio);
 	}
 	/*for ($i = 0; $i < count($data['response']['items']); $i++) {
