@@ -23,13 +23,15 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	if (isset($_POST['audio'])) {
 		$audio = json_decode($_POST['audio']);
 		$list_id = $_POST['list_id'];
+		$user_id = $_POST['user_id'];
 		$content = $list->GetContentById($list_id);
 		
 		foreach($audio as $key => $record) { 
 			for ($i = 0; $i < count($record); $i++) {
 				if ($vk->Search($content, $record[$i]->title) >= 0) {
 					$audio_[] = array(
-						'user_id' => $record[$i]->owner_id,
+						'user_id' => $user_id,
+						'owner_id' => $record[$i]->owner_id,
 						'title' => $record[$i]->title,
 						'duration' => $record[$i]->duration,
 						'url' => $record[$i]->url
@@ -37,9 +39,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 				}
 			}
 		}
-		
+		var_dump($audio_);
 		ini_set('max_execution_time', 600);
-		echo json_encode($audio_);
+		//echo json_encode($audio_);
 	}
 	
 	/*for ($i = 0; $i < count($data['response']['items']); $i++) {
