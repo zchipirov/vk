@@ -72,7 +72,7 @@ function getMembers20k(group_id, members_count) {
 											
 											var _arr = data.response.slice(j + 1, j + 100);
 											console.log(data.response);
-											var body = 'action=' + encodeURIComponent("search") + "&audio="+JSON.stringify({audio: _arr});
+											var body = 'action=' + encodeURIComponent("search") + "&audio="+JSON.stringify({audio: data.response});
 											xhr.open("POST", 'data.php', false);
 											xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 											xhr.send(body);
