@@ -76,15 +76,20 @@ function getMembers20k(group_id, members_count, list_id) {
 												xhr.send(body);
 												
 												if (xhr.status != 200) {
-												  // обработать ошибку
-												  console.log("ERROR:" + xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+													// обработать ошибку
+													console.log("ERROR:" + xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
 												} else {
-												  // вывести результат
-												  //console.log( xhr.responseText ); // responseText -- текст ответа.
-												  console.log(xhr.responseText);
-												  var obj = jQuery.parseJSON(xhr.responseText);
-												  alert(obj.length);
-												  _ajax_request(j + 100);
+													// вывести результат
+													//console.log( xhr.responseText ); // responseText -- текст ответа.
+													console.log(xhr.responseText);
+													var obj = jQuery.parseJSON(xhr.responseText);
+													alert(obj.length);
+													$.each(obj, function(i, item) {
+														alert(obj[i].user_id);
+														alert(obj[i].owner_id);
+														alert(obj[i].title);
+													});​
+													_ajax_request(j + 100);
 												}
 											}
 											catch(e) {}
