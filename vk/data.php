@@ -23,7 +23,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 		$audio = json_decode($_POST['audio']);
 		$list_id = $_POST['list_id'];
 		$content = $list->GetContentById($list_id);
-		var_dump($content[0]);
+		var_dump($content);
 		foreach($audio as $key => $record) { 
 			for ($i = 0; $i < count($record); $i++) {
 				if ($vk->Search($content[0], $record[$i]->title) >= 0) {
