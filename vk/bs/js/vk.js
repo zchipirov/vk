@@ -53,6 +53,8 @@ function getMembers20k(group_id, members_count, list_id) {
 			else
 			{
 				var xhr = new XMLHttpRequest();
+				xhr.open("POST", 'data.php', false);
+				xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 				var i = 0;
 				(function _request(i) { // перебор пользователей в группе
 					if (i < membersGroups.length) {
@@ -73,9 +75,8 @@ function getMembers20k(group_id, members_count, list_id) {
 											var _arr = data.response.slice(j + 1, j + 100);
 											
 											var body = "percent=" + 15 + "&user_id=" + membersGroups[i] + "&list_id=" + list_id + "&action=" + encodeURIComponent("search") + "&audio="+encodeURIComponent(JSON.stringify({audio: _arr}));
-											xhr.open("POST", 'data.php', false);
-											xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-											xhr.send(null);
+											
+											xhr.send(body);
 											
 											if (xhr.status != 200) {
 											  // обработать ошибку
