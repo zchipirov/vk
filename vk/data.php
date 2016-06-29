@@ -31,11 +31,11 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 				$search_result = $vk->Search($content, $record[$i]->title);
 				if ($search_result >= 15) {
 					$audio_[] = array(
-						'user_id' => $user_id,
-						'owner_id' => $record[$i]->owner_id,
-						'title' => $record[$i]->title,
-						'duration' => $record[$i]->duration,
-						'url' => $record[$i]->url
+						'user_id' 	=> $user_id,
+						'owner_id' 	=> $record[$i]->owner_id,
+						'title' 	=> $record[$i]->title,
+						'duration' 	=> $record[$i]->duration,
+						'url' 		=> $record[$i]->url
 					);
 				}
 			}

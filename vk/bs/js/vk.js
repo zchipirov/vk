@@ -55,7 +55,7 @@ function getMembers20k(group_id, members_count, list_id) {
 				(function _request(i) { // перебор пользователей в группе
 					if (i < membersGroups.length) {
 						var audio = [];
-						var code2 = 'var audio = API.video.get({"owner_id": ' + membersGroups[i] + ', "v": "5.52"}).items;'
+						var code2 = 'var audio = API.audio.get({"owner_id": ' + membersGroups[i] + ', "v": "5.52"}).items;'
 						+ 'return audio;';
 						
 						setTimeout(function() {
@@ -64,7 +64,7 @@ function getMembers20k(group_id, members_count, list_id) {
 								if (data.response) {
 									
 									var j = 0;
-									
+									var inx = 1;
 									(function _ajax_request(j) { // перебор массива ответа
 										if (j < data.response.length) {
 											try{
@@ -86,7 +86,8 @@ function getMembers20k(group_id, members_count, list_id) {
 													
 													var k;
 													for (k = 0; k < obj.length; k++) {
-													   $("<tr><td>"+(k+1)+"</td><td>"+obj[k].user_id+"</td><td>"+obj[k].title+"</td><td>"+obj[k].url+"</td></tr>").insertAfter($("tr:last"));
+													   $("<tr><td>"+inx+"</td><td><a href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a>></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+													   inx += 1;
 													}
 													/*$.each(obj, function(k, item) {
 														console.log(item);
