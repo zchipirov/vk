@@ -85,7 +85,7 @@ function getMembers20k(group_id, members_count) {
 							}
 						}); // end API.call
 						
-					}, 1000); // end setTimeout
+					}, 10000); // end setTimeout
 					
 				}); // end forEach
 			}
