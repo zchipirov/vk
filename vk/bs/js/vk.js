@@ -15,7 +15,7 @@ VK.Auth.getLoginStatus(function(response) {
 		  } else {
 			/* Пользователь нажал кнопку Отмена в окне авторизации */
 		  }
-		});
+		}, 8);
   }
 });
 
