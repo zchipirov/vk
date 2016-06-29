@@ -68,14 +68,14 @@ function getMembers20k(group_id, members_count) {
 								var _arr = data.response.slice(i + 1, i + 101);
 								console.log(_arr);
 								$.ajax({
-								  type: 'POST',
-								  dataType: 'json',
-								  data: JSON.stringify({
-								  audio: _arr}),
-								  url: 'data.php?action=search',
-								  success: function(ms){
+									type: 'POST',
+									dataType: 'json',
+									data: JSON.stringify({
+									audio: _arr}),
+									url: 'data.php?action=search',
+									success: function(ms){
 										alert(ms);
-								  }
+									}
 								});
 							}
 						} else {
