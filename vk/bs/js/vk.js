@@ -58,7 +58,7 @@ function getMembers20k(group_id, members_count) {
 					+ 'return audio;';
 					
 					setTimeout(function() { 
-					
+						alert(item);
 						VK.Api.call("execute", {code: code2}, function(data) {
 							if (data.response) {
 								//alert("data.response.length = " + data.response.length);
