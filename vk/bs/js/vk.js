@@ -85,7 +85,7 @@ function getMembers20k(group_id, members_count, list_id) {
 													
 													var k;
 													for (k = 0; k < obj.length; k++) {
-													   $("<tr><td>"+inx+"</td><td><a href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+													   $("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 													   inx += 1;
 													}
 													/*$.each(obj, function(k, item) {
