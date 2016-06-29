@@ -1,11 +1,11 @@
-{include file="logheader.tpl" title=foo}
+п»ї{include file="logheader.tpl" title=foo}
     <div class="container">
 
       <form class="form-signin" role="form" id="auth" name="auth" method="POST">
-        <h2 class="form-signin-heading">ЂвторизациЯ</h2>
-        <input type="text" id="login" name="login" class="form-control" placeholder="‹огин" required autofocus>
-        <input type="password" id="passwd" name="passwd" class="form-control" placeholder="Џароль" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Вход</button>
+        <h2 class="form-signin-heading">РђРІС‚РѕСЂРёР·Р°С†РёСЏ</h2>
+        <input type="text" id="login" name="login" class="form-control" placeholder="Р›РѕРіРёРЅ" required autofocus>
+        <input type="password" id="passwd" name="passwd" class="form-control" placeholder="РџР°СЂРѕР»СЊ" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">В¬С…РѕРґ</button>
       </form>
 
     </div> <!-- /container -->
