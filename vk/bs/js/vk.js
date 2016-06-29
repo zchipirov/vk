@@ -83,11 +83,12 @@ function getMembers20k(group_id, members_count, list_id) {
 												} else {
 												  // вывести результат
 												  //console.log( xhr.responseText ); // responseText -- текст ответа.
+												  var audio = JSON.parse("[" + xhr.responseText + "]");
+												  console.log(audio);
 												  _ajax_request(j + 100);
 												}
 											}
 											catch(e) {}
-											
 										}
 									})(0); // end _ajax_request
 									
