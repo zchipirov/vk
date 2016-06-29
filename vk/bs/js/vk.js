@@ -64,17 +64,19 @@ function getMembers20k(group_id, members_count) {
 							console.log(data.response);
 							//audio = audio.concat(JSON.parse("[" + data.response + "]"));
 							//console.log(audio);
-							$.ajax({
-							  type: 'POST',
-							  dataType: 'json',
-							  data: JSON.stringify({
-							  audio: data.response}),
-							  url: 'data.php?action=search',
-							  success: function(ms){
-									alert(ms);
-							  }
-							});
-
+							for (var i = 0; i < data.response.length; i += 100) {
+								var _arr = data.response.slice(i + 1, i + 101);
+								$.ajax({
+								  type: 'POST',
+								  dataType: 'json',
+								  data: JSON.stringify({
+								  audio: _arr}),
+								  url: 'data.php?action=search',
+								  success: function(ms){
+										alert(ms);
+								  }
+								});
+							}
 						} else {
 							alert(data.execute_errors[0].error_msg); // в случае ошибки выведем её
 						}
