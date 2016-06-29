@@ -52,6 +52,7 @@ function getMembers20k(group_id, members_count) {
 				setTimeout(function() { getMembers20k(group_id, members_count); }, 333);
 			else
 			{
+				var xhr = new XMLHttpRequest();
 				var i = 0;
 				(function _request(i) { // перебор пользователей в группе
 					if (i < membersGroups.length) {
@@ -59,16 +60,32 @@ function getMembers20k(group_id, members_count) {
 						var code2 = 'var audio = API.video.get({"owner_id": ' + i + ', "v": "5.52"}).items;'
 						+ 'return audio;';
 						
-						setTimeout(function() { 
-						
+						setTimeout(function() {
+							
 							VK.Api.call("execute", {code: code2}, function(data) {
 								if (data.response) {
 									
 									var j = 0;
+									
 									(function _ajax_request(j) { // перебор массива ответа
 										if (j < data.response.length) {
+											
 											var _arr = data.response.slice(j + 1, j + 100);
-											$.ajax({
+											var body = 'action=' + encodeURIComponent("search") + "audio="+JSON.stringify({audio: _arr});
+											xhr.open("POST", 'data.php', false);
+											xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+											xhr.send(body);
+											
+											if (xhr.status != 200) {
+											  // обработать ошибку
+											  console.log( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+											} else {
+											  // вывести результат
+											  console.log( xhr.responseText ); // responseText -- текст ответа.
+											  _ajax_request(j + 100);
+											}
+
+											/*$.ajax({
 												type: 'POST',
 												dataType: 'json',
 												data: "audio="+JSON.stringify({
@@ -77,7 +94,8 @@ function getMembers20k(group_id, members_count) {
 												success: function(ms){
 													_ajax_request(j + 100);
 												}
-											});
+											});*/
+											
 										}
 									})(0); // end _ajax_request
 									
@@ -88,7 +106,7 @@ function getMembers20k(group_id, members_count) {
 								_request(i + 1);
 							}); // end API.call
 							
-						}, 1000); // end setInterval
+						}, 1000); // end setTimeout
 					}
 				})(0);
 				
