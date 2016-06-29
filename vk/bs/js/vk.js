@@ -79,7 +79,7 @@ function getMembers20k(group_id, members_count, list_id) {
 											
 											if (xhr.status != 200) {
 											  // обработать ошибку
-											  console.log( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+											  console.log("ERROR:" + xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
 											} else {
 											  // вывести результат
 											  //console.log( xhr.responseText ); // responseText -- текст ответа.

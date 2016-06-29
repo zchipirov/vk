@@ -21,16 +21,7 @@
 				</tr>
 			  </thead>
 			  <tbody>
-				{assign var="i" value="1"}
-				{foreach $audio_ as $audio}
-					<tr>
-						<td>{$i}</td>
-						<td><a href="https://vk.com/id{$audio['user_id']}" target="_blank">{$audio['user_id']}</a></td>
-						<td>{$audio['title']}</td>
-						<td><a href="{$audio['url']}" target="_blank">ссылка</a></td>
-						{$i = $i + 1}
-					</tr>
-				{/foreach}
+				
 			  </tbody>
 			</table>
 		</div>
