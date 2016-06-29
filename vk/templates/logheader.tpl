@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+п»ї<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Авторизация</title>
+    <title>РђРІС‚РѕСЂРёР·Р°С†РёСЏ</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./bs/css/bootstrap.min.css" rel="stylesheet">
