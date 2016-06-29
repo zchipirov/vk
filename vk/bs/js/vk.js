@@ -2,6 +2,8 @@ VK.init({
     apiId: 5382063
 });
 
+VK.Auth.logout(function(response) {});
+
 VK.Auth.getLoginStatus(function(response) {
   if (response.session) {
     /* Авторизованный в Open API пользователь, response.status="connected" */
