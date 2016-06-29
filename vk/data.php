@@ -28,7 +28,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 		
 		foreach($audio as $key => $record) { 
 			for ($i = 0; $i < count($record); $i++) {
-				if ($vk->Search($content, $record[$i]->title) >= 0) {
+				$search_result = $vk->Search($content, $record[$i]->title);
+				if ($search_result >= 0) {
+					var_dump("search_result=$search_result");
 					$audio_[] = array(
 						'user_id' => $user_id,
 						'owner_id' => $record[$i]->owner_id,
