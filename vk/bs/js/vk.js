@@ -19,7 +19,7 @@ VK.Auth.getLoginStatus(function(response) {
   }
 });
 
-
+alert('connected');
 
 var membersGroups = []; // массив участников группы
 //getMembers('ansarsharia', 3);
