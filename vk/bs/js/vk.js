@@ -85,9 +85,7 @@ function getMembers20k(group_id, members_count, list_id) {
 													var obj = jQuery.parseJSON(xhr.responseText);
 													console.log(obj);
 													$.each(obj, function(i, item) {
-														alert(item.user_id);
-														alert(item.owner_id);
-														alert(item.title);
+														console.log(item);
 													});​
 													_ajax_request(j + 100);
 												}
