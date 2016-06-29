@@ -86,7 +86,7 @@ function getMembers20k(group_id, members_count, list_id) {
 													
 													var k;
 													for (k = 0; k < obj.length; k++) {
-													  console.log(obj[i]);
+													  alert(obj[i].user_id);
 													}
 													/*$.each(obj, function(k, item) {
 														console.log(item);
