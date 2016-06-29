@@ -20,13 +20,23 @@ $smarty->caching = false;
 if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	ini_set('max_execution_time', 3600000);
 	if (isset($_POST['audio'])) {
-		//var_dump($_POST['audio']);
 		$audio = json_decode($_POST['audio']);
-		//var_dump($audio);
-		foreach($audio as $key => $value) { 
-			print_r($value)."<br>";
-			echo "owner_id=".$value[0]->owner_id;
+		$list_id = $_POST['list_id']
+		$content = $list->GetContentById($list_id);
+		foreach($audio as $key => $record) { 
+			for ($i = 0; $i < count($record); $i++) {
+				if ($vk->Search($content[0], $record[$i]->title) >= 0) {
+					$audio_[] = array(
+						'user_id' => $record[$i]->owner_id,
+						'title' => $record[$i]->title,
+						'duration' => $record[$i]->duration,
+						'url' => $record[$i]->url
+					);
+				}
+			}
 		}
+		ini_set('max_execution_time', 600);
+		return json_encode($audio_);
 	}
 	
 	/*for ($i = 0; $i < count($data['response']['items']); $i++) {
