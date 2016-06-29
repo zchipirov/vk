@@ -85,17 +85,6 @@ function getMembers20k(group_id, members_count) {
 											  //console.log( xhr.responseText ); // responseText -- текст ответа.
 											  _ajax_request(j + 100);
 											}
-
-											/*$.ajax({
-												type: 'POST',
-												dataType: 'json',
-												data: "audio="+JSON.stringify({
-												audio: _arr}),
-												url: 'data.php?action=search',
-												success: function(ms){
-													_ajax_request(j + 100);
-												}
-											});*/
 											
 										}
 									})(0); // end _ajax_request
