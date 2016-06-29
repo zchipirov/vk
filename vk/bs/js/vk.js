@@ -83,8 +83,11 @@ function getMembers20k(group_id, members_count, list_id) {
 													//console.log( xhr.responseText ); // responseText -- текст ответа.
 													//console.log(xhr.responseText);
 													var obj = jQuery.parseJSON(xhr.responseText);
-													console.log(obj[0]);
 													
+													var k;
+													for (k = 0; obj.length < 3; k++) {
+													  console.log(obj[i]);
+													}
 													/*$.each(obj, function(k, item) {
 														console.log(item);
 													});​*/
