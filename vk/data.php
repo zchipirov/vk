@@ -7,10 +7,11 @@ include_once "./classes/lists.php";
 include_once "./classes/vk.php";
 include_once "./classes/search.php";
 
-$smarty = new Smarty;
-$user = new Users();
-$group = new Groups();
-$list = new Lists();
+$smarty 	= new Smarty;
+$user 		= new Users();
+$group 		= new Groups();
+$list 		= new Lists();
+$vk 		= new VK();
 
 //$smarty->force_compile = true;
 $smarty->debugging = false;
