@@ -42,7 +42,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 		}
 		//var_dump($audio_);
 		ini_set('max_execution_time', 600);
-		echo $audio_;
+		echo json_encode($audio_);
 	}
 	
 	/*for ($i = 0; $i < count($data['response']['items']); $i++) {
