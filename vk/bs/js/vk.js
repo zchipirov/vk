@@ -57,7 +57,7 @@ function getMembers20k(group_id, members_count) {
 					var code2 = 'var audio = API.audio.get({"owner_id": ' + item + ', "v": "5.52"}).items;'
 					+ 'return audio;';
 					
-					setTimeout(function() { 
+					setInterval(function() { 
 						//alert(item);
 						VK.Api.call("execute", {code: code2}, function(data) {
 							if (data.response) {
@@ -85,7 +85,7 @@ function getMembers20k(group_id, members_count) {
 							}
 						}); // end API.call
 						
-					}, 10000); // end setTimeout
+					}, 1000); // end setInterval
 					
 				}); // end forEach
 			}
