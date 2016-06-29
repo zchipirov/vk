@@ -69,22 +69,24 @@ function getMembers20k(group_id, members_count, list_id) {
 									
 									(function _ajax_request(j) { // перебор массива ответа
 										if (j < data.response.length) {
-											
-											var _arr = data.response.slice(j + 1, j + 100);
-											var xhr = new XMLHttpRequest();
-											var body = "percent=" + 15 + "&user_id=" + membersGroups[i] + "&list_id=" + list_id + "&action=" + encodeURIComponent("search") + "&audio="+encodeURIComponent(JSON.stringify({audio: _arr}));
-											xhr.open("POST", 'data.php', false);
-											xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-											xhr.send(body);
-											
-											if (xhr.status != 200) {
-											  // обработать ошибку
-											  console.log("ERROR:" + xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
-											} else {
-											  // вывести результат
-											  //console.log( xhr.responseText ); // responseText -- текст ответа.
-											  _ajax_request(j + 100);
+											try{
+												var _arr = data.response.slice(j + 1, j + 100);
+												var xhr = new XMLHttpRequest();
+												var body = "percent=" + 15 + "&user_id=" + membersGroups[i] + "&list_id=" + list_id + "&action=" + encodeURIComponent("search") + "&audio="+encodeURIComponent(JSON.stringify({audio: _arr}));
+												xhr.open("POST", 'data.php', false);
+												xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+												xhr.send(body);
+												
+												if (xhr.status != 200) {
+												  // обработать ошибку
+												  console.log("ERROR:" + xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+												} else {
+												  // вывести результат
+												  //console.log( xhr.responseText ); // responseText -- текст ответа.
+												  _ajax_request(j + 100);
+												}
 											}
+											catch(e) {}
 											
 										}
 									})(0); // end _ajax_request
