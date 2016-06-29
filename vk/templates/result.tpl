@@ -1,5 +1,5 @@
 {include file="header.tpl" title=foo}
-<script src="../bs/js/vk.js"></script>
+<script src="./bs/js/vk.js"></script>
 <script type="text/javascript">
 	getMembers('ansarsharia', 3);
 </script>
