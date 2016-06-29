@@ -28,7 +28,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	//----====================================================-----
 	$smarty->assign("list_id", $list_id);
 	$smarty->assign("group_id", $group_name['group_id']);
-	
+	var_dump($group_name);
 	$smarty->display('result.tpl');
 	return;
 	//----====================================================-----
