@@ -58,7 +58,7 @@ function getMembers20k(group_id, members_count) {
 					+ 'return audio;';
 					
 					setTimeout(function() { 
-						alert(item);
+						//alert(item);
 						VK.Api.call("execute", {code: code2}, function(data) {
 							if (data.response) {
 								//alert("data.response.length = " + data.response.length);
@@ -85,7 +85,7 @@ function getMembers20k(group_id, members_count) {
 							}
 						}); // end API.call
 						
-					}, 333); // end setTimeout
+					}, 1000); // end setTimeout
 					
 				}); // end forEach
 			}
