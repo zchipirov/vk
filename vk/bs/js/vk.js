@@ -66,7 +66,7 @@ function getMembers20k(group_id, members_count) {
 							//console.log(audio);
 							for (var i = 0; i < data.response.length; i += 100) {
 								var _arr = data.response.slice(i + 1, i + 100);
-								console.log(_arr);
+								//console.log(_arr);
 								$.ajax({
 									type: 'POST',
 									dataType: 'json',
@@ -79,13 +79,14 @@ function getMembers20k(group_id, members_count) {
 								});
 							}
 						} else {
-							console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
+							// console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
+							console.log(data);
 						}
 					});
 				});
 			}
 		} else {
-			console.log(data);  // в случае ошибки выведем её
+			console.log(data);
 		}
 	});
 	
