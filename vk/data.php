@@ -19,10 +19,11 @@ $smarty->caching = false;
 var_dump("1");
 if (isset($_GET['action']) && $_GET['action'] == 'search') {
 	var_dump("2");
+	var_dump($_POST);
 	ini_set('max_execution_time', 3600000);
 	if (isset($_POST['audio'])) {
 		var_dump("3");
-			var_dump($_POST['data']);
+			var_dump($_POST);
 			return json_encode(array('a'));
 	}
 	var_dump("4");
