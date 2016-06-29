@@ -84,7 +84,7 @@ function getMembers20k(group_id, members_count, list_id) {
 													//console.log(xhr.responseText);
 													var obj = jQuery.parseJSON(xhr.responseText);
 													console.log(obj);
-													$.each(obj, function(i, item) {
+													$.each(obj, function(k, item) {
 														console.log(item);
 													});​
 													_ajax_request(j + 100);
