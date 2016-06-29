@@ -23,9 +23,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 		//var_dump($_POST['audio']);
 		$audio = json_decode($_POST['audio']);
 		//var_dump($audio);
-		foreach($audio as $key => $value) 
-		{ 
-			print_r($value)."<br>";
+		foreach($audio as $key => $value) { 
+			for ($i = 0; $i < count($value); $i++) {
+				print_r($value['owner_id'])."<br>";
+			}
 		}
 	}
 	
