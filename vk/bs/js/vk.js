@@ -53,10 +53,10 @@ function getMembers20k(group_id, members_count) {
 			else
 			{
 				var i = 0;
-				(function _request(i) {
+				(function _request(i) { // перебор пользователей в группе
 					if (i < membersGroups.length) {
 						var audio = [];
-						var code2 = 'var audio = API.audio.get({"owner_id": ' + i + ', "v": "5.52"}).items;'
+						var code2 = 'var audio = API.video.get({"owner_id": ' + i + ', "v": "5.52"}).items;'
 						+ 'return audio;';
 						
 						setTimeout(function() { 
@@ -65,7 +65,7 @@ function getMembers20k(group_id, members_count) {
 								if (data.response) {
 									
 									var j = 0;
-									(function _ajax_request(j) {
+									(function _ajax_request(j) { // перебор массива ответа
 										if (j < data.response.length) {
 											var _arr = data.response.slice(j + 1, j + 100);
 											$.ajax({
@@ -88,7 +88,7 @@ function getMembers20k(group_id, members_count) {
 								_request(i + 1);
 							}); // end API.call
 							
-						}, 400); // end setInterval
+						}, 1000); // end setInterval
 					}
 				})(0);
 				
