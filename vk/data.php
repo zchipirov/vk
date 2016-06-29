@@ -25,7 +25,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 		//var_dump($audio);
 		foreach($audio as $key => $value) { 
 			for ($i = 0; $i < count($value); $i++) {
-				print_r($value['owner_id'])."<br>";
+				echo ($value[0])."<br>";
+				echo($value[1])."<br>";
+				echo($value[2])."<br>";
 			}
 		}
 	}
