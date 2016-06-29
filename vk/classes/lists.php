@@ -7,8 +7,8 @@ class Lists {
 	}
 	public function Select() {
 		$db = new SafeMySQL();
-		$groups = $db->getAll("SELECT id, title, (SELECT user_login FROM users AS u WHERE u.user_id=ls.user_id) AS user_id, dt FROM lists AS ls");
-		return $groups;
+		$lists = $db->getAll("SELECT id, title, (SELECT user_login FROM users AS u WHERE u.user_id=ls.user_id) AS user_id, dt FROM lists AS ls");
+		return $lists;
 	}
 	public function Update($title, $id) {
 		$db = new SafeMySQL();
@@ -21,13 +21,18 @@ class Lists {
 	}
 	public function GetListById($id) {
 		$db = new SafeMySQL();
-		$groups = $db->getAll("SELECT id, title FROM lists WHERE id=?i LIMIT 1", $id);
-		return $groups[0];
+		$lists = $db->getAll("SELECT id, title FROM lists WHERE id=?i LIMIT 1", $id);
+		return $lists[0];
+	}
+	public function GetListByTitle($title) {
+		$db = new SafeMySQL();
+		$lists = $db->getAll("SELECT id FROM lists WHERE title=?s LIMIT 1", $title);
+		return $lists[0];
 	}
 	public function GetContentById($id) {
 		$db = new SafeMySQL();
-		$groups = $db->getAll("SELECT id, caption, title, note FROM list_content WHERE list_id=?i", $id);
-		return $groups;
+		$lists = $db->getAll("SELECT id, caption, title, note FROM list_content WHERE list_id=?i", $id);
+		return $lists;
 	}
 	public function RemoveContentById($id) {
 		$db = new SafeMySQL();
