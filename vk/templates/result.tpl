@@ -8,8 +8,7 @@
 	<div class="btn-group" role="group" aria-label="...">
 		<h2 class="sub-header">Результат</h2>&nbsp;<button type="button" class="btn btn-default" onclick="$('#form_r').submit();">Назад</button>
 	</div>
-	<br>
-	<div class="panel panel-default">
+	<div class="panel panel-default" style="margin-top: 5px;">
 		<div class="panel-heading">Обработка...</div>
 		<div class="panel-body">
 			<p>Данные обрабатываются в синхронном режиме, во избежание блокировки VK. Возможны подвисания интерфейса. Дождитесь загрузки и сохраните результат.</p>
