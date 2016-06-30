@@ -1,14 +1,40 @@
 {include file="header.tpl" title=foo}
 <script src="./bs/js/vk.js"></script>
 <script type="text/javascript">
-	getMembers('{$group_id}', {$list_id});
+	getMembers('{$source}', '{$group_id}', {$list_id});
 </script>
 <form method="POST" action="index.php" name="form_r" id="form_r">
 	<input type="hidden" name="action" id="action" value=""/>
 	<div class="btn-group" role="group" aria-label="...">
 		<h2 class="sub-header">Результат</h2>&nbsp;<button type="button" class="btn btn-default" onclick="$('#form_r').submit();">Назад</button>
 	</div>
-	{if isset($audio_)}
+	<table>
+		<tr>
+			<td>Группа</td>
+			<td>{$group_title}</td>
+		</tr>
+		<tr>
+			<td>Поиск по</td>
+			<td>{$source}</td>
+		</tr>
+		<tr>
+			<td>Число подписчиков</td>
+			<td>{$group_count}</td>
+		</tr>
+		<tr>
+			<td>Список</td>
+			<td>{$list_title}</td>
+		</tr>
+		<tr>
+			<td>Минимальный процент соответствия</td>
+			<td>15%</td>
+		</tr>
+		<tr>
+			<td>Найдено</td>
+			<td></td>
+		</tr>
+	</table>
+	{if isset($source) && $source=='audio'}
 		<div class="table-responsive">
 			<h3 class="sub-header">Аудио</h3>
 			<table class="table table-striped">
@@ -27,7 +53,7 @@
 		</div>
 	{/if}
 	
-	{if isset($video_)}
+	<!--{if isset($video_)}
 		<div class="table-responsive">
 			<h3 class="sub-header">Видео</h3>
 			<table class="table table-striped">
@@ -141,7 +167,7 @@
 			  </tbody>
 			</table>
 		</div>
-	{/if}
+	{/if}-->
 </form>
 
 {include file="footer.tpl"}

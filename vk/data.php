@@ -20,49 +20,88 @@ $smarty->caching = false;
 
 if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	ini_set('max_execution_time', 3600000);
-	if (isset($_POST['audio'])) {
-		$audio = json_decode($_POST['audio']);
+	if (isset($_POST['source'])) {
+		$source = $_POST['source'];
+		$data = json_decode($_POST['data']);
 		$list_id = $_POST['list_id'];
 		$user_id = $_POST['user_id'];
 		$content = $list->GetContentById($list_id);
 		
-		foreach($audio as $key => $record) { 
-			for ($i = 0; $i < count($record); $i++) {
-				$search_result = $vk->Search($content, $record[$i]->title);
+		foreach($data as $key => $item) { 
+			for ($i = 0; $i < count($item); $i++) {
+				$title = "";
+				switch ($source) {
+					case 'friends':
+						$title = $item[$i]->first_name." ".$item[$i]->last_name;
+						break;
+					case 'groups':
+						$title = $item[$i]->name;
+						break;
+					default:
+						$title = $item[$i]->title;
+				}
+				$search_result = $vk->Search($content, $title);
 				if ($search_result >= 15) {
-					$audio_[] = array(
-						'user_id' 	=> $user_id,
-						'owner_id' 	=> $record[$i]->owner_id,
-						'title' 	=> $record[$i]->title,
-						'duration' 	=> $record[$i]->duration,
-						'url' 		=> $record[$i]->url
-					);
+					switch ($source) {
+						case 'audio':
+							$result[] = array(
+								'user_id' 	=> $user_id,
+								'owner_id' 	=> $item[$i]->owner_id,
+								'title' 	=> $item[$i]->title,
+								'duration' 	=> $item[$i]->duration,
+								'url' 		=> $item[$i]->url
+							);
+							break;
+						case 'video':
+							$result[] = array(
+								'user_id' 	=> $user_id,
+								'owner_id' => $record['owner_id'],
+								'title' => $record['title'],
+								'duration' => $record['duration'],
+								'player' => $record['player']
+							);
+							break;
+						case 'docs':
+							$result[] = array(
+								'user_id' 	=> $user_id,
+								'owner_id' => $record['owner_id'],
+								'title' => $record['title'],
+								'size' => $record['size'],
+								'url' => $record['url']
+							);
+							break;
+						case 'groups':
+							$result[] = array(
+								'user_id' 	=> $user_id,
+								'owner_id' => $record['user_id'],
+								'name' => $record['name']
+							);
+							break;
+						case 'groups':
+							$result[] = array(
+								'user_id' 	=> $user_id,
+								'owner_id' => $record['user_id'],
+								'first_name' => $record['first_name'],
+								'last_name' => $record['last_name']
+							);
+							break;
+					}
 				}
 			}
 		}
-		//var_dump($audio_);
 		ini_set('max_execution_time', 600);
-		echo json_encode($audio_);
+		echo json_encode($result);
 	}
-	
-	/*for ($i = 0; $i < count($data['response']['items']); $i++) {
-		$userid = $data['response']['items'][$i];
-		
-		if (isset($_POST['audio'])) {
-			var_dump($_POST['audio']);
-			return;
-			$audio = $vk->GetUser_Audio($userid, $access_token);
-			for ($j = 0; $j < count($audio['response']['items']); $j++) {
-				$record = $audio['response']['items'][$j];
-				if ($vk->Search($content[0], $record['title']) >= 15) {
-					$audio_[] = array(
-						'user_id' => $record['owner_id'],
-						'title' => $record['title'],
-						'duration' => $record['duration'],
-						'url' => $record['url']
-					);
-				}
-			}
-		}
-	}*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
