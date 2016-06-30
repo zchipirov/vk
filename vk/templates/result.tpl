@@ -34,7 +34,7 @@
 			<td id="search_status"></td>
 		</tr>
 		<tr>
-			<td>Найдено</td>
+			<td>Найдено записей</td>
 			<td id="search_result"></td>
 		</tr>
 	</table>
