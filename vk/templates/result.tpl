@@ -15,31 +15,31 @@
 		</div>
 		<table class="table">
 			<tr>
-				<td width="30%">Группа</td>
+				<td width="30%"><b>Группа</b></td>
 				<td>{$group_title}</td>
 			</tr>
 			<tr>
-				<td>Поиск по</td>
+				<td><b>Поиск по</b></td>
 				<td>{$source}</td>
 			</tr>
 			<tr>
-				<td>Число подписчиков</td>
+				<td><b>Число подписчиков</b></td>
 				<td id="group_count">{$group_count}</td>
 			</tr>
 			<tr>
-				<td>Список</td>
+				<td><b>Список</b></td>
 				<td>{$list_title}</td>
 			</tr>
 			<tr>
-				<td>Минимальный процент соответствия</td>
+				<td><b>Минимальный процент соответствия</b></td>
 				<td>15%</td>
 			</tr>
 			<tr>
-				<td>Обработано</td>
+				<td><b>Обработано</b></td>
 				<td id="search_status"></td>
 			</tr>
 			<tr>
-				<td>Найдено записей</td>
+				<td><b>Найдено записей</b></td>
 				<td id="search_result"></td>
 			</tr>
 		</table>
