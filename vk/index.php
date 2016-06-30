@@ -25,14 +25,14 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	$list_id = $_POST['ls'][0];
 	$list_title = $list->GetListById($list_id);
 	$vk = new VK();
-	$group_data = $vk->GetInfoGroup($group_name['group_id']);
-	$count = $group_data['response'][0]['members_count'];
+	//$group_data = $vk->GetInfoGroup($group_name['group_id']);
+	//$count = $group_data['response'][0]['members_count'];
 	//----====================================================-----
 	$smarty->assign("list_id", $list_id);
 	$smarty->assign("list_title", $list_title);
 	$smarty->assign("group_id", $group_name['group_id']);
 	$smarty->assign("group_title", $group_name['title']);
-	$smarty->assign("group_count", $count);
+	//$smarty->assign("group_count", $count);
 	if (isset($_POST['inf']) && $_POST['inf'] == '1') {
 		$smarty->assign("source", "audio");
 	}

@@ -29,6 +29,7 @@ function getMembers20k(source, group_id, members_count, list_id) {
 				setTimeout(function() { getMembers20k(source, group_id, members_count); }, 333);
 			else
 			{
+				$(".group_count").html(membersGroups.length);
 				var inx = 1;
 				var i = 0;
 				(function _request(i) { // перебор пользователей в группе

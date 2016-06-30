@@ -19,7 +19,7 @@
 		</tr>
 		<tr>
 			<td>Число подписчиков</td>
-			<td>{$group_count}</td>
+			<td id="group_count">{$group_count}</td>
 		</tr>
 		<tr>
 			<td>Список</td>
