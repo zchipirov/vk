@@ -8,37 +8,46 @@
 	<div class="btn-group" role="group" aria-label="...">
 		<h2 class="sub-header">Результат</h2>&nbsp;<button type="button" class="btn btn-default" onclick="$('#form_r').submit();">Назад</button>
 	</div>
-	<table>
-		<tr>
-			<td>Группа</td>
-			<td>{$group_title}</td>
-		</tr>
-		<tr>
-			<td>Поиск по</td>
-			<td>{$source}</td>
-		</tr>
-		<tr>
-			<td>Число подписчиков</td>
-			<td id="group_count">{$group_count}</td>
-		</tr>
-		<tr>
-			<td>Список</td>
-			<td>{$list_title}</td>
-		</tr>
-		<tr>
-			<td>Минимальный процент соответствия</td>
-			<td>15%</td>
-		</tr>
-		<tr>
-			<td>Обработано</td>
-			<td id="search_status"></td>
-		</tr>
-		<tr>
-			<td>Найдено записей</td>
-			<td id="search_result"></td>
-		</tr>
-	</table>
-	{if isset($source) && $source=='audio'}
+	<br>
+	<div class="panel panel-default">
+		<div class="panel-heading">Обработка...</div>
+		<div class="panel-body">
+			<p>Данные обрабатываются в синхронном режиме, во избежание блокировки VK. Возможны подвисания интерфейса. Дождитесь загрузки и сохраните результат.</p>
+		</div>
+		<table class="table">
+			<tr>
+				<td>Группа</td>
+				<td>{$group_title}</td>
+			</tr>
+			<tr>
+				<td>Поиск по</td>
+				<td>{$source}</td>
+			</tr>
+			<tr>
+				<td>Число подписчиков</td>
+				<td id="group_count">{$group_count}</td>
+			</tr>
+			<tr>
+				<td>Список</td>
+				<td>{$list_title}</td>
+			</tr>
+			<tr>
+				<td>Минимальный процент соответствия</td>
+				<td>15%</td>
+			</tr>
+			<tr>
+				<td>Обработано</td>
+				<td id="search_status"></td>
+			</tr>
+			<tr>
+				<td>Найдено записей</td>
+				<td id="search_result"></td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<button type="button" class="btn btn-success" onclick="" id="save">Сохранить в Excel</button>
+	<!--{if isset($source) && $source=='audio'}
 		<div class="table-responsive">
 			<h3 class="sub-header">Аудио</h3>
 			<table class="table table-striped">
@@ -55,7 +64,7 @@
 			  </tbody>
 			</table>
 		</div>
-	{/if}
+	{/if}-->
 	
 	<!--{if isset($video_)}
 		<div class="table-responsive">
