@@ -15,7 +15,7 @@
 		</div>
 		<table class="table">
 			<tr>
-				<td>Группа</td>
+				<td width="30%">Группа</td>
 				<td>{$group_title}</td>
 			</tr>
 			<tr>
