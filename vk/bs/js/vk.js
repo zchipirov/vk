@@ -80,7 +80,8 @@ function getMembers20k(source, group_id, members_count, list_id) {
 													var obj = jQuery.parseJSON(xhr.responseText);
 													for (var k = 0; k < obj.length; k++) {
 														if (source == 'audio')
-															$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+															$("#search_result").html(inx)
+															// $("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 													   inx += 1;
 													}
 													_ajax_request(j + 100);
@@ -94,10 +95,12 @@ function getMembers20k(source, group_id, members_count, list_id) {
 									// console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
 									console.log(data);
 								}
+								$("#search_status").html(i + "/" + membersGroups.length);
 								_request(i + 1);
 							}); // end API.call
 							
 						}, 500); // end setTimeout
+						
 					}
 				})(0); // end перебор пользователей в группе
 				

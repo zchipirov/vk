@@ -30,8 +30,12 @@
 			<td>15%</td>
 		</tr>
 		<tr>
+			<td>Обработано</td>
+			<td id="search_status"></td>
+		</tr>
+		<tr>
 			<td>Найдено</td>
-			<td></td>
+			<td id="search_result"></td>
 		</tr>
 	</table>
 	{if isset($source) && $source=='audio'}
