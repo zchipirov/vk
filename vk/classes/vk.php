@@ -97,7 +97,7 @@ class VK {
 			}
 		}
 		//echo "MAX=$max<br>";
-		echo $max;
+		return $max;
 	}
 }
 ?>
