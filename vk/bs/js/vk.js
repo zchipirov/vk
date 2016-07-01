@@ -80,6 +80,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													var obj = jQuery.parseJSON(xhr.responseText);
 													for (var k = 0; k < obj.length; k++) {
 														//if (source == 'audio')
+															alert(inx);
 														$("#search_result").html(inx)
 														// $("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 														$("#save").html("Сохранить в Excel (" + inx + " записей)");
