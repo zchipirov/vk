@@ -83,8 +83,8 @@ class Users {
 	}
 	public function GetPercent() {
 		$db = new SafeMySQL();
-		$access_token = $db->getAll("SELECT val FROM settings LIMIT 1");
-		return $access_token[0]['val'];
+		$pr = $db->getAll("SELECT val FROM settings LIMIT 1");
+		return $pr[0]['val'];
 	}
 	public function SavePercent($percent) {
 		$db = new SafeMySQL();

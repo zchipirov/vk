@@ -7,15 +7,12 @@ require_once ('./classes/PHPExcel.php');
 $smarty = new Smarty;
 $user = new Users();
 
-
 $smarty->debugging = false;
 $smarty->caching = false;
 
-
-
 $user->Check();
-
-if (isset($_POST)) {
+echo $_POST['percent'];
+if (isset($_POST['percent'])) {
 	$user->SavePercent($_POST['percent']);
 }
 $percent = $user->GetPercent();
