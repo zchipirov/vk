@@ -63,7 +63,7 @@
 			</table>
 		</div>
 	{/if}
-	{if isset($video_)}
+	{if isset($source) && $source=='video'}
 		<div class="table-responsive">
 			<h3 class="sub-header">Видео</h3>
 			<table class="table table-striped">
