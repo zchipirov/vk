@@ -81,10 +81,11 @@ class VK {
 	
 	public function Search($content, $title) {
 		$title = explode(" ", trim($title));
+		var_dump("TITLE = ".$title);
 		$max = -1;
 		for ($i = 0; $i < count($content); $i++) {
 			$cn = explode(" ", trim($content[$i]['title']));
-			
+			var_dump("CN = ".$cn);
 			$pr = 0;
 			for ($j = 0; $j <= count($title); $j++) {
 				for ($k = 0; $k <= count($cn); $k++) {
