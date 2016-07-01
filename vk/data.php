@@ -41,6 +41,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 						$title = $item[$i]->title;
 				}
 				$search_result = $vk->Search($content, $title);
+				echo "Процент = $search_result<br>".$title."<br>";
 				if ($search_result >= 15) {
 					switch ($source) {
 						case 'audio':
