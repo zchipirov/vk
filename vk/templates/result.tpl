@@ -45,7 +45,25 @@
 		</table>
 	</div>
 	<br>
-	<button type="button" class="btn btn-success" onclick="" id="save">Сохранить в Excel</button>
+	{if isset($source) && $source=='audio'}
+		<div class="table-responsive">
+			<h3 class="sub-header">Аудио</h3>
+			<table class="table table-striped">
+			  <thead>
+				<tr>
+				  <th>#</th>
+				  <th>Владелец</th>
+				  <th>Название</th>
+				  <th>Адрес</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				
+			  </tbody>
+			</table>
+		</div>
+	{/if}
+	<!--<button type="button" class="btn btn-success" onclick="" id="save">Сохранить в Excel</button>-->
 </form>
 
 {include file="footer.tpl"}
