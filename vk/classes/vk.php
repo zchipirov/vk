@@ -87,7 +87,7 @@ class VK {
 			$pr = 0;
 			for ($j = 0; $j <= count($title); $j++) {
 				for ($k = 0; $k <= count($cn); $k++) {
-					echo "TITLE[$j] = $title[$j]" ."CN[$k] = $cn[$k]";
+					echo "$title[$j]-->$cn[$k]<br>";
 					if ($cn[$k] != NULL && strlen($title[$j]) > 2 && $title[$j] == $cn[$k])
 						$pr += 1;
 				}
