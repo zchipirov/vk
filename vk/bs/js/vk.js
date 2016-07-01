@@ -106,7 +106,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 								_request(i + 1);
 							}); // end API.call
 							
-						}, 1500); // end setTimeout
+						}, 2000); // end setTimeout
 						
 					}
 					fl = 0;
