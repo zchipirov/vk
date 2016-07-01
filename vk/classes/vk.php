@@ -81,14 +81,13 @@ class VK {
 	
 	public function Search($content, $title) {
 		$title = explode(" ", trim($title));
-		print_r("TITLE = ".$title);
 		$max = -1;
 		for ($i = 0; $i < count($content); $i++) {
 			$cn = explode(" ", trim($content[$i]['title']));
-			print_r("CN = ".$cn);
 			$pr = 0;
 			for ($j = 0; $j <= count($title); $j++) {
 				for ($k = 0; $k <= count($cn); $k++) {
+					echo "TITLE[$j] = $title[$j]" ."CN[$k] = $cn[$k]";
 					if ($cn[$k] != NULL && strlen($title[$j]) > 2 && $title[$j] == $cn[$k])
 						$pr += 1;
 				}
