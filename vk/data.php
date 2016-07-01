@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once '../libs/Smarty.class.php';
 require_once "./classes/users.php";
 require_once "./classes/auth.php";
