@@ -2,17 +2,17 @@ var membersGroups = []; // массив участников группы
 //getMembers('ansarsharia', 3);
 
 // получаем информацию о группе и её участников
-function getMembers(source, gr_id, list_id) {
+function getMembers(source, gr_id, list_id, percent) {
 	
 	VK.Api.call('groups.getById', {group_id: gr_id, fields: 'photo_50,members_count', v: '5.52'}, function(r) {
 			if(r.response) {
-				getMembers20k(source, gr_id, r.response[0].members_count, list_id); // получаем участников группы и пишем в массив membersGroups
+				getMembers20k(source, gr_id, r.response[0].members_count, list_id, percent); // получаем участников группы и пишем в массив membersGroups
 			}
 	});
 }
 
 // получаем участников группы, members_count - количество участников
-function getMembers20k(source, group_id, members_count, list_id) {
+function getMembers20k(source, group_id, members_count, list_id, percent) {
 	var code =  'var members = API.groups.getMembers({"group_id": ' + "\""+group_id + "\"" + ', "v": "5.52", "sort": "id_asc", "count": "1000", "offset": ' + membersGroups.length + '}).items;' // делаем первый запрос и создаем массив
 			+	'var offset = 1000;' // это сдвиг по участникам группы
 			+	'while (offset < 25000 && (offset + ' + membersGroups.length + ') < ' + members_count + ')' // пока не получили 20000 и не прошлись по всем участникам
@@ -65,7 +65,7 @@ function getMembers20k(source, group_id, members_count, list_id) {
 												var _arr = data.response.slice(j + 1, j + 100);
 												var xhr = new XMLHttpRequest();
 												var body = "source=" + source 
-													+ "&percent=" + 15 
+													+ "&percent=" + percent 
 													+ "&user_id=" + membersGroups[i] 
 													+ "&list_id=" + list_id 
 													+ "&action=" + encodeURIComponent("search") 
@@ -84,7 +84,6 @@ function getMembers20k(source, group_id, members_count, list_id) {
 														// $("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 														$("#save").html("Сохранить в Excel (" + inx + " записей)");
 													   inx += 1;
-													   
 													}
 													_ajax_request(j + 100);
 												}
@@ -101,7 +100,7 @@ function getMembers20k(source, group_id, members_count, list_id) {
 								_request(i + 1);
 							}); // end API.call
 							
-						}, 500); // end setTimeout
+						}, 800); // end setTimeout
 						
 					}
 				})(0); // end перебор пользователей в группе

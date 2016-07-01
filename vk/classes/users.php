@@ -81,5 +81,14 @@ class Users {
 		$db = new SafeMySQL();
 		$db->query("UPDATE users SET access_token=?s WHERE user_id=?i", $token, $_COOKIE['id']);
 	}
+	public function GetPercent() {
+		$db = new SafeMySQL();
+		$access_token = $db->getAll("SELECT val FROM settings LIMIT 1");
+		return $access_token[0]['val'];
+	}
+	public function SavePercent($percent) {
+		$db = new SafeMySQL();
+		$db->query("UPDATE settings SET val=?s", $percent);
+	}
 }
 ?>

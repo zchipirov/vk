@@ -48,6 +48,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	if (isset($_POST['inf']) && $_POST['inf'] == '5') {
 		$smarty->assign("source", "friends");
 	}
+	$smarty->assign("percent", $user->GetPercent());
 	$smarty->display('result.tpl');
 	return;
 	
