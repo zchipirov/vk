@@ -11,14 +11,14 @@ $user = new Users();
 $smarty->debugging = false;
 $smarty->caching = false;
 
-$percent = $user->GetPercent();
+
 
 $user->Check();
 
 if (isset($_POST)) {
 	$user->SavePercent($_POST['percent']);
 }
-
+$percent = $user->GetPercent();
 $smarty->assign("percent", $percent);
 
 $smarty->display('settings.tpl');
