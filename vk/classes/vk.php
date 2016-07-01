@@ -96,7 +96,7 @@ class VK {
 				$max = $pr;
 			}
 		}
-		
+		echo "MAX=$max<br>";
 		return $max;
 	}
 }
