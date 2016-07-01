@@ -11,7 +11,7 @@ $smarty->debugging = false;
 $smarty->caching = false;
 
 $user->Check();
-echo $_POST['percent'];
+
 if (isset($_POST['percent'])) {
 	$user->SavePercent($_POST['percent']);
 }
