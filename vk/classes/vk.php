@@ -85,9 +85,9 @@ class VK {
 		for ($i = 0; $i < count($content); $i++) {
 			$cn = explode(" ", trim($content[$i]['title']));
 			$pr = 0;
-			for ($j = 0; $j <= count($title); $j++) {
-				for ($k = 0; $k <= count($cn); $k++) {
-					if ($cn[$k] != NULL && strlen($title[$j]) > 2 && $title[$j] == $cn[$k])
+			for ($j = 0; $j < count($title); $j++) {
+				for ($k = 0; $k < count($cn); $k++) {
+					if ($cn[$k] != NULL && strlen($title[$j]) > 2 && strlen($cn[$k]) > 2 && $title[$j] == $cn[$k])
 						$pr += 1;
 				}
 			}
