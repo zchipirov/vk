@@ -100,7 +100,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 								_request(i + 1);
 							}); // end API.call
 							
-						}, 800); // end setTimeout
+						}, 1000); // end setTimeout
 						
 					}
 				})(0); // end перебор пользователей в группе
