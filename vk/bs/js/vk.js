@@ -109,6 +109,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 						}, 1500); // end setTimeout
 						
 					}
+					fl = 0;
 				})(0); // end перебор пользователей в группе
 				
 			}
