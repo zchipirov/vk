@@ -26,6 +26,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 		$list_id = $_POST['list_id'];
 		$user_id = $_POST['user_id'];
 		$content = $list->GetContentById($list_id);
+		$percent = $_POST['percent'];
 		
 		foreach($data as $key => $item) { 
 			for ($i = 0; $i < count($item); $i++) {
@@ -42,7 +43,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 				}
 				$search_result = $vk->Search($content, $title);
 				
-				if ((float)$search_result >= 15) {
+				if ((float)$search_result >= $percent) {
 					switch ($source) {
 						case 'audio':
 							$result[] = array(
