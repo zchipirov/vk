@@ -42,6 +42,10 @@
 				<td><b>Найдено записей</b></td>
 				<td id="search_result"></td>
 			</tr>
+			<tr>
+				<td><b>У пользователей</b></td>
+				<td id="user_result">0</td>
+			</tr>
 		</table>
 	</div>
 	<br>

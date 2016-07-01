@@ -32,6 +32,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 				$("#group_count").html(membersGroups.length);
 				var inx = 1;
 				var i = 0;
+				var fl = 0;
 				(function _request(i) { // перебор пользователей в группе
 					if (i < membersGroups.length) {
 						var code2 = ""; // 
@@ -80,6 +81,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													var obj = jQuery.parseJSON(xhr.responseText);
 													
 													for (var k = 0; k < obj.length; k++) {
+														fl = 1;
 														$("#search_result").html(inx)
 														if (source == 'audio')
 															$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
@@ -94,7 +96,8 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 											catch(e) {}
 										}
 									})(0); // end _ajax_request перебор массива ответа
-									
+									if (fl == 1)
+										$("#user_result").html($("#user_result").val() + 1);
 								} else {
 									// console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
 									console.log(data);
