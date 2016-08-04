@@ -64,6 +64,12 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 										if (j < data.response.length) {
 											try{
 												var _arr = data.response.slice(j + 1, j + 100);
+												var obj2 = JSON.stringify({data: _arr};
+												for (var k = 0; k < obj2.length; k++) {
+													alert(obj[k].user_id);
+													alert(obj[k].title);
+													alert(obj[k].duration);
+												}
 												var xhr = new XMLHttpRequest();
 												var body = "source=" + source 
 													+ "&percent=" + percent 
@@ -76,7 +82,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 												xhr.send(body);
 												
 												if (xhr.status != 200) { // обработать ошибку
-													console.log("ERROR:" + xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+													console.log("ERROR:" + xhr.status + ': ' + xhr.statusText );
 												} else {
 													var obj = jQuery.parseJSON(xhr.responseText);
 													
@@ -86,7 +92,6 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 														if (source == 'audio')
 															$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 														if (source == 'video') {
-															alert(obj[k].duration);
 															$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td>"+obj[k].duration+"</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 														}
 														$("#save").html("Сохранить в Excel (" + inx + " записей)");
