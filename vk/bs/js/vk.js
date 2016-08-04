@@ -86,7 +86,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 														if (source == 'audio')
 															$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 														if (source == 'video')
-															$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><td>"+obj[k].duration+"</td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+															$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td>"+obj[k].duration+"</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 														$("#save").html("Сохранить в Excel (" + inx + " записей)");
 													   inx += 1;
 													}
@@ -102,7 +102,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 									// console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
 									console.log(data);
 								}
-								$("#search_status").html(i + "/" + membersGroups.length);
+								$("#search_status").html(i+1 + "/" + membersGroups.length);
 								_request(i + 1);
 							}); // end API.call
 							
