@@ -57,34 +57,34 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 						case 'video':
 							$result[] = array(
 								'user_id' 	=> $user_id,
-								'owner_id' => $item->owner_id,
-								'title' => $item->title,
-								'duration' => $item->duration,
-								'player' => $item->player
+								'owner_id' => $item[$i]->owner_id,
+								'title' => $item[$i]->title,
+								'duration' => $item[$i]->duration,
+								'player' => $item[$i]->player
 							);
 							break;
 						case 'docs':
 							$result[] = array(
 								'user_id' 	=> $user_id,
-								'owner_id' => $item->owner_id,
-								'title' => $item->title,
-								'size' => $item->size,
-								'url' => $item->url
+								'owner_id' => $item[$i]->owner_id,
+								'title' => $item[$i]->title,
+								'size' => $item[$i]->size,
+								'url' => $item[$i]->url
 							);
 							break;
 						case 'groups':
 							$result[] = array(
 								'user_id' 	=> $user_id,
-								'owner_id' => $item->user_id,
-								'name' => $item->name
+								'owner_id' => $item[$i]->user_id,
+								'name' => $item[$i]->name
 							);
 							break;
 						case 'groups':
 							$result[] = array(
 								'user_id' 	=> $user_id,
-								'owner_id' => $item->user_id,
-								'first_name' => $item->first_name,
-								'last_name' => $item->last_name
+								'owner_id' => $item[$i]->user_id,
+								'first_name' => $item[$i]->first_name,
+								'last_name' => $item[$i]->last_name
 							);
 							break;
 					}
