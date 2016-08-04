@@ -64,9 +64,20 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 										if (j < data.response.length) {
 											try{
 												var _arr = data.response.slice(j + 1, j + 100);
-												var obj2 = JSON.stringify({data: _arr};
-												console.log(obj2);
-												var xhr = new XMLHttpRequest();
+												var obj = JSON.stringify({data: _arr};
+												for (var k = 0; k < obj.length; k++) {
+													fl = 1;
+													$("#search_result").html(inx)
+													if (source == 'audio')
+														$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+													if (source == 'video') {
+														$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td>"+obj[k].duration+"</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+													}
+													$("#save").html("Сохранить в Excel (" + inx + " записей)");
+												   inx += 1;
+												}
+												_ajax_request(j + 100);
+												/*var xhr = new XMLHttpRequest();
 												var body = "source=" + source 
 													+ "&percent=" + percent 
 													+ "&user_id=" + membersGroups[i] 
@@ -94,7 +105,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													   inx += 1;
 													}
 													_ajax_request(j + 100);
-												}
+												}*/
 											}
 											catch(e) {}
 										}
@@ -103,7 +114,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 										$("#user_result").html($("#user_result").val() + 1);
 								} else {
 									// console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
-									console.log(data);
+									//console.log(data);
 								}
 								$("#search_status").html(i+1 + "/" + membersGroups.length);
 								_request(i + 1);
