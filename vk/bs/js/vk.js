@@ -65,11 +65,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 											try{
 												var _arr = data.response.slice(j + 1, j + 100);
 												var obj2 = JSON.stringify({data: _arr};
-												for (var k = 0; k < obj2.length; k++) {
-													alert(obj[k].user_id);
-													alert(obj[k].title);
-													alert(obj[k].duration);
-												}
+												console.log(obj2);
 												var xhr = new XMLHttpRequest();
 												var body = "source=" + source 
 													+ "&percent=" + percent 
@@ -113,7 +109,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 								_request(i + 1);
 							}); // end API.call
 							
-						}, 2000); // end setTimeout
+						}, 1000); // end setTimeout
 						
 					}
 					fl = 0;
