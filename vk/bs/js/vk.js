@@ -64,7 +64,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 										if (j < data.response.length) {
 											try{
 												var _arr = data.response.slice(j + 1, j + 100);
-												var obj = JSON.stringify({data: _arr};
+												/*var obj = JSON.stringify({data: _arr};
 												for (var k = 0; k < obj.length; k++) {
 													fl = 1;
 													$("#search_result").html(inx)
@@ -76,8 +76,8 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													$("#save").html("Сохранить в Excel (" + inx + " записей)");
 												   inx += 1;
 												}
-												_ajax_request(j + 100);
-												/*var xhr = new XMLHttpRequest();
+												_ajax_request(j + 100);*/
+												var xhr = new XMLHttpRequest();
 												var body = "source=" + source 
 													+ "&percent=" + percent 
 													+ "&user_id=" + membersGroups[i] 
@@ -105,7 +105,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													   inx += 1;
 													}
 													_ajax_request(j + 100);
-												}*/
+												}
 											}
 											catch(e) {}
 										}
