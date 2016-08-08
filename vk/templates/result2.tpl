@@ -15,16 +15,8 @@
 		</div>
 		<table class="table">
 			<tr>
-				<td width="30%"><b>Группа</b></td>
-				<td>{$group_title}</td>
-			</tr>
-			<tr>
-				<td><b>Поиск по</b></td>
-				<td>{$source}</td>
-			</tr>
-			<tr>
-				<td><b>Число подписчиков</b></td>
-				<td id="group_count">{$group_count}</td>
+				<td><b>Поиск на стринице пользователя</b></td>
+				<td>{$userid}</td>
 			</tr>
 			<tr>
 				<td><b>Список</b></td>
@@ -35,16 +27,8 @@
 				<td>{$percent}%</td>
 			</tr>
 			<tr>
-				<td><b>Обработано</b></td>
-				<td id="search_status"></td>
-			</tr>
-			<tr>
 				<td><b>Найдено записей</b></td>
 				<td id="search_result"></td>
-			</tr>
-			<tr>
-				<td><b>У пользователей</b></td>
-				<td id="user_result">0</td>
 			</tr>
 		</table>
 	</div>

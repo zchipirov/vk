@@ -110,8 +110,10 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 											catch(e) {}
 										}
 									})(0); // end _ajax_request перебор массива ответа
-									if (fl == 1)
-										$("#user_result").html($("#user_result").val() + 1);
+									if (fl == 1) {
+										var ff = $("#user_result").val();
+										$("#user_result").html(ff + 1);
+									}
 								} else {
 									// console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
 									//console.log(data);
