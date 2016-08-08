@@ -9,7 +9,7 @@ include_once "./classes/search.php";
 
 $smarty = new Smarty;
 $user = new Users();
-//$group = new Groups();
+$group = new Groups();
 $list = new Lists();
 
 //$smarty->force_compile = true;
