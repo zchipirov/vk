@@ -43,13 +43,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="./bs/img/logo.png"/></a>
+          <a class="navbar-brand" href="./index.php"><img src="./bs/img/logo.png"/></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="./groups.php">Группы</a></li>
             <li><a href="./lists.php">Списки</a></li>
             <li><a href="./settings.php">Настройки</a></li>
+			<li><a href="./newusers.php">Пользователи</a></li>
             <li><a href="./auth.php?logout=1">Выход</a></li>
           </ul>
         </div>
