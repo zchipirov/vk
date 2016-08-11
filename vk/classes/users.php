@@ -92,7 +92,7 @@ class Users {
 	}
 	public function Select() {
 		$db = new SafeMySQL();
-		$lists = $db->getAll("SELECT id, user_login FROM users");
+		$lists = $db->getAll("SELECT user_id, user_login FROM users");
 		return $lists;
 	}
 }
