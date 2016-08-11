@@ -67,4 +67,4 @@ $smarty->assign("users", $user);
 
 $smarty->assign("info", $info);
 $smarty->assign("errors", $err);
-$smarty->display('lists.tpl');
+$smarty->display('users.tpl');
