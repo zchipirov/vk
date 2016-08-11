@@ -90,5 +90,10 @@ class Users {
 		$db = new SafeMySQL();
 		$db->query("UPDATE settings SET val=?s", $percent);
 	}
+	public function Select() {
+		$db = new SafeMySQL();
+		$lists = $db->getAll("SELECT id, user_login FROM users");
+		return $lists;
+	}
 }
 ?>
