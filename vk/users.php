@@ -1,8 +1,8 @@
 <?php
-require '../libs/Smarty.class.php';
-include_once "./classes/users.php";
-include_once "./classes/lists.php";
-require_once ('./classes/PHPExcel.php');
+require_once "../libs/Smarty.class.php";
+require_once "./classes/users.php";
+require_once "./classes/lists.php";
+require_once "./classes/PHPExcel.php";
 
 $smarty = new Smarty;
 $users = new Users();
