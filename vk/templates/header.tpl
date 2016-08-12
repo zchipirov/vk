@@ -50,7 +50,7 @@
             <li><a href="./groups.php">Группы</a></li>
             <li><a href="./lists.php">Списки</a></li>
             <li><a href="./settings.php">Настройки</a></li>
-			<li><a href="./users.php">Пользователи</a></li>
+			
             <li><a href="./auth.php?logout=1">Выход</a></li>
           </ul>
         </div>
