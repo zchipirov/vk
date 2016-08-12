@@ -1,5 +1,4 @@
-﻿{config_load file="test.conf" section="setup"}
-{include file="header.tpl" title=foo}
+﻿{include file="header.tpl" title=foo}
 
 <h2 class="sub-header">Поиск по группам VK</h2>
   <form method="POST" action="index.php" name="form_indx" id="form_indx">
