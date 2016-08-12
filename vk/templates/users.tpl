@@ -1,7 +1,7 @@
 ﻿{include file="header.tpl" title=foo}
 
 <h2 class="sub-header">Пользователи</h2>
-<form method="POST" action="lists.php" name="form_ls" id="form_ls">
+<form method="POST" action="users.php" name="form_ls" id="form_ls">
 	<input type="hidden" name="action" id="action" value=""/>
 	<div class="btn-group" role="group" aria-label="...">
 		<button type="button" class="btn btn-success" onclick="$('#action').val('add');$('#form_ls').submit();">Добавить</button>
