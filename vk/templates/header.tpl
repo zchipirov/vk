@@ -50,7 +50,7 @@
             <li><a href="./groups.php">Группы</a></li>
             <li><a href="./lists.php">Списки</a></li>
             <li><a href="./settings.php">Настройки</a></li>
-			<!--<li><a href="./users.php">Пользователи</a></li>-->
+			<li><a href="./users.php">Пользователи</a></li>
             <li><a href="./auth.php?logout=1">Выход</a></li>
           </ul>
         </div>
@@ -61,7 +61,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li {if isset($home)}class="active"{/if}><a href="index.php">Поиск по группам <span class="sr-only">(current)</span></a></li>
+            <li {if isset($home)}class="active"{/if}><a href="index.php">Поиск по группе <span class="sr-only">(current)</span></a></li>
 			<li {if isset($user)}class="active"{/if}><a href="index2.php">Поиск по пользователю <span class="sr-only">(current)</span></a></li>
           </ul>
           <!--<ul class="nav nav-sidebar">
