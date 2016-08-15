@@ -14,7 +14,7 @@ class Users {
 		if(count($err) == 0) {
 			$passwd = md5(md5(trim($passwd)));
 			$db->query("INSERT INTO users SET user_login='".$login."', user_password='".$passwd."'");
-			header("Location: login.php"); exit();
+			//header("Location: login.php"); exit();
 		}
 		else {
 			print "<b>При регистрации произошли следующие ошибки:</b><br>";
