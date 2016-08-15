@@ -7,7 +7,11 @@
 			<div class="col-lg-5">
 				<div class="input-group input-group-lg">
 				  <span class="input-group-addon" id="sizing-addon1">Логин</span>
-				  <input type="text" class="form-control" aria-describedby="sizing-addon1" name="title" id="title" value="{if isset($list)}{$list['title']}{/if}"/>
+				  <input type="text" class="form-control" aria-describedby="sizing-addon1" name="login" id="login" value="{if isset($list)}{$list['title']}{/if}"/>
+				</div>
+				<div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="sizing-addon1">Пароль</span>
+				  <input type="password" class="form-control" aria-describedby="sizing-addon1" name="passwd" id="passwd" value="{if isset($list)}{$list['title']}{/if}"/>
 				</div>
 			</div>
 		</div>

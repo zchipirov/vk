@@ -6,7 +6,6 @@ require_once "./classes/PHPExcel.php";
 
 $smarty = new Smarty;
 $users = new Users();
-$list = new Lists();
 
 $smarty->debugging = false;
 $smarty->caching = false;
@@ -15,7 +14,7 @@ $users->Check();
 
 // Добавление
 if (isset($_POST['action']) && $_POST['action'] == 'save') {
-	$list->Create($_POST['title']);
+	$users->Create($_POST['login'], $_POST['passwd']);
 	$info .= "Список добавлен<br>";
 }
 
