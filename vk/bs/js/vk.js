@@ -126,9 +126,10 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 							code2 = 'var friends = API.friends.get({"user_id": ' + membersGroups[i] + ', "v": "5.52", "fields": "domain"}).items; return friends;'
 							break;
 						}
-						
+						alert(code2);
+						alert(-3);	
 						setTimeout(function() {
-							
+							alert(-2);	
 							VK.Api.call("execute", {code: code2}, function(data) {
 								if (data.response) {
 										alert(-1);	
