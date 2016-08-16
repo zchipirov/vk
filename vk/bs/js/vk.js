@@ -150,7 +150,8 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 												xhr.send(body);
 												
 												if (xhr.status != 200) { // обработать ошибку
-													console.log("ERROR:" + xhr.status + ': ' + xhr.statusText );
+													alert(xhr.status + ': ' + xhr.statusText)
+													console.log("ERROR:" + xhr.status + ': ' + xhr.statusText);
 												} else {
 													var obj = jQuery.parseJSON(xhr.responseText);
 													if (obj != null) {
