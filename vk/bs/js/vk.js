@@ -103,12 +103,11 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 				var inx = 1;
 				var i = 0;
 				var fl = 0;
-				alert(1);
+				
 				(function _request(i) { // перебор пользователей в группе
-					alert(2);
+					
 					if (i < membersGroups.length) {
-						alert(3);
-						alert(membersGroups.length);
+						
 						var code2 = ""; // 
 						switch (source) {
 						  case 'audio':
@@ -127,23 +126,20 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 							code2 = 'var friends = API.friends.get({"user_id": ' + membersGroups[i] + ', "v": "5.52", "fields": "domain"}).items; return friends;'
 							break;
 						}
-						alert(4);
+						
 						setTimeout(function() {
-						alert(5);	
+							
 							VK.Api.call("execute", {code: code2}, function(data) {
 								if (data.response) {
-									
-									console.log(data);
-									
+											
 									var j = 0;
 									(function _ajax_request(j) { // перебор массива ответа
 										if (j < data.response.length) {
 											try{
 												var _arr = data.response.slice(j + 1, j + 100);
 												
-												console.log(_arr);
-												
 												var xhr = new XMLHttpRequest();
+												xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 												var body = "source=" + source 
 													+ "&percent=" + percent 
 													+ "&user_id=" + membersGroups[i] 
@@ -158,7 +154,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													console.log("ERROR:" + xhr.status + ': ' + xhr.statusText );
 												} else {
 													var obj = jQuery.parseJSON(xhr.responseText);
-													console.log(obj);
+													
 													for (var k = 0; k < obj.length; k++) {
 														fl = 1;
 														$("#search_result").html(inx)
