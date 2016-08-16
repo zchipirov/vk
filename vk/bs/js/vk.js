@@ -103,8 +103,12 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 				var inx = 1;
 				var i = 0;
 				var fl = 0;
+				alert(1);
 				(function _request(i) { // перебор пользователей в группе
+					alert(2);
 					if (i < membersGroups.length) {
+						alert(3);
+						alert(membersGroups.length);
 						var code2 = ""; // 
 						switch (source) {
 						  case 'audio':
@@ -123,9 +127,9 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 							code2 = 'var friends = API.friends.get({"user_id": ' + membersGroups[i] + ', "v": "5.52", "fields": "domain"}).items; return friends;'
 							break;
 						}
-						
+						alert(4);
 						setTimeout(function() {
-							
+						alert(5);	
 							VK.Api.call("execute", {code: code2}, function(data) {
 								if (data.response) {
 									
