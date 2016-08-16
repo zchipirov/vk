@@ -1,7 +1,7 @@
 ﻿{include file="header.tpl" title=foo}
 
 <h2 class="sub-header">Поиск по пользователю VK</h2>
-  <form method="POST" action="index.php" name="form_indx" id="form_indx">
+  <form method="POST" action="index2.php" name="form_indx" id="form_indx">
 		<input type="hidden" name="action" id="action" value=""/>
 		<div class="btn-group" role="group" aria-label="...">
 			<div class="btn-group">
