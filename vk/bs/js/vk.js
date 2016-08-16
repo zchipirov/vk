@@ -139,7 +139,6 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 												var _arr = data.response.slice(j + 1, j + 100);
 												
 												var xhr = new XMLHttpRequest();
-												xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 												var body = "source=" + source 
 													+ "&percent=" + percent 
 													+ "&user_id=" + membersGroups[i] 
@@ -147,7 +146,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													+ "&action=" + encodeURIComponent("search") 
 													+ "&data=" + encodeURIComponent(JSON.stringify({data: _arr}));
 												xhr.open("POST", 'data.php', false);
-												//xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+												xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 												xhr.send(body);
 												
 												if (xhr.status != 200) { // обработать ошибку
@@ -169,7 +168,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													_ajax_request(j + 100);
 												}
 											}
-											catch(e) {}
+											catch(e) {console.log(e);}
 										}
 									})(0); // end _ajax_request перебор массива ответа
 									if (fl == 1) {
