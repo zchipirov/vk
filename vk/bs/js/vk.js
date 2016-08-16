@@ -78,7 +78,6 @@ function getMembers2(source, list_id, percent, user_id)
 				// console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
 				//console.log(data);
 			}
-			_request(i + 1);
 		}); // end API.call
 }
 
