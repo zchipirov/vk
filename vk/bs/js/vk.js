@@ -125,17 +125,13 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 						  case 'friends':
 							code2 = 'var friends = API.friends.get({"user_id": ' + membersGroups[i] + ', "v": "5.52", "fields": "domain"}).items; return friends;'
 							break;
-						}
-						alert(code2);
-						alert(-3);	
+						}						
 						setTimeout(function() {
-							alert(-2);	
+							
 							VK.Api.call("execute", {code: code2}, function(data) {
 								if (data.response) {
-										alert(-1);	
 									var j = 0;
 									(function _ajax_request(j) { // перебор массива ответа
-									alert(0);
 										if (j < data.response.length) {
 											try{
 												var _arr = data.response.slice(j + 1, j + 100);
@@ -147,16 +143,11 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													+ "&list_id=" + list_id 
 													+ "&action=" + encodeURIComponent("search") 
 													+ "&data=" + encodeURIComponent(JSON.stringify({data: _arr}));
-												alert(2);
 												xhr.open("POST", 'data.php', false);
-												alert(3);
 												xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-												alert(4);
 												xhr.send(body);
-												alert(5);
-												alert(xhr.status + ': ' + xhr.statusText)
-												if (xhr.status != 200) { // обработать ошибку
-													alert(xhr.status + ': ' + xhr.statusText)
+												
+												if (xhr.status != 200) {
 													console.log("ERROR:" + xhr.status + ': ' + xhr.statusText);
 												} else {
 													var obj = jQuery.parseJSON(xhr.responseText);
