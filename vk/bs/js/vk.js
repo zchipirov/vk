@@ -129,7 +129,8 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 						setTimeout(function() {
 							alert(code2);
 							VK.Api.call("execute", {code: code2}, function(data) {
-								alert(data.response);
+								alert(data);
+								console.log(data);
 								if (data.response) {
 									var j = 0;
 									(function _ajax_request(j) { // перебор массива ответа
