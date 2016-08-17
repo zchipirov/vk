@@ -17,19 +17,19 @@ function getMembers2(source, list_id, percent, user_id)
 		var code2 = ""; // 
 		switch (source) {
 		  case 'audio':
-			code2 = 'var audio = API.audio.get({"owner_id": ' + user_id + ', "v": "5.52"}).items; return audio;';
+			code2 = 'var audio = API.audio.get({"owner_id": ' + user_id + ', "v": "5.53"}).items; return audio;';
 			break;
 		  case 'video':
-			code2 = 'var video = API.video.get({"owner_id": ' + user_id + ', "v": "5.52"}).items; return video;';
+			code2 = 'var video = API.video.get({"owner_id": ' + user_id + ', "v": "5.53"}).items; return video;';
 			break;
 		  case 'docs':
-			code2 = 'var docs = API.docs.get({"owner_id": ' + user_id + ', "v": "5.52"}).items; return docs;'
+			code2 = 'var docs = API.docs.get({"owner_id": ' + user_id + ', "v": "5.53"}).items; return docs;'
 			break;
 		  case 'groups':
-			code2 = 'var groups = API.docs.get({"user_id": ' + user_id + ', "v": "5.52", "extended": "1"}).items; return groups;'
+			code2 = 'var groups = API.docs.get({"user_id": ' + user_id + ', "v": "5.53", "extended": "1"}).items; return groups;'
 			break;
 		  case 'friends':
-			code2 = 'var friends = API.friends.get({"user_id": ' + user_id + ', "v": "5.52", "fields": "domain"}).items; return friends;'
+			code2 = 'var friends = API.friends.get({"user_id": ' + user_id + ', "v": "5.53", "fields": "domain"}).items; return friends;'
 			break;
 		}
 		alert(code2);
@@ -126,7 +126,8 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 						  case 'friends':
 							code2 = 'var friends = API.friends.get({"user_id": ' + membersGroups[i] + ', "v": "5.53", "fields": "domain"}).items; return friends;'
 							break;
-						}						
+						}	
+alert(code2);						
 						setTimeout(function() {
 							VK.Api.call("execute", {code: code2}, function(data) {
 								
