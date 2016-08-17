@@ -4,7 +4,7 @@ var membersGroups = []; // массив участников группы
 // получаем информацию о группе и её участников
 function getMembers(source, gr_id, list_id, percent) {
 	
-	VK.Api.call('groups.getById', {group_id: gr_id, fields: 'photo_50,members_count', v: '5.52'}, function(r) {
+	VK.Api.call('groups.getById', {group_id: gr_id, fields: 'photo_50,members_count', v: '5.53'}, function(r) {
 			if(r.response) {
 				getMembers20k(source, gr_id, r.response[0].members_count, list_id, percent); // получаем участников группы и пишем в массив membersGroups
 			}
