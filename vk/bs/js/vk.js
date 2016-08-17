@@ -130,67 +130,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 						alert(-3);	
 						setTimeout(function() {
 							alert(-2);	
-							VK.Api.call("execute", {code: code2}, function(data) {
-								if (data.response) {
-										alert(-1);	
-									var j = 0;
-									(function _ajax_request(j) { // перебор массива ответа
-									alert(0);
-										if (j < data.response.length) {
-											try{
-												var _arr = data.response.slice(j + 1, j + 100);
-												alert(1);
-												var xhr = new XMLHttpRequest();
-												var body = "source=" + source 
-													+ "&percent=" + percent 
-													+ "&user_id=" + membersGroups[i] 
-													+ "&list_id=" + list_id 
-													+ "&action=" + encodeURIComponent("search") 
-													+ "&data=" + encodeURIComponent(JSON.stringify({data: _arr}));
-												alert(2);
-												xhr.open("POST", 'data.php', false);
-												alert(3);
-												xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-												alert(4);
-												xhr.send(body);
-												alert(5);
-												alert(xhr.status + ': ' + xhr.statusText)
-												if (xhr.status != 200) { // обработать ошибку
-													alert(xhr.status + ': ' + xhr.statusText)
-													console.log("ERROR:" + xhr.status + ': ' + xhr.statusText);
-												} else {
-													var obj = jQuery.parseJSON(xhr.responseText);
-													if (obj != null) {
-														for (var k = 0; k < obj.length; k++) {
-															fl = 1;
-															$("#search_result").html(inx);
-															if (source == 'audio')
-																$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
-															if (source == 'video') {
-																$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td>"+obj[k].duration+"</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
-															}
-															$("#save").html("Сохранить в Excel (" + inx + " записей)");
-														   inx += 1;
-														}
-													}
-													_ajax_request(j + 100);
-												}
-											}
-											catch(e) {console.log(e);}
-										}
-									})(0); // end _ajax_request перебор массива ответа
-									if (fl == 1) {
-										var ff = $("#user_result").val();
-										$("#user_result").html(ff + 1);
-									}
-								} else {
-									// console.log(data.execute_errors[0].error_msg); // в случае ошибки выведем её
-									//console.log(data);
-								}
-								$("#search_status").html(i+1 + "/" + membersGroups.length);
-								_request(i + 1);
-							}); // end API.call
-							
+						
 						}, 1000); // end setTimeout
 						
 					}
