@@ -83,7 +83,7 @@ function getMembers2(source, list_id, percent, user_id)
 
 // получаем участников группы, members_count - количество участников
 function getMembers20k(source, group_id, members_count, list_id, percent) {
-	var code =  'var members = API.groups.getMembers({"group_id": ' + "\""+group_id + "\"" + ', "v": "5.52", "sort": "id_asc", "count": "1000", "offset": ' + membersGroups.length + '}).items;' // делаем первый запрос и создаем массив
+	var code1 =  'var members = API.groups.getMembers({"group_id": ' + "\""+group_id + "\"" + ', "v": "5.52", "sort": "id_asc", "count": "1000", "offset": ' + membersGroups.length + '}).items;' // делаем первый запрос и создаем массив
 			+	'var offset = 1000;' // это сдвиг по участникам группы
 			+	'while (offset < 25000 && (offset + ' + membersGroups.length + ') < ' + members_count + ')' // пока не получили 20000 и не прошлись по всем участникам
 			+	'{'
@@ -92,9 +92,9 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 			+	'};'
 			+	'return members;'; // вернуть массив members
 	
-	VK.Api.call("execute", {code: code}, function(data) {
-		if (data.response) {
-			membersGroups = membersGroups.concat(JSON.parse("[" + data.response + "]"));			
+	VK.Api.call("execute", {code: code1}, function(data1) {
+		if (data1.response) {
+			membersGroups = membersGroups.concat(JSON.parse("[" + data1.response + "]"));			
 			if (members_count >  membersGroups.length)
 				setTimeout(function() { getMembers20k(source, group_id, members_count); }, 333);
 			else
@@ -129,7 +129,6 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 						setTimeout(function() {
 							alert(code2);
 							VK.Api.call("execute", {code: code2}, function(data) {
-								alert(1);
 								alert(data.response);
 								if (data.response) {
 									var j = 0;
@@ -191,7 +190,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 				
 			}
 		} else {
-			console.log(data);
+			console.log(data1);
 		}
 	});
 	
