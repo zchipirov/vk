@@ -135,7 +135,6 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 										if (j < data.response.length) {
 											try{
 												var _arr = data.response.slice(j + 1, j + 100);
-												alert(1);
 												var xhr = new XMLHttpRequest();
 												var body = "source=" + source 
 													+ "&percent=" + percent 
