@@ -83,11 +83,11 @@ function getMembers2(source, list_id, percent, user_id)
 
 // получаем участников группы, members_count - количество участников
 function getMembers20k(source, group_id, members_count, list_id, percent) {
-	var code1 =  'var members = API.groups.getMembers({"group_id": ' + "\""+group_id + "\"" + ', "v": "5.52", "sort": "id_asc", "count": "1000", "offset": ' + membersGroups.length + '}).items;' // делаем первый запрос и создаем массив
+	var code1 =  'var members = API.groups.getMembers({"group_id": ' + "\""+group_id + "\"" + ', "v": "5.53", "sort": "id_asc", "count": "1000", "offset": ' + membersGroups.length + '}).items;' // делаем первый запрос и создаем массив
 			+	'var offset = 1000;' // это сдвиг по участникам группы
 			+	'while (offset < 25000 && (offset + ' + membersGroups.length + ') < ' + members_count + ')' // пока не получили 20000 и не прошлись по всем участникам
 			+	'{'
-				+	'members = members + "," + API.groups.getMembers({"group_id": ' + "\""+group_id + "\"" + ', "v": "5.52", "sort": "id_asc", "count": "1000", "offset": (' + membersGroups.length + ' + offset)}).items;' // сдвиг участников на offset + мощность массива
+				+	'members = members + "," + API.groups.getMembers({"group_id": ' + "\""+group_id + "\"" + ', "v": "5.53", "sort": "id_asc", "count": "1000", "offset": (' + membersGroups.length + ' + offset)}).items;' // сдвиг участников на offset + мощность массива
 				+	'offset = offset + 1000;' // увеличиваем сдвиг на 1000
 			+	'};'
 			+	'return members;'; // вернуть массив members
@@ -111,19 +111,19 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 						var code2 = ""; // 
 						switch (source) {
 						  case 'audio':
-							code2 = 'var audio = API.audio.get({"owner_id": ' + membersGroups[i] + ', "v": "5.52"}).items; return audio;';
+							code2 = 'var audio = API.audio.get({"owner_id": ' + membersGroups[i] + ', "v": "5.53"}).items; return audio;';
 							break;
 						  case 'video':
-							code2 = 'var video = API.video.get({"owner_id": ' + membersGroups[i] + ', "v": "5.52"}).items; return video;';
+							code2 = 'var video = API.video.get({"owner_id": ' + membersGroups[i] + ', "v": "5.53"}).items; return video;';
 							break;
 						  case 'docs':
-							code2 = 'var docs = API.docs.get({"owner_id": ' + membersGroups[i] + ', "v": "5.52"}).items; return docs;'
+							code2 = 'var docs = API.docs.get({"owner_id": ' + membersGroups[i] + ', "v": "5.53"}).items; return docs;'
 							break;
 						  case 'groups':
-							code2 = 'var groups = API.docs.get({"user_id": ' + membersGroups[i] + ', "v": "5.52", "extended": "1"}).items; return groups;'
+							code2 = 'var groups = API.docs.get({"user_id": ' + membersGroups[i] + ', "v": "5.53", "extended": "1"}).items; return groups;'
 							break;
 						  case 'friends':
-							code2 = 'var friends = API.friends.get({"user_id": ' + membersGroups[i] + ', "v": "5.52", "fields": "domain"}).items; return friends;'
+							code2 = 'var friends = API.friends.get({"user_id": ' + membersGroups[i] + ', "v": "5.53", "fields": "domain"}).items; return friends;'
 							break;
 						}						
 						setTimeout(function() {
