@@ -51,7 +51,7 @@
             <li><a href="./lists.php">Списки</a></li>
             <li><a href="./settings.php">Настройки</a></li>
 			<li><a href="./users2.php">Пользователи</a></li>
-            <li><a href="./auth.php?logout=1">Выход</a></li>
+            <li><a href="./auth.php?logout=1" onclick="VK.Auth.logout(function(response) {});">Выход</a></li>
           </ul>
         </div>
       </div>
@@ -78,8 +78,6 @@
 			VK.init({
 				apiId: 5382063
 			});
-
-			VK.Auth.logout(function(response) {});
 
 			VK.Auth.getLoginStatus(function(response) {
 			  if (response.session) {
