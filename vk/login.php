@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 require '../libs/Smarty.class.php';
 require "./classes/users.php";
 
@@ -11,7 +11,7 @@ if (isset($_POST['login'])) {
 	if ($user->Login($_POST['login'], $_POST['passwd']))
 		header("Location: index.php"); 
 	else
-		echo "Îøèáêà àâòîðèçàöèè.";
+		echo "ÐžÑˆÐ¸Ð±ÐºÐ° Ð°Ð²Ñ‚Ð¾Ñ€Ð¸Ð·Ð°Ñ†Ð¸Ð¸";
 }
 
 $smarty->display('login.tpl');
