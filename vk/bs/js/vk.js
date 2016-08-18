@@ -37,7 +37,6 @@ function getMembers2(source, list_id, percent, user_id)
 		
 		if (data.response) {
 			var j = -1;
-			var k = 0;
 			(function _ajax_request(j) { // перебор массива ответа
 				if (j < data.response.length) {
 					try{
@@ -58,8 +57,10 @@ function getMembers2(source, list_id, percent, user_id)
 							var obj = jQuery.parseJSON(xhr.responseText);
 							if (obj != null) {
 								for (var k = 0; k < obj.length; k++) {
-									if (source == 'audio')
+									if (source == 'audio') {
 										$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+										alert(obj.length);
+									}
 									if (source == 'video')
 										$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td>"+obj[k].duration+"</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 									inx += 1;
