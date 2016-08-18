@@ -56,14 +56,9 @@ function getMembers2(source, list_id, percent, user_id)
 						} else {
 							var obj = jQuery.parseJSON(xhr.responseText);
 							if (obj != null) {
-								alert(source);
-								alert(obj.length);
 								for (var k = 0; k < obj.length; k++) {
-									if (source == 'audio') {
-										alert(obj[k].user_id);
-										$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
-										
-									}
+									if (source == 'audio')
+										$("<tr><td>"+(k + 1)+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 									if (source == 'video')
 										$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td>"+obj[k].duration+"</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 									inx += 1;
