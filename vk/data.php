@@ -52,7 +52,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'owner_id' 	=> $item[$i]->owner_id,
 								'title' 	=> $item[$i]->title,
 								'duration' 	=> $item[$i]->duration,
-								'url' 		=> $item[$i]->url
+								'url' 		=> $item[$i]->url,
+								'percent'	=> $percent
 							);
 							break;
 						case 'video':
