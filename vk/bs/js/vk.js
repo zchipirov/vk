@@ -36,12 +36,12 @@ function getMembers2(source, list_id, percent, user_id)
 	VK.Api.call("execute", {code: code2}, function(data) {
 		
 		if (data.response) {
-			var j = 0;
+			var j = -1;
 			var k = 0;
 			(function _ajax_request(j) { // перебор массива ответа
 				if (j < data.response.length) {
 					try{
-						var _arr = data.response.slice(j + 1, j + 50);
+						var _arr = data.response.slice(j + 1, j + 100);
 						var xhr = new XMLHttpRequest();
 						var body = "source=" + source 
 							+ "&percent=" + percent 
@@ -57,22 +57,15 @@ function getMembers2(source, list_id, percent, user_id)
 						} else {
 							var obj = jQuery.parseJSON(xhr.responseText);
 							if (obj != null) {
-								alert(obj.length);
 								for (var k = 0; k < obj.length; k++) {
 									if (source == 'audio')
 										$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
-									if (source == 'video') {
+									if (source == 'video')
 										$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td>"+obj[k].duration+"</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
-									}
-								   inx += 1;
+									inx += 1;
 								}
 							}
-							if (j + 50 > data.response.length - 1 && k ==0) {
-								_ajax_request(j);
-								k = 1;
-							}
-							else
-								_ajax_request(j + 50);
+							_ajax_request(j + 100);
 						}
 					}
 					catch(e) {}
