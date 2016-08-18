@@ -52,12 +52,14 @@ function getMembers2(source, list_id, percent, user_id)
 							xhr.open("POST", 'data.php', false);
 							xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 							xhr.send(body);
-							
+							alert("step=1");
 							if (xhr.status != 200) { // обработать ошибку
 								console.log("ERROR:" + xhr.status + ': ' + xhr.statusText );
 							} else {
+								alert("step=2");
 								var obj = jQuery.parseJSON(xhr.responseText);
 								console.log(xhr.responseText);
+								alert("step=3");
 								for (var k = 0; k < obj.length; k++) {
 									if (source == 'audio')
 										$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
@@ -65,8 +67,11 @@ function getMembers2(source, list_id, percent, user_id)
 										$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td>"+obj[k].duration+"</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 									}
 								   inx += 1;
+								   alert("step=4");
 								}
+								alert("step=5");
 								_ajax_request(j + 100);
+								alert("step=6");
 							}
 						}
 						catch(e) {}
