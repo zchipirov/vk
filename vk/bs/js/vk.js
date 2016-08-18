@@ -41,7 +41,7 @@ function getMembers2(source, list_id, percent, user_id)
 			(function _ajax_request(j) { // перебор массива ответа
 				if (j < data.response.length) {
 					try{
-						var _arr = data.response.slice(j + 1, j + 100);
+						var _arr = data.response.slice(j + 1, j + 50);
 						var xhr = new XMLHttpRequest();
 						var body = "source=" + source 
 							+ "&percent=" + percent 
@@ -67,12 +67,12 @@ function getMembers2(source, list_id, percent, user_id)
 								   inx += 1;
 								}
 							}
-							if (j + 100 > data.response.length - 1 && k ==0) {
+							if (j + 50 > data.response.length - 1 && k ==0) {
 								_ajax_request(j);
 								k = 1;
 							}
 							else
-								_ajax_request(j + 100);
+								_ajax_request(j + 50);
 						}
 					}
 					catch(e) {}
