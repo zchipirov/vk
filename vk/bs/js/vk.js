@@ -36,9 +36,9 @@ function getMembers2(source, list_id, percent, user_id)
 		VK.Api.call("execute", {code: code2}, function(data) {
 			
 			if (data.response) {
-				alert(data.response.length);
 				var j = 0;
 				(function _ajax_request(j) { // перебор массива ответа
+					alert("j="+j);
 					if (j < data.response.length) {
 						try{
 							var _arr = data.response.slice(j + 1, j + 100);
