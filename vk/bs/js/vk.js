@@ -38,6 +38,7 @@ function getMembers2(source, list_id, percent, user_id)
 		if (data.response) {
 			var j = -1;
 			var g = 0;
+			var cnt = 0;
 			(function _ajax_request(j) { // перебор массива ответа
 				if (j < data.response.length) {
 					try{
@@ -59,13 +60,14 @@ function getMembers2(source, list_id, percent, user_id)
 							var obj = jQuery.parseJSON(xhr.responseText);
 							if (obj != null) {
 								for (var k = 0; k < obj.length; k++) {
+									cnt += 1;
 									if (source == 'audio')
-										$("<tr><td>"+ (k + 1) +"</td><td><a target='_blank' href='http://vk.com/id" + obj[k].user_id + "'>" + 
+										$("<tr><td>"+ (cnt) +"</td><td><a target='_blank' href='http://vk.com/id" + obj[k].user_id + "'>" + 
 											obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='" + obj[k].url + "' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 									if (source == 'video')
-										$("<tr><td>"+ (k + 1) +"</td><td><a target='_blank' href='http://vk.com/id" + obj[k].user_id + "'>" +
+										$("<tr><td>"+ (cnt) +"</td><td><a target='_blank' href='http://vk.com/id" + obj[k].user_id + "'>" +
 											obj[k].user_id + "</a></td><td>" + obj[k].title + "</td><td>" + obj[k].duration + "</td><td><a href='" + obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
-									$("#search_result").html(k + 1);
+									$("#search_result").html(cnt);
 								}
 							}
 							var f = 0;
