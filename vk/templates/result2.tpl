@@ -15,8 +15,8 @@
 		</div>
 		<table class="table">
 			<tr>
-				<td><b>Поиск на стринице пользователя</b></td>
-				<td>{$userid}</td>
+				<td width="30%"><b>Поиск на стринице пользователя</b></td>
+				<td><a target='_blank' href='http://vk.com/id{$userid}'>{$userid}</a></td>
 			</tr>
 			<tr>
 				<td><b>Список</b></td>

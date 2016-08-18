@@ -37,6 +37,7 @@ function getMembers2(source, list_id, percent, user_id)
 		
 		if (data.response) {
 			var j = -1;
+			var g = 0;
 			(function _ajax_request(j) { // перебор массива ответа
 				if (j < data.response.length) {
 					try{
@@ -51,20 +52,30 @@ function getMembers2(source, list_id, percent, user_id)
 						xhr.open("POST", 'data.php', false);
 						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 						xhr.send(body);
-						if (xhr.status != 200) { // обработать ошибку
+						
+						if (xhr.status != 200) {
 							console.log("ERROR:" + xhr.status + ': ' + xhr.statusText );
 						} else {
 							var obj = jQuery.parseJSON(xhr.responseText);
 							if (obj != null) {
 								for (var k = 0; k < obj.length; k++) {
 									if (source == 'audio')
-										$("<tr><td>"+(k + 1)+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+										$("<tr><td>"+ (k + 1) +"</td><td><a target='_blank' href='http://vk.com/id" + obj[k].user_id + "'>" + 
+											obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='" + obj[k].url + "' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 									if (source == 'video')
-										$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td>"+obj[k].duration+"</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
-									inx += 1;
+										$("<tr><td>"+ (k + 1) +"</td><td><a target='_blank' href='http://vk.com/id" + obj[k].user_id + "'>" +
+											obj[k].user_id + "</a></td><td>" + obj[k].title + "</td><td>" + obj[k].duration + "</td><td><a href='" + obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+									$("#search_result").html(k + 1);
 								}
 							}
-							_ajax_request(j + 100);
+							var f = 0;
+							if (j + 100 >= data.response.length && g == 0) {
+								f = j;
+								g = 1;
+							}
+							else
+								f = j + 100;
+							_ajax_request(f);
 						}
 					}
 					catch(e) {}
