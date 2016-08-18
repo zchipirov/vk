@@ -41,8 +41,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 					default:
 						$title = $item[$i]->title;
 				}
-				echo $content;
-				echo $title;
+				print_r($content);
 				$search_result = $vk->Search($content, $title);
 				echo $search_result;
 				if ((float)$search_result >= $percent) {
