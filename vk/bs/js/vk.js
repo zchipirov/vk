@@ -59,8 +59,9 @@ function getMembers2(source, list_id, percent, user_id)
 								alert(source);
 								alert(obj.length);
 								for (var k = 0; k < obj.length; k++) {
+									alert('2');
 									if (source == 'audio') {
-										alert('2');
+										alert('3');
 										$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 										
 									}
