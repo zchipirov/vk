@@ -183,6 +183,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 									})(0); // end _ajax_request перебор массива ответа
 									if (fl == 1) {
 										var ff = $("#user_result").val();
+										alert(ff);
 										$("#user_result").html(ff + 1);
 									}
 								} else {
