@@ -53,7 +53,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'title' 	=> $item[$i]->title,
 								'duration' 	=> $item[$i]->duration,
 								'url' 		=> $item[$i]->url,
-								'percent'	=> $percent
+								'percent'	=> $search_result
 							);
 							break;
 						case 'video':
