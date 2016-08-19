@@ -1,5 +1,12 @@
 ﻿{include file="header.tpl" title=foo}
 
+<script>
+	function sub() {
+		var a = !!document.querySelector(".chekbox:checked");
+		a || alert("Выберите хотя бы один чекбокс!");
+		return a
+	};
+</script>
 <h2 class="sub-header">Поиск по группам VK</h2>
   <form method="POST" action="index.php" name="form_indx" id="form_indx">
 		<input type="hidden" name="action" id="action" value=""/>
@@ -18,7 +25,7 @@
 			  </div>
 			  
 			</div>
-			<button type="button" class="btn btn-success" onclick="$('#action').val('search');$('#form_indx').submit();">Анализировать</button>
+			<button type="button" class="btn btn-success" onclick="alert(sub()); $('#action').val('search');$('#form_indx').submit();">Анализировать</button>
 		</div>		
 		<div class="panel panel-default" style="margin-top: 5px;">
 		  <div class="panel-body">

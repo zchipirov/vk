@@ -41,9 +41,9 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 					default:
 						$title = $item[$i]->title;
 				}
-				//print_r($content);
+				
 				$search_result = $vk->Search($content, $title);
-				//echo $search_result;
+				
 				if ((float)$search_result >= $percent) {
 					switch ($source) {
 						case 'audio':
@@ -58,36 +58,36 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 							break;
 						case 'video':
 							$result[] = array(
-								'user_id' 	=> $user_id,
-								'owner_id' => $item[$i]->owner_id,
-								'title' => $item[$i]->title,
-								'duration' => $item[$i]->duration,
-								'player' => $item[$i]->player,
+								'user_id'	=> $user_id,
+								'owner_id'	=> $item[$i]->owner_id,
+								'title'		=> $item[$i]->title,
+								'duration' 	=> $item[$i]->duration,
+								'player' 	=> $item[$i]->player,
 								'percent'	=> round($search_result)
 							);
 							break;
 						case 'docs':
 							$result[] = array(
-								'user_id' 	=> $user_id,
-								'owner_id' => $item[$i]->owner_id,
-								'title' => $item[$i]->title,
-								'size' => $item[$i]->size,
-								'url' => $item[$i]->url
+								'user_id'	=> $user_id,
+								'owner_id'	=> $item[$i]->owner_id,
+								'title'		=> $item[$i]->title,
+								'size'		=> $item[$i]->size,
+								'url'		=> $item[$i]->url
 							);
 							break;
 						case 'groups':
 							$result[] = array(
-								'user_id' 	=> $user_id,
-								'owner_id' => $item[$i]->user_id,
-								'name' => $item[$i]->name
+								'user_id'	=> $user_id,
+								'owner_id'	=> $item[$i]->user_id,
+								'name'		=> $item[$i]->name
 							);
 							break;
 						case 'groups':
 							$result[] = array(
-								'user_id' 	=> $user_id,
-								'owner_id' => $item[$i]->user_id,
-								'first_name' => $item[$i]->first_name,
-								'last_name' => $item[$i]->last_name
+								'user_id'	=> $user_id,
+								'owner_id'	=> $item[$i]->user_id,
+								'first_name'=> $item[$i]->first_name,
+								'last_name'	=> $item[$i]->last_name
 							);
 							break;
 					}
