@@ -53,7 +53,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'title' 	=> $item[$i]->title,
 								'duration' 	=> $item[$i]->duration,
 								'url' 		=> $item[$i]->url,
-								'percent'	=> $search_result
+								'percent'	=> round($search_result)
 							);
 							break;
 						case 'video':
@@ -62,7 +62,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'owner_id' => $item[$i]->owner_id,
 								'title' => $item[$i]->title,
 								'duration' => $item[$i]->duration,
-								'player' => $item[$i]->player
+								'player' => $item[$i]->player,
+								'percent'	=> round($search_result)
 							);
 							break;
 						case 'docs':
