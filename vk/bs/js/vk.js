@@ -197,7 +197,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 															if (source == 'groups')
 																$("<tr><td>"+inx+"</td>"+
 																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
-																	"<td>"+obj[k].title+"</td></tr>").insertAfter($("tr:last"));
+																	"<td>"+obj[k].name+"</td></tr>").insertAfter($("tr:last"));
 															if (source == 'friends')
 																$("<tr><td>"+inx+"</td>"+
 																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
