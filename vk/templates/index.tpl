@@ -2,7 +2,7 @@
 
 <script>
 	function sub() {
-		var a = !!document.querySelector(".chekbox:checked");
+		var a = !!document.querySelector("#rb");
 		a || alert("Выберите хотя бы один чекбокс!");
 		return a
 	};
