@@ -3,13 +3,15 @@
 <script>
 	function checkSubmit(checkBoxName){
 		isChecked = false;
-		for(i =0; i<checkBoxName.length; i++) {
-			if(checkBoxName[i].checked){
+		alert(checkBoxName.length);
+		for (i=0; i < checkBoxName.length; i++) {
+			alert(checkBoxName[i].checked);
+			if (checkBoxName[i].checked) {
 				isChecked = true;
 				break;
 			}
 		}
-       return isChecked;
+		return isChecked;
     };
 </script>
 <h2 class="sub-header">Поиск по группам VK</h2>
