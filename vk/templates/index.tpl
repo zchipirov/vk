@@ -1,7 +1,7 @@
 ﻿{include file="header.tpl" title=foo}
 
 <script>
-	function a() { alert($('input[name=rb]:checked', '#form_indx').val()); }
+	function a() { alert($("#form_indx input[type='radio']:checked").val();); }
 </script>
 <h2 class="sub-header">Поиск по группам VK</h2>
   <form method="POST" action="index.php" name="form_indx" id="form_indx">
