@@ -42,10 +42,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	if (isset($_POST['inf']) && $_POST['inf'] == '3') {
 		$smarty->assign("source", "docs");
 	}
-	if (isset($_POST['inf']) && $_POST['inf'] == '4') {
+	if (isset($_POST['inf']) && $_POST['inf'] == '5') {
 		$smarty->assign("source", "groups");
 	}
-	if (isset($_POST['inf']) && $_POST['inf'] == '5') {
+	if (isset($_POST['inf']) && $_POST['inf'] == '4') {
 		$smarty->assign("source", "friends");
 	}
 	$smarty->assign("percent", $user->GetPercent());
