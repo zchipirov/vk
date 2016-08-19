@@ -154,11 +154,11 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 						setTimeout(function() {
 							VK.Api.call("execute", {code: code2}, function(data) {
 								
-								//console.log(data);
+								console.log(data);
 								if (data.response) {
 									var j = 0;
 									(function _ajax_request(j) { // перебор массива ответа
-									console.log(data);
+										
 										if (j < data.response.length) {
 											try{
 												var _arr = data.response.slice(j + 1, j + 100);
