@@ -72,15 +72,15 @@
 		</div>
 	{/if}
 	
-	{if isset($docs_)}
+	{if isset($source) && $source=='docs'}
 		<div class="table-responsive">
 			<h3 class="sub-header">Документы</h3>
 			<table class="table table-striped">
 			  <thead>
 				<tr>
 				  <th>#</th>
+				  <th>Владелец</th>
 				  <th>Название</th>
-				  <th>Описание</th>
 				  <th>Размер</th>
 				  <th>Примечание</th>
 				</tr>
@@ -91,16 +91,15 @@
 		</div>
 	{/if}
 	
-	{if isset($groups_)}
+	{if isset($source) && $source=='groups'}
 		<div class="table-responsive">
 			<h3 class="sub-header">Группы</h3>
 			<table class="table table-striped">
 			  <thead>
 				<tr>
 				  <th>#</th>
+				  <th>Владелец</th>
 				  <th>Название</th>
-				  <th>Описание</th>
-				  <th>Примечание</th>
 				</tr>
 			  </thead>
 			  <tbody>
@@ -109,14 +108,14 @@
 		</div>
 	{/if}
 	
-	{if isset($friends_)}
+	{if isset($source) && $source=='friends'}
 		<div class="table-responsive">
 			<h3 class="sub-header">Друзья</h3>
 			<table class="table table-striped">
 			  <thead>
 				<tr>
 				  <th>#</th>
-				  <th>Название</th>
+				  <th>Владелец</th>
 				  <th>Имя</th>
 				  <th>Фамилия</th>
 				</tr>

@@ -82,7 +82,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'name'		=> $item[$i]->name
 							);
 							break;
-						case 'groups':
+						case 'friends':
 							$result[] = array(
 								'user_id'	=> $user_id,
 								'owner_id'	=> $item[$i]->user_id,

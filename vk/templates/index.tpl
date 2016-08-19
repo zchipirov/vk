@@ -1,18 +1,7 @@
 ﻿{include file="header.tpl" title=foo}
 
 <script>
-	function checkSubmit(checkBoxName){
-		isChecked = false;
-		alert(checkBoxName.length);
-		for (i=0; i < checkBoxName.length; i++) {
-			alert(checkBoxName[i].checked);
-			if (checkBoxName[i].checked) {
-				isChecked = true;
-				break;
-			}
-		}
-		return isChecked;
-    };
+	function a() { alert($('input[name=rb]:checked', '#form_indx').val()); }
 </script>
 <h2 class="sub-header">Поиск по группам VK</h2>
   <form method="POST" action="index.php" name="form_indx" id="form_indx">
@@ -32,7 +21,7 @@
 			  </div>
 			  
 			</div>
-			<button type="button" class="btn btn-success" onclick="alert(checkSubmit('rb[]')); $('#action').val('search');$('#form_indx').submit();">Анализировать</button>
+			<button type="button" class="btn btn-success" onclick="a(); $('#action').val('search');$('#form_indx').submit();">Анализировать</button>
 		</div>		
 		<div class="panel panel-default" style="margin-top: 5px;">
 		  <div class="panel-body">
