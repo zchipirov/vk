@@ -177,6 +177,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 												} else {
 													var obj = jQuery.parseJSON(xhr.responseText);
 													if (obj != null) {
+														console.log(obj);
 														for (var k = 0; k < obj.length; k++) {
 															fl = 1;
 															$("#search_result").html(inx);
