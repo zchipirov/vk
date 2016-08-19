@@ -179,8 +179,9 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													var obj = jQuery.parseJSON(xhr.responseText);
 													if (obj != null) {
 														console.log(obj);
-														alert(obj.length);
 														for (var k = 0; k < obj.length; k++) {
+															alert(obj[k].user_id);
+															alert(obj[k].name);
 															fl = 1;
 															$("#search_result").html(inx);
 															if (source == 'audio')
