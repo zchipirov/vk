@@ -178,12 +178,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 												} else {
 													var obj = jQuery.parseJSON(xhr.responseText);
 													if (obj != null) {
-														console.log(obj);
 														for (var k = 0; k < obj.length; k++) {
-															alert(inx);
-															alert(obj[k].user_id);
-															alert(obj[k].name);
-															
 															fl = 1;
 															$("#search_result").html(inx);
 															if (source == 'audio')
@@ -199,9 +194,15 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 																	"<td>" + obj[k].size + " %</td>"+
 																	"<td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
 															if (source == 'groups')
+															{
+																alert("<tr><td>"+inx+"</td>"+
+																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
+																	"<td>"+obj[k].name+"</td></tr>");
+															
 																$("<tr><td>"+inx+"</td>"+
 																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
 																	"<td>"+obj[k].name+"</td></tr>").insertAfter($("tr:last"));
+															}
 															if (source == 'friends')
 																$("<tr><td>"+inx+"</td>"+
 																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
