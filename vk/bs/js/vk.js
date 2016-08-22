@@ -169,7 +169,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													+ "&list_id=" + list_id 
 													+ "&action=" + encodeURIComponent("search") 
 													+ "&data=" + encodeURIComponent(JSON.stringify({data: _arr}));
-												xhr.open("POST", 'data.php', false);
+												xhr.open("POST", 'data.php', true);
 												xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 												xhr.send(body);
 												
@@ -223,7 +223,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 								_request(i + 1);
 							}); // end API.call
 							
-						}, 1000); // end setTimeout
+						}, 1500); // end setTimeout
 						
 					}
 					fl = 0;

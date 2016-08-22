@@ -3,7 +3,7 @@
 <script type="text/javascript">
 	getMembers2('{$source}', {$list_id}, {$percent}, '{$userid}');
 </script>
-<form method="POST" action="index.php" name="form_r" id="form_r">
+<form method="POST" action="index2.php" name="form_r" id="form_r">
 	<input type="hidden" name="action" id="action" value=""/>
 	<div class="btn-group" role="group" aria-label="...">
 		<h2 class="sub-header">Результат</h2>&nbsp;<button type="button" class="btn btn-default" onclick="$('#form_r').submit();">Назад</button>
