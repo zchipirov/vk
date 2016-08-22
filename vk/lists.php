@@ -92,6 +92,19 @@ if (isset($_POST['action']) && $_POST['action'] == 'del') {
 	else
 		$err .= "Не выбран список для удаления<br>";	
 }
+if (isset($_POST['action']) && ($_POST['action'] == 'add_c' || $_POST['action'] == 'add_c2')) {
+	if (isset($_POST['lc'][0]) && $_POST['action'] == 'add_c') {
+		$smarty->assign("list", $list->GetListById($_POST['lc'][0]));
+		$smarty->display('newellist.tpl');
+		exit();
+	}
+	elseif ($_POST['action'] == 'add_c2')
+	{
+		$list->InsertContent($_POST['id'], $_POST['title'], "", "");
+	}
+	else
+		$err .= "Не выбран элемент списока для удаления<br>";	
+}
 if (isset($_POST['action']) && $_POST['action'] == 'del_c') {
 	if (isset($_POST['lc'][0])) {
 		$list->RemoveContentById($_POST['lc'][0]);
