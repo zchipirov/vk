@@ -160,7 +160,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 									(function _ajax_request(j) { // перебор массива ответа
 										
 										if (j < data.response.length) {
-											try{
+											try {
 												var _arr = data.response.slice(j + 1, j + 100);
 												var xhr = new XMLHttpRequest();
 												var body = "source=" + source 
