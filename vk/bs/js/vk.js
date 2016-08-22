@@ -50,7 +50,7 @@ function getMembers2(source, list_id, percent, user_id)
 							+ "&list_id=" + list_id 
 							+ "&action=" + encodeURIComponent("search") 
 							+ "&data=" + encodeURIComponent(JSON.stringify({data: _arr}));
-						xhr.open("POST", 'data.php', false);
+						xhr.open("POST", 'data.php', true);
 						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 						xhr.send(body);
 						
@@ -61,22 +61,27 @@ function getMembers2(source, list_id, percent, user_id)
 							if (obj != null) {
 								for (var k = 0; k < obj.length; k++) {
 									cnt += 1;
+									alert(1);
 									if (source == 'audio')
 										$("<tr><td>"+ (cnt) +"</td><td><a target='_blank' href='http://vk.com/id" + obj[k].user_id + "'>" + 
 											obj[k].user_id+"</a></td><td>"+obj[k].title+"</td><td>" + obj[k].percent + " %</td><td><a href='" + obj[k].url + "' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+									alert(2);
 									if (source == 'video')
 										$("<tr><td>"+ (cnt) +"</td><td><a target='_blank' href='http://vk.com/id" + obj[k].user_id + "'>" +
 											obj[k].user_id + "</a></td><td>" + obj[k].title + "</td><td>" + obj[k].duration + "</td><td>" + obj[k].percent + " %</td><td><a href='" + obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+									alert(3);
 									if (source == 'docs')
 										$("<tr><td>"+inx+"</td>"+
 											"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
 											"<td>"+obj[k].title+"</td>"+
 											"<td>" + obj[k].size + " %</td>"+
 											"<td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+									alert(4);
 									if (source == 'groups')
 										$("<tr><td>"+inx+"</td>"+
 											"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
 											"<td>"+obj[k].name+"</td></tr>").insertAfter($("tr:last"));
+									alert(5);
 									if (source == 'friends')
 										$("<tr><td>"+inx+"</td>"+
 											"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
