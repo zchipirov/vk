@@ -8,7 +8,7 @@ $smarty = new Smarty;
 $user = new Users();
 $list = new Lists();
 
-$smarty->debugging = false;
+$smarty->debugging = true;
 $smarty->caching = false;
 
 $user->Check();
