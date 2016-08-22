@@ -32,11 +32,7 @@ function getMembers2(source, list_id, percent, user_id)
 		code2 = 'var friends = API.friends.get({"user_id": ' + user_id + ', "v": "5.53", "fields": "domain"}).items; return friends;'
 		break;
 	}
-	alert("source = "+source);
-	alert("percent = "+percent);
-	alert("list = "+list_id);
-	alert("user_id = "+user_id);
-	alert("code = "+code2);
+	
 	VK.Api.call("execute", {code: code2}, function(data) {
 		if (data.response) {
 			var j = -1;
@@ -61,7 +57,7 @@ function getMembers2(source, list_id, percent, user_id)
 							console.log("ERROR:" + xhr.status + ': ' + xhr.statusText );
 						} else {
 							var obj = jQuery.parseJSON(xhr.responseText);
-							console.log(obj);
+							
 							if (obj != null) {
 								alert(obj.length);
 								for (var k = 0; k < obj.length; k++) {
@@ -94,6 +90,8 @@ function getMembers2(source, list_id, percent, user_id)
 									$("#search_result").html(cnt);
 								}
 							}
+							else
+								console.log("error huy");
 							var f = 0;
 							if (j + 100 >= data.response.length && g == 0) {
 								f = j;
