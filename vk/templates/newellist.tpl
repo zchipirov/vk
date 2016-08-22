@@ -12,6 +12,7 @@
 				</div>
 			</div>
 		</div>
+		<br>
 		<div class="row" style="width: 100%">
 			<div class="col-lg-5">
 				<div class="input-group input-group-lg">
@@ -20,6 +21,7 @@
 				</div>
 			</div>
 		</div>
+		<br>
 		<div class="row" style="width: 100%">
 			<div class="col-lg-5">
 				<div class="input-group input-group-lg">
