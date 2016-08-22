@@ -50,7 +50,7 @@ function getMembers2(source, list_id, percent, user_id)
 							+ "&list_id=" + list_id 
 							+ "&action=" + encodeURIComponent("search") 
 							+ "&data=" + encodeURIComponent(JSON.stringify({data: _arr}));
-						xhr.open("POST", 'data.php', true);
+						xhr.open("POST", 'data.php', false);
 						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 						xhr.send(body);
 						
