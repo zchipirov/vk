@@ -93,7 +93,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'del') {
 		$err .= "Не выбран список для удаления<br>";	
 }
 if (isset($_POST['action']) && ($_POST['action'] == 'add_c' || $_POST['action'] == 'add_c2')) {
-	if (isset($_POST['lc'][0]) && $_POST['action'] == 'add_c') {
+	if ($_POST['action'] == 'add_c') {
 		$smarty->assign("list", $list->GetListById($_POST['lc'][0]));
 		$smarty->display('newellist.tpl');
 		exit();
