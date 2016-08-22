@@ -98,9 +98,13 @@ if (isset($_POST['action']) && ($_POST['action'] == 'add_c' || $_POST['action'] 
 		$smarty->display('newellist.tpl');
 		exit();
 	}
-	elseif ($_POST['action'] == 'add_c2')
+	if ($_POST['action'] == 'add_c2')
 	{
+		print ($_POST['id']);
+		print ($_POST['title']);
 		$list->InsertContent($_POST['id'], $_POST['title'], "", "");
+		return;
+		exit();
 	}
 	else
 		$err .= "Не выбран элемент списока для удаления<br>";	

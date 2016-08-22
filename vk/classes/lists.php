@@ -38,7 +38,6 @@ class Lists {
 		$db = new SafeMySQL();
 		$db->query("DELETE FROM list_content WHERE id=?i", $id);
 	}
-	
 	public function InsertContent($id, $title, $caption, $note) {
 		$db = new SafeMySQL();
 		$db->query("INSERT INTO list_content (list_id, caption, title, note) VALUES (?i, ?s, ?s, ?s)", $id, $caption, $title, $note);
