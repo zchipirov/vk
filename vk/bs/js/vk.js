@@ -179,42 +179,28 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													var obj = jQuery.parseJSON(xhr.responseText);
 													if (obj != null) {
 														for (var k = 0; k < obj.length; k++) {
-															alert("1");
 															fl = 1;
 															$("#search_result").html(inx);
-															alert("2");
 															if (source == 'audio')
 																$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+
 																	"</td><td>" + obj[k].percent + " %</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
-															alert("3");
-															if (source == 'video') {
+															if (source == 'video')
 																$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+
 																	"</td><td>"+obj[k].duration+"</td><td>" + obj[k].percent + " %</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
-															alert("4");
 															if (source == 'docs')
 																$("<tr><td>"+inx+"</td>"+
 																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
 																	"<td>"+obj[k].title+"</td>"+
 																	"<td>" + obj[k].size + " %</td>"+
 																	"<td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
-															alert("5");
-															alert(source);
 															if (source == 'groups')
-															{
-																alert(source);
-																alert("<tr><td>"+inx+"</td>"+
-																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
-																	"<td>"+obj[k].name+"</td></tr>");
-															
 																$("<tr><td>"+inx+"</td>"+
 																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
 																	"<td>"+obj[k].name+"</td></tr>").insertAfter($("tr:last"));
-															}
 															if (source == 'friends')
 																$("<tr><td>"+inx+"</td>"+
 																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
 																	"<td>"+obj[k].first_name+"</td><td>"+obj[k].last_name+"</td></tr>").insertAfter($("tr:last"));
-															}
 															$("#save").html("Сохранить в Excel (" + inx + " записей)");
 														   inx += 1;
 														}
