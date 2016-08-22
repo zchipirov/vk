@@ -94,7 +94,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'del') {
 }
 if (isset($_POST['action']) && ($_POST['action'] == 'add_c' || $_POST['action'] == 'add_c2')) {
 	if ($_POST['action'] == 'add_c') {
-		$smarty->assign("list", $_POST['id']);
+		$smarty->assign("id", $_POST['id']);
 		$smarty->display('newellist.tpl');
 		exit();
 	}

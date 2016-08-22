@@ -3,7 +3,7 @@
 <div class="table-responsive">
 	<form class="bs-example bs-example-form" data-example-id="input-group-with-checkbox-radio" action="lists.php" method="POST" name="form_ls" id="form_ls" style="width: 70%">
 		<input type="hidden" name="action" id="action" value=""/>
-		<input type="hidden" name="id" id="id" value="{if isset($list)}{$list['id']}{else}-1{/if}"/>
+		<input type="hidden" name="id" id="id" value="{if isset($id)}{$id}{else}-1{/if}"/>
 		<div class="row" style="width: 100%">
 			<div class="col-lg-5">
 				<div class="input-group input-group-lg">
