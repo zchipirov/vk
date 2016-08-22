@@ -8,7 +8,7 @@ $smarty = new Smarty;
 $user = new Users();
 $list = new Lists();
 
-$smarty->debugging = true;
+$smarty->debugging = false;
 $smarty->caching = false;
 
 $user->Check();
@@ -94,14 +94,12 @@ if (isset($_POST['action']) && $_POST['action'] == 'del') {
 }
 if (isset($_POST['action']) && ($_POST['action'] == 'add_c' || $_POST['action'] == 'add_c2')) {
 	if ($_POST['action'] == 'add_c') {
-		$smarty->assign("list", $list->GetListById($_POST['lc'][0]));
+		$smarty->assign("list", $_POST['id']);
 		$smarty->display('newellist.tpl');
 		exit();
 	}
 	if ($_POST['action'] == 'add_c2')
 	{
-		print ($_POST['id']);
-		print ($_POST['title']);
 		$list->InsertContent($_POST['id'], $_POST['title'], "", "");
 		return;
 		exit();
