@@ -32,9 +32,12 @@ function getMembers2(source, list_id, percent, user_id)
 		code2 = 'var friends = API.friends.get({"user_id": ' + user_id + ', "v": "5.53", "fields": "domain"}).items; return friends;'
 		break;
 	}
-	
+	alert("source = "+source);
+	alert("percent = "+percent);
+	alert("list = "+list_id);
+	alert("user_id = "+user_id);
+	alert("code = "+code2);
 	VK.Api.call("execute", {code: code2}, function(data) {
-		
 		if (data.response) {
 			var j = -1;
 			var g = 0;
