@@ -59,7 +59,8 @@ function getMembers2(source, list_id, percent, user_id)
 							var obj = jQuery.parseJSON(xhr.responseText);
 							
 							if (obj != null) {
-								alert(obj.length);
+								alert(obj[k].name);
+								alert(obj[k].user_id);
 								for (var k = 0; k < obj.length; k++) {
 									cnt += 1;
 									alert("-1");
