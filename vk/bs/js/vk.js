@@ -180,8 +180,10 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													if (obj != null) {
 														console.log(obj);
 														for (var k = 0; k < obj.length; k++) {
+															alert(inx);
 															alert(obj[k].user_id);
 															alert(obj[k].name);
+															
 															fl = 1;
 															$("#search_result").html(inx);
 															if (source == 'audio')
