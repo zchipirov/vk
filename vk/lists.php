@@ -100,9 +100,7 @@ if (isset($_POST['action']) && ($_POST['action'] == 'add_c' || $_POST['action'] 
 	}
 	if ($_POST['action'] == 'add_c2')
 	{
-		$list->InsertContent($_POST['id'], $_POST['title'], "", "");
-		return;
-		exit();
+		$list->InsertContent($_POST['id'], $_POST['title'], $_POST['caption'], $_POST['note']);
 	}
 	else
 		$err .= "Не выбран элемент списока для удаления<br>";	

@@ -12,6 +12,22 @@
 				</div>
 			</div>
 		</div>
+		<div class="row" style="width: 100%">
+			<div class="col-lg-5">
+				<div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="sizing-addon1">Описание</span>
+				  <input type="text" class="form-control" aria-describedby="sizing-addon1" name="caption" id="caption" value=""/>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="width: 100%">
+			<div class="col-lg-5">
+				<div class="input-group input-group-lg">
+				  <span class="input-group-addon" id="sizing-addon1">Примечание</span>
+				  <input type="text" class="form-control" aria-describedby="sizing-addon1" name="note" id="note" value=""/>
+				</div>
+			</div>
+		</div>
 		<br>
 		<div class="row">
 			<div class="col-lg-5">	
