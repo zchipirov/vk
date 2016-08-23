@@ -5,7 +5,7 @@
 		<div class="panel-heading"></div>
 		<table class="table">
 			<tr>
-				<td width="30%"><b>RSS канал:</b></td>
+				<td width="80%"><b>RSS канал:</b></td>
 				<td><input type="text" id="url" name="url" value="http://minjust.ru/ru/extremist-materials/rss"/></td>
 			</tr>
 		</table>
