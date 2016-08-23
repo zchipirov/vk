@@ -6,7 +6,7 @@
 		<table class="table">
 			<tr>
 				<td width="80%"><b>RSS канал:</b></td>
-				<td><input type="text" id="url" name="url" value="http://minjust.ru/ru/extremist-materials/rss"/></td>
+				<td><input type="text" size="100" id="url" name="url" value="http://minjust.ru/ru/extremist-materials/rss"/></td>
 			</tr>
 		</table>
 	</div>
