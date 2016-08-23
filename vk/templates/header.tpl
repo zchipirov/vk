@@ -49,8 +49,9 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="./groups.php">Группы</a></li>
             <li><a href="./lists.php">Списки</a></li>
-            <li><a href="./settings.php">Настройки</a></li>
+			<li><a href="./rss.php">RSS</a></li>
 			<li><a href="./users2.php">Пользователи</a></li>
+            <li><a href="./settings.php">Настройки</a></li>
             <li><a href="./auth.php?logout=1" onclick="VK.Auth.logout(function(response) {});">Выход</a></li>
           </ul>
         </div>
