@@ -11,6 +11,6 @@
 		</table>
 	</div>
 	<br>
-	<button type="button" class="btn btn-success" onclick="if (confirm('Данные в базе будут обновлены. Продолжить?')) $('#form_r').submit();" id="save">Загрузить</button>
+	<button type="button" class="btn btn-success" onclick="if (confirm('Данные в базе будут обновлены. Продолжить?')) { $('action').val('load'); $('#form_r').submit(); }" id="save">Загрузить</button>
 </form>
 {include file="footer.tpl"}
