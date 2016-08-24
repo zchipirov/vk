@@ -5,7 +5,7 @@
 		<div class="panel-heading"></div>
 		<table class="table">
 			<tr>
-				<td width="30%"><b>Процент совпадения</b></td>
+				<td width="30%"><b>Процент совпадения:</b></td>
 				<td><input type="text" id="percent" name="percent" value="{$percent}"/></td>
 			</tr>
 		</table>

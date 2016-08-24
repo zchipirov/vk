@@ -14,6 +14,7 @@
 					{foreach $lists as $ls}
 						<li><a><label><input type="radio" checked name="ls" id="ls" value="{$ls['id']}"/>&nbsp;{$ls['title']}</label></a></li>
 					{/foreach}
+					<li><a><label><input type="radio" checked name="ls" id="ls" value="-1"/>&nbsp;RSS</label></a></li>
 				  </ul>
 			  </div>
 			  
