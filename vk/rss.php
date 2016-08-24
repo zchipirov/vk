@@ -30,11 +30,12 @@ if (isset($_POST['action']) && $_POST['action'] == 'load') {
 	}
 
 	$rss = simplexml_load_string($rss_str, 'SimpleXMLElement', LIBXML_NOCDATA);
-	//print_r ($rss);
+	$rss->ClearRSS();
 	foreach ($rss->channel->item as $item) {
-		print $item->link." (".$item->pubDate.")\n".$item->title."\n".$item->description."\n-----\n";
+		$rss->UpdateRSS($item->title, $item->link, $item->description, $item->pubDate);
+		//print $item->link." (".$item->pubDate.")\n".$item->title."\n".$item->description."\n-----\n";
 	}
-	//$smarty->display('result.tpl');
+	
 	return;
 }
 

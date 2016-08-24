@@ -95,5 +95,13 @@ class Users {
 		$lists = $db->getAll("SELECT user_id, user_login FROM users");
 		return $lists;
 	}
+	public function ClearRSS() {
+		$db = new SafeMySQL();
+		$db->query("DELETE FROM rss");
+	}
+	public function UpdateRSS($title, $link, $description, $pubDate) {
+		$db = new SafeMySQL();
+		$db->query("INSERT INTO rss (title, link, desc, dt) VALUE (?s, ?s, ?s, ?s)", $title, $link, $description, $pubDate);
+	}
 }
 ?>
