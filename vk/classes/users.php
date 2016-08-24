@@ -102,7 +102,7 @@ class Users {
 	public function UpdateRSS($title, $link, $description, $pubDate) {
 		$db = new SafeMySQL();
 		$sql = "INSERT INTO rss (title, link, descr, dt) VALUE ('".$title."', '".$link."', ".$db->escapeString($description).", '".$pubDate."')";
-		echo $sql;
+		echo "<br>".$sql."<br>";
 		$db->query($sql);
 	}
 }
