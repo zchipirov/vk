@@ -32,7 +32,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'load') {
 	$rss = simplexml_load_string($rss_str, 'SimpleXMLElement', LIBXML_NOCDATA);
 	$user->ClearRSS();
 	foreach ($rss->channel->item as $item) {
-		$user->UpdateRSS($item->title, $item->link, substr($item->description, strpos($item->description, '&gt;')), $item->pubDate);
+		$user->UpdateRSS($item->title, $item->link, strip_tags($item->description), $item->pubDate);
 		//print $item->link." (".$item->pubDate.")\n".$item->title."\n".$item->description."\n-----\n";
 	}
 	
