@@ -23,6 +23,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	//$access_token = $user->GetAccess_token();
 	$group_name = $group->GetGroupById($_POST['rb'][0]);
 	$list_id = $_POST['ls'][0];
+	echo $list_id."<br>";
 	$list_title = $list_id == -1? "RSS": $list->GetListById($list_id);
 	$vk = new VK();
 	//$group_data = $vk->GetInfoGroup($group_name['group_id']);
