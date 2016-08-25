@@ -101,7 +101,7 @@ class Users {
 	}
 	public function UpdateRSS($title, $link, $description, $pubDate) {
 		$db = new SafeMySQL();
-		$description = str_replace('\'', "", $db->escapeString($description));
+		$description = str_replace('?', "", $db->escapeString($description));
 		$sql = "INSERT INTO rss (title, link, descr, dt) VALUE ('".$title."', '".$link."', '".$description."', '".$pubDate."')";
 		echo "<br>".$sql."<br>";
 		$db->query($sql);
