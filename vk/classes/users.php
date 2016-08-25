@@ -103,7 +103,6 @@ class Users {
 		$db = new SafeMySQL();
 		$description = str_replace("?", "", $description);
 		$sql = "INSERT INTO rss (title, link, descr, dt) VALUE ('".$title."', '".$link."', '".$description."', '".$pubDate."')";
-		echo "<br>".$sql."<br>";
 		$db->query($sql);
 	}
 }

@@ -35,8 +35,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'load') {
 		$user->UpdateRSS($item->title, $item->link, strip_tags($item->description), $item->pubDate);
 		//print $item->link." (".$item->pubDate.")\n".$item->title."\n".$item->description."\n-----\n";
 	}
-	
-	return;
+	$info .= "База обновлена<br>";
+	$smarty->assign("info", $info);
 }
 
 $user->Check();
