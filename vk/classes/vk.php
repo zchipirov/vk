@@ -108,7 +108,6 @@ class VK {
 			$pr = 0;
 			for ($j = 0; $j < count($title); $j++) {
 				for ($k = 0; $k < count($cn); $k++) {
-					echo $cn[$k]."============". $title[$j];
 					if ($cn[$k] != NULL && strlen($title[$j]) > 2 && strlen($cn[$k]) > 2 && $title[$j] == $cn[$k])
 						$pr += 1;
 				}
