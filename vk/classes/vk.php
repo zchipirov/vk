@@ -103,7 +103,7 @@ class VK {
 		$title = explode(" ", trim($title));
 		$max = -1;
 		for ($i = 0; $i < count($content); $i++) {
-			$content[$i]['descr'] = substr($content[$i]['descr'], strpos($content[$i]['descr'], '«'), strpos($content[$i]['descr'], '»')-strpos($content[$i]['descr'], '«'));
+			$content[$i]['descr'] = substr($content[$i]['descr'], strpos($content[$i]['descr'], '«') + 1, strpos($content[$i]['descr'], '»') - (strpos($content[$i]['descr'], '«') + 1));
 			$cn = explode(" ", trim($content[$i]['descr']));
 			$pr = 0;
 			for ($j = 0; $j < count($title); $j++) {
