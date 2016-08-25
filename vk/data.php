@@ -25,7 +25,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 		$data = json_decode($_POST['data']);
 		$list_id = $_POST['list_id'];
 		$user_id = $_POST['user_id'];
-		$content = $list->GetContentById($list_id);
+		$content = $list_id == -1? $list->GetRSS(): $list->GetContentById($list_id);
 		$percent = $_POST['percent'];
 		
 		foreach($data as $key => $item) { 
@@ -42,7 +42,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 						$title = $item[$i]->title;
 				}
 				
-				$search_result = $vk->Search($content, $title);
+				$search_result = $list_id == -1? $vk->Search2($content, $title): $vk->Search($content, $title);
 				
 				if ((float)$search_result >= $percent) {
 					switch ($source) {

@@ -99,5 +99,27 @@ class VK {
 		//echo "MAX=$max<br>";
 		return $max;
 	}
+	public function Search2($content, $title) {
+		$title = explode(" ", trim($title));
+		$max = -1;
+		for ($i = 0; $i < count($content); $i++) {
+			$content[$i]['descr'] = substr($content[$i]['descr'], strpos($content[$i]['descr'], '«'), strpos($content[$i]['descr'], '»')-strpos($content[$i]['descr'], '«'));
+			$cn = explode(" ", trim($content[$i]['descr']));
+			echo "<br>".$cn."<br>";
+			$pr = 0;
+			for ($j = 0; $j < count($title); $j++) {
+				for ($k = 0; $k < count($cn); $k++) {
+					if ($cn[$k] != NULL && strlen($title[$j]) > 2 && strlen($cn[$k]) > 2 && $title[$j] == $cn[$k])
+						$pr += 1;
+				}
+			}
+			$pr = $pr * 100 / count($title);
+			if ($pr > $max) {
+				$max = $pr;
+			}
+		}
+		//echo "MAX=$max<br>";
+		return $max;
+	}
 }
 ?>

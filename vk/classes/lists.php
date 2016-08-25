@@ -34,6 +34,11 @@ class Lists {
 		$lists = $db->getAll("SELECT id, caption, title, note FROM list_content WHERE list_id=?i", $id);
 		return $lists;
 	}
+	public function GetRSS() {
+		$db = new SafeMySQL();
+		$lists = $db->getAll("SELECT title, link, dt, descr FROM rss");
+		return $lists;
+	}
 	public function RemoveContentById($id) {
 		$db = new SafeMySQL();
 		$db->query("DELETE FROM list_content WHERE id=?i", $id);
