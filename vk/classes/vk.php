@@ -105,10 +105,10 @@ class VK {
 		for ($i = 0; $i < count($content); $i++) {
 			$content[$i]['descr'] = substr($content[$i]['descr'], strpos($content[$i]['descr'], '«'), strpos($content[$i]['descr'], '»')-strpos($content[$i]['descr'], '«'));
 			$cn = explode(" ", trim($content[$i]['descr']));
-			echo "<br>".$cn."<br>";
 			$pr = 0;
 			for ($j = 0; $j < count($title); $j++) {
 				for ($k = 0; $k < count($cn); $k++) {
+					echo $cn[$k]."============". $title[$j];
 					if ($cn[$k] != NULL && strlen($title[$j]) > 2 && strlen($cn[$k]) > 2 && $title[$j] == $cn[$k])
 						$pr += 1;
 				}
