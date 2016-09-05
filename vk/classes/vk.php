@@ -99,7 +99,7 @@ class VK {
 			}
 		}
 		//echo "MAX=$max<br>";
-		return new array(0=>$max, 1=>$title2);
+		return array(0=>$max, 1=>$title2);
 	}
 	public function Search2($content, $title) {
 		$title = explode(" ", trim($title));
@@ -122,7 +122,7 @@ class VK {
 			}
 		}
 		//echo "MAX=$max<br>";
-		return new array(0=>$max, 1=>$title2);
+		return array(0=>$max, 1=>$title2);
 	}
 }
 ?>
