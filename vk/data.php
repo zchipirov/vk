@@ -44,7 +44,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 				
 				$search_result = $list_id == 0? $vk->Search2($content, $title): $vk->Search($content, $title);
 				
-				if ((float)$search_result >= $percent) {
+				if ((float)$search_result[0] >= $percent) {
 					switch ($source) {
 						case 'audio':
 							$result[] = array(
@@ -53,7 +53,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'title' 	=> $item[$i]->title,
 								'duration' 	=> $item[$i]->duration,
 								'url' 		=> $item[$i]->url,
-								'percent'	=> round($search_result)
+								'percent'	=> round($search_result[0]),
+								'extr'		=> $search_result[1]
 							);
 							break;
 						case 'video':
@@ -63,7 +64,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'title'		=> $item[$i]->title,
 								'duration' 	=> $item[$i]->duration,
 								'player' 	=> $item[$i]->player,
-								'percent'	=> round($search_result)
+								'percent'	=> round($search_result[0]),
+								'extr'		=> $search_result[1]
 							);
 							break;
 						case 'docs':
@@ -72,14 +74,16 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'owner_id'	=> $item[$i]->owner_id,
 								'title'		=> $item[$i]->title,
 								'size'		=> $item[$i]->size,
-								'url'		=> $item[$i]->url
+								'url'		=> $item[$i]->url,
+								'extr'		=> $search_result[1]
 							);
 							break;
 						case 'groups':
 							$result[] = array(
 								'user_id'	=> $user_id,
 								'owner_id'	=> $item[$i]->user_id,
-								'name'		=> $item[$i]->name
+								'name'		=> $item[$i]->name,
+								'extr'		=> $search_result[1]
 							);
 							break;
 						case 'friends':
@@ -87,7 +91,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'user_id'	=> $user_id,
 								'owner_id'	=> $item[$i]->user_id,
 								'first_name'=> $item[$i]->first_name,
-								'last_name'	=> $item[$i]->last_name
+								'last_name'	=> $item[$i]->last_name,
+								'extr'		=> $search_result[1]
 							);
 							break;
 					}

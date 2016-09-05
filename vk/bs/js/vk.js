@@ -189,24 +189,24 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 															$("#search_result").html(inx);
 															if (source == 'audio')
 																$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+
-																	"</td><td>" + obj[k].percent + " %</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+																	"</td><td>" + obj[k].percent + " %</td><td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td><td>"+obj[k].extr+"</td></tr>").insertAfter($("tr:last"));
 															if (source == 'video')
 																$("<tr><td>"+inx+"</td><td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td><td>"+obj[k].title+
-																	"</td><td>"+obj[k].duration+"</td><td>" + obj[k].percent + " %</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+																	"</td><td>"+obj[k].duration+"</td><td>" + obj[k].percent + " %</td><td><a href='"+obj[k].player+"' target='_blank'>открыть</a></td><td>"+obj[k].extr+"</td></tr>").insertAfter($("tr:last"));
 															if (source == 'docs')
 																$("<tr><td>"+inx+"</td>"+
 																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
 																	"<td>"+obj[k].title+"</td>"+
 																	"<td>" + obj[k].size + " %</td>"+
-																	"<td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td></tr>").insertAfter($("tr:last"));
+																	"<td><a href='"+obj[k].url+"' target='_blank'>открыть</a></td><td>"+obj[k].extr+"</td></tr>").insertAfter($("tr:last"));
 															if (source == 'groups')
 																$("<tr><td>"+inx+"</td>"+
 																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
-																	"<td>"+obj[k].name+"</td></tr>").insertAfter($("tr:last"));
+																	"<td>"+obj[k].name+"</td><td>"+obj[k].extr+"</td></tr>").insertAfter($("tr:last"));
 															if (source == 'friends')
 																$("<tr><td>"+inx+"</td>"+
 																	"<td><a target='_blank' href='http://vk.com/id"+obj[k].user_id+"'>"+obj[k].user_id+"</a></td>"+
-																	"<td>"+obj[k].first_name+"</td><td>"+obj[k].last_name+"</td></tr>").insertAfter($("tr:last"));
+																	"<td>"+obj[k].first_name+"</td><td>"+obj[k].last_name+"</td><td>"+obj[k].extr+"</td></tr>").insertAfter($("tr:last"));
 															$("#save").html("Сохранить в Excel (" + inx + " записей)");
 														   inx += 1;
 														}

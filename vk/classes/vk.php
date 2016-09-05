@@ -81,6 +81,7 @@ class VK {
 	
 	public function Search($content, $title) {
 		$title = explode(" ", trim($title));
+		$title2 = "";
 		$max = -1;
 		for ($i = 0; $i < count($content); $i++) {
 			$cn = explode(" ", trim($content[$i]['title']));
@@ -94,14 +95,16 @@ class VK {
 			$pr = $pr * 100 / count($title);
 			if ($pr > $max) {
 				$max = $pr;
+				$title2 = $content[$i]['title'];
 			}
 		}
 		//echo "MAX=$max<br>";
-		return $max;
+		return new array(0=>$max, 1=>$title2);
 	}
 	public function Search2($content, $title) {
 		$title = explode(" ", trim($title));
 		$max = -1;
+		$title2 = "";
 		for ($i = 0; $i < count($content); $i++) {
 			$content[$i]['descr'] = substr($content[$i]['descr'], strpos($content[$i]['descr'], '«') + 1, strpos($content[$i]['descr'], '»') - (strpos($content[$i]['descr'], '«') + 1));
 			$cn = explode(" ", trim($content[$i]['descr']));
@@ -115,10 +118,11 @@ class VK {
 			$pr = $pr * 100 / count($title);
 			if ($pr > $max) {
 				$max = $pr;
+				$title2 = $content[$i]['title'];
 			}
 		}
 		//echo "MAX=$max<br>";
-		return $max;
+		return new array(0=>$max, 1=>$title2);
 	}
 }
 ?>
