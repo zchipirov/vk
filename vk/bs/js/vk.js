@@ -159,17 +159,21 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 						  case 'friends':
 							code2 = 'var friends = API.friends.get({"user_id": ' + membersGroups[i] + ', "v": "5.53", "fields": "domain"}).items; return friends;'
 							break;
-						}	
+						}
+						alert("1");
 
 						setTimeout(function() {
 							VK.Api.call("execute", {code: code2}, function(data) {
-								
+								alert("2");
 								console.log(data);
+								alert("3");
 								if (data.response) {
+									alert("4");
 									var j = 0;
 									(function _ajax_request(j) { // перебор массива ответа
-										
+										alert("5");
 										if (j < data.response.length) {
+											alert("6");
 											try {
 												var _arr = data.response.slice(j + 1, j + 100);
 												var xhr = new XMLHttpRequest();
