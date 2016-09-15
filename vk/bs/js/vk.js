@@ -57,7 +57,7 @@ function getMembers2(source, list_id, percent, user_id)
 							console.log("ERROR:" + xhr.status + ': ' + xhr.statusText );
 						} else {
 							var obj = jQuery.parseJSON(xhr.responseText);
-							
+							console.log(obj);
 							if (obj != null) {
 								
 								for (var k = 0; k < obj.length; k++) {
