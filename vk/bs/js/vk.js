@@ -40,8 +40,7 @@ function getMembers2(source, list_id, percent, user_id)
 			var cnt = 0;
 			(function _ajax_request(j) { // перебор массива ответа
 				if (j < data.response.length) {
-					try{
-						alert("1");
+					try {
 						var _arr = data.response.slice(j + 1, j + 100);
 						var xhr = new XMLHttpRequest();
 						var body = "source=" + source 
@@ -53,17 +52,13 @@ function getMembers2(source, list_id, percent, user_id)
 						xhr.open("POST", 'data.php', false);
 						xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 						xhr.send(body);
-						alert("2");
+						
 						if (xhr.status != 200) {
 							console.log("ERROR:" + xhr.status + ': ' + xhr.statusText );
-							alert("3");
 						} else {
-							alert("4");
 							var obj = jQuery.parseJSON(xhr.responseText);
-							console.log(obj);
-							alert("5");
+							
 							if (obj != null) {
-								alert("6");
 								for (var k = 0; k < obj.length; k++) {
 									cnt += 1;
 									
@@ -160,20 +155,14 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 							code2 = 'var friends = API.friends.get({"user_id": ' + membersGroups[i] + ', "v": "5.53", "fields": "domain"}).items; return friends;'
 							break;
 						}
-						alert("1");
 
 						setTimeout(function() {
 							VK.Api.call("execute", {code: code2}, function(data) {
-								alert("2");
 								console.log(data);
-								alert("3");
 								if (data.response) {
-									alert("4");
 									var j = 0;
 									(function _ajax_request(j) { // перебор массива ответа
-										alert("5");
 										if (j < data.response.length) {
-											alert("6");
 											try {
 												var _arr = data.response.slice(j + 1, j + 100);
 												var xhr = new XMLHttpRequest();
