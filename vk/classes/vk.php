@@ -92,8 +92,7 @@ class VK {
 						$pr += 1;
 				}
 			}
-			$pr = $pr * 100 / count($title);
-			if ($pr > $max) {
+			if (($pr * 100 / count($title)) > $max) {
 				$max = $pr;
 				$title2 = $content[$i]['title'];
 			}
