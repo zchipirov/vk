@@ -33,10 +33,10 @@
 			  <label><input type="radio" value="4" name="inf" id="friends">&nbsp;Друзья</label>&nbsp;
 			  <label><input type="radio" value="5" name="inf" id="groups">&nbsp;Группы</label>&nbsp;
 			</div>
-			<div class="input-group" style="width: 30%;">
+			<!--<div class="input-group" style="width: 30%;">
 				<span class="input-group-addon" id="basic-addon3">Город:</span>
 				<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"/>
-			</div>
+			</div>-->
 		  </div>
 		</div>
 		
