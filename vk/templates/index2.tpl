@@ -39,8 +39,8 @@
 			<div class="input-group" style="width: 50%;">
 			<span class="input-group-addon" id="basic-addon4">ID пользователя:</span>
 				<input type="text" class="form-control" id="userid" name="userid" aria-describedby="basic-addon4" placeholder="Обязательный параметр"/>
-				<span class="input-group-addon" id="basic-addon3">Город:</span>
-				<input type="text" class="form-control" id="city" name="city" aria-describedby="basic-addon3" placeholder="Необязательный параметр"/>
+				<!--<span class="input-group-addon" id="basic-addon3">Город:</span>
+				<input type="text" class="form-control" id="city" name="city" aria-describedby="basic-addon3" placeholder="Необязательный параметр"/>-->
 			</div>
 		  </div>
 		</div>
