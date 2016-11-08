@@ -25,6 +25,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	$list_id = $_POST['ls'][0];
 	echo $list_id."<br>";
 	$list_title = $list_id == 0? array("title"=>"RSS"): $list->GetListById($list_id);
+	echo $list_title;
+	return;
 	$vk = new VK();
 	//$group_data = $vk->GetInfoGroup($group_name['group_id']);
 	//$count = $group_data['response'][0]['members_count'];
