@@ -88,12 +88,16 @@ class VK {
 			$pr = 0;
 			for ($j = 0; $j < count($title); $j++) {
 				for ($k = 0; $k < count($cn); $k++) {
-					if ($cn[$k] != NULL && strlen($title[$j]) > 2 && strlen($cn[$k]) > 2 && $title[$j] == $cn[$k])
+					if ($cn[$k] != NULL && strlen($title[$j]) > 2 && strlen($cn[$k]) > 2 && 
+						$title[$j] == $cn[$k]) {
 						$pr += 1;
+						continue;
+					}
 				}
 			}
-			if (($pr * 100 / count($title)) > $max) {
-				$max = $pr;
+			$val = $pr * 100 / count($cn);
+			if ($val > $max) {
+				$max = $val;
 				$title2 = $content[$i]['title'];
 			}
 		}
