@@ -95,7 +95,11 @@ class VK {
 					}
 				}
 			}
-			$val = $pr * 100 / count($cn);
+			if (count($title) <= count($cn)) {
+				$val = $pr * 100 / count($cn);
+			}
+			else
+				$val = $pr * 100 / count($title);
 			if ($val > $max) {
 				$max = $val;
 				$title2 = $content[$i]['title'];
