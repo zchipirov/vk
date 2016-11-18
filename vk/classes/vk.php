@@ -86,6 +86,7 @@ class VK {
 		for ($i = 0; $i < count($content); $i++) {
 			$cn = explode(" ", trim($content[$i]['title']));
 			$pr = 0;
+			$val = 0;
 			for ($j = 0; $j < count($title); $j++) {
 				for ($k = 0; $k < count($cn); $k++) {
 					if ($cn[$k] != NULL && strlen($title[$j]) > 2 && strlen($cn[$k]) > 2 && 
@@ -112,6 +113,7 @@ class VK {
 		$title = explode(" ", trim($title));
 		$max = -1;
 		$title2 = "";
+		$val = 0;
 		for ($i = 0; $i < count($content); $i++) {
 			$content[$i]['descr'] = substr($content[$i]['descr'], strpos($content[$i]['descr'], '«') + 1, strpos($content[$i]['descr'], '»') - (strpos($content[$i]['descr'], '«') + 1));
 			$cn = explode(" ", trim($content[$i]['descr']));
