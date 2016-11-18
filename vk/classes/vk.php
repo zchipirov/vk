@@ -111,12 +111,16 @@ class VK {
 	}
 	public function Search2($content, $title) {
 		$title = explode(" ", trim($title));
+		print_r($title);
+		echo "<br>";
 		$max = -1;
 		$title2 = "";
 		$val = 0;
 		for ($i = 0; $i < count($content); $i++) {
 			$content[$i]['descr'] = substr($content[$i]['descr'], strpos($content[$i]['descr'], '«') + 1, strpos($content[$i]['descr'], '»') - (strpos($content[$i]['descr'], '«') + 1));
 			$cn = explode(" ", trim($content[$i]['descr']));
+			print_r($cn);
+			echo "<br>";
 			$pr = 0;
 			for ($j = 0; $j < count($title); $j++) {
 				for ($k = 0; $k < count($cn); $k++) {
