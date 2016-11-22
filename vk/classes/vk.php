@@ -110,17 +110,18 @@ class VK {
 		return array(0=>$max, 1=>$title2);
 	}
 	public function Search2($content, $title) {
+		$chars = array(".", ",", ":", "|", ")", "(", "-", "=", "*", "/", "!", "@", "#", "%", "&", "+", "«", "»");
+		$title = str_replace($chars, "", $title);
 		$title = explode(" ", trim($title));
-		print_r($title);
-		echo "<br>";
 		$max = -1;
 		$title2 = "";
 		$val = 0;
+		
 		for ($i = 0; $i < count($content); $i++) {
 			$content[$i]['descr'] = substr($content[$i]['descr'], strpos($content[$i]['descr'], '«') + 1, strpos($content[$i]['descr'], '»') - (strpos($content[$i]['descr'], '«') + 1));
+			$content[$i]['descr'] = str_replace($chars, "", $content[$i]['descr']);
+			
 			$cn = explode(" ", trim($content[$i]['descr']));
-			print_r($cn);
-			echo "<br>";
 			$pr = 0;
 			for ($j = 0; $j < count($title); $j++) {
 				for ($k = 0; $k < count($cn); $k++) {
@@ -130,11 +131,10 @@ class VK {
 					}
 				}
 			}
-			if (count($title) <= count($cn)) {
-				$val = $pr * 100 / count($cn);
-			}
+			if (count($title) <= CountT($cn))
+				$val = $pr * 100 / CountT($cn);
 			else
-				$val = $pr * 100 / count($title);
+				$val = $pr * 100 / CountT($title);
 			if ($val > $max) {
 				$max = $val;
 				$title2 = $content[$i]['title'];
@@ -142,6 +142,14 @@ class VK {
 		}
 		//echo "MAX=$max<br>";
 		return array(0=>$max, 1=>$title2);
+	}
+	public function CountT($arr) {
+		$j = 0;
+		for ($i=0;$i<count($arr);$i++) {
+			if (strlen($arr[$i]) > 2)
+				$j += 1;
+		}
+		return $j;
 	}
 }
 ?>
