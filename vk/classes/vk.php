@@ -149,7 +149,7 @@ class VK {
 			if (strlen($arr[$i]) > 2)
 				$j += 1;
 		}
-		return $j;
+		return $j == 0? 1: $j;
 	}
 }
 ?>

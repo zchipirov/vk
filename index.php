@@ -2,6 +2,18 @@
 <head>
 <title>Перенаправление на служебный сайт...</title>
 <?php
+class A {
+	public function CountT($arr) {
+		$j = 0;
+		for ($i=0; $i < count($arr); $i++) {
+			if (strlen($arr[$i]) > 2)
+				$j += 1;
+		}
+		return $j;
+	}
+}
+$a = new A();
+echo $a->CountT(array("as", "ass", "asddd"));
 	/*function Search2($content, $title) {
 		$chars = array(".", ",", ":", "|", ")", "(", "-", "=", "*", "/", "!", "@", "#", "%", "&", "+", "«", "»");
 		$title = str_replace($chars, "", $title);
