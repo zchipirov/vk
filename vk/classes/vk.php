@@ -96,7 +96,7 @@ class VK {
 					}
 				}
 			}
-			if (count($title) <= count($cn)) {
+			if ($this->CountT($title) <= $this->CountT($cn)) {
 				$val = $pr * 100 / $this->CountT($cn);
 			}
 			else
@@ -131,7 +131,7 @@ class VK {
 					}
 				}
 			}
-			if (count($title) <= count($cn))
+			if ($this->CountT($title) <= $this->CountT($cn))
 				$val = $pr * 100 / $this->CountT($cn);
 			else
 				$val = $pr * 100 / $this->CountT($title);
