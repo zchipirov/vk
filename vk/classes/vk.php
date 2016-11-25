@@ -145,7 +145,7 @@ class VK {
 	}
 	public function CountT($arr) {
 		$j = 0;
-		for ($i=0;$i<count($arr);$i++) {
+		for ($i=0; $i < count($arr); $i++) {
 			if (strlen($arr[$i]) > 2)
 				$j += 1;
 		}
