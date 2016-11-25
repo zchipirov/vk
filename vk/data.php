@@ -22,7 +22,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 	ini_set('max_execution_time', 3600000);
 	if (isset($_POST['source'])) {
 		$source = $_POST['source'];
-		echo $_POST['data'];
 		$data = json_decode($_POST['data']);
 		$list_id = $_POST['list_id'];
 		$user_id = $_POST['user_id'];

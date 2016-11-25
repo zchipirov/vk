@@ -123,6 +123,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 	
 	VK.Api.call("execute", {code: code1}, function(data1) {
 		if (data1.response) {
+			console.log(data1.response);
 			membersGroups = membersGroups.concat(JSON.parse("[" + data1.response + "]"));			
 			if (members_count >  membersGroups.length)
 				setTimeout(function() { getMembers20k(source, group_id, members_count); }, 333);
