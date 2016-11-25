@@ -97,10 +97,10 @@ class VK {
 				}
 			}
 			if (count($title) <= count($cn)) {
-				$val = $pr * 100 / CountT($cn);
+				$val = $pr * 100 / $this->CountT($cn);
 			}
 			else
-				$val = $pr * 100 / CountT($title);
+				$val = $pr * 100 / $this->CountT($title);
 			if ($val > $max) {
 				$max = $val;
 				$title2 = $content[$i]['title'];
@@ -132,9 +132,9 @@ class VK {
 				}
 			}
 			if (count($title) <= count($cn))
-				$val = $pr * 100 / CountT($cn);
+				$val = $pr * 100 / $this->CountT($cn);
 			else
-				$val = $pr * 100 / CountT($title);
+				$val = $pr * 100 / $this->CountT($title);
 			if ($val > $max) {
 				$max = $val;
 				$title2 = $content[$i]['title'];
