@@ -174,7 +174,11 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 													+ "&data=" + encodeURIComponent(JSON.stringify({data: _arr}));
 												xhr.open("POST", 'data.php', false);
 												xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-												xhr.send(body);
+												try
+												{
+													xhr.send(body);
+												}
+												catch {}
 												console.log(xhr.statusText);
 												if (xhr.status != 200) {
 													console.log("ERROR:" + xhr.status + ': ' + xhr.statusText);
