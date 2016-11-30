@@ -14,6 +14,7 @@ $smarty->debugging = false;
 $smarty->caching = false;
 
 if (isset($_POST['action']) && $_POST['action'] == 'load') {
+	ini_set('max_execution_time', 3600000);
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_FAILONERROR, 1);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
@@ -36,6 +37,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'load') {
 		//print $item->link." (".$item->pubDate.")\n".$item->title."\n".$item->description."\n-----\n";
 	}
 	$info .= "База обновлена<br>";
+	ini_set('max_execution_time', 30);
 	$smarty->assign("info", $info);
 }
 
