@@ -54,7 +54,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'duration' 	=> $item[$i]->duration,
 								'url' 		=> $item[$i]->url,
 								'percent'	=> round($search_result[0]),
-								'extr'		=> $search_result[1]
+								'extr'		=> $search_result[1],
+								'link'		=> $search_result[2]
 							);
 							break;
 						case 'video':
@@ -65,7 +66,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'duration' 	=> $item[$i]->duration,
 								'player' 	=> $item[$i]->player,
 								'percent'	=> round($search_result[0]),
-								'extr'		=> $search_result[1]
+								'extr'		=> $search_result[1],
+								'link'		=> $search_result[2]
 							);
 							break;
 						case 'docs':
@@ -75,7 +77,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'title'		=> $item[$i]->title,
 								'size'		=> $item[$i]->size,
 								'url'		=> $item[$i]->url,
-								'extr'		=> $search_result[1]
+								'extr'		=> $search_result[1],
+								'link'		=> $search_result[2]
 							);
 							break;
 						case 'groups':
@@ -83,7 +86,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'user_id'	=> $user_id,
 								'owner_id'	=> $item[$i]->user_id,
 								'name'		=> $item[$i]->name,
-								'extr'		=> $search_result[1]
+								'extr'		=> $search_result[1],
+								'link'		=> $search_result[2]
 							);
 							break;
 						case 'friends':
@@ -92,7 +96,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'search') {
 								'owner_id'	=> $item[$i]->user_id,
 								'first_name'=> $item[$i]->first_name,
 								'last_name'	=> $item[$i]->last_name,
-								'extr'		=> $search_result[1]
+								'extr'		=> $search_result[1],
+								'link'		=> $search_result[2]
 							);
 							break;
 					}

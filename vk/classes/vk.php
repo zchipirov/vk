@@ -116,6 +116,7 @@ class VK {
 		$max = -1;
 		$title2 = "";
 		$val = 0;
+		$link = "";
 		
 		for ($i = 0; $i < count($content); $i++) {
 			$content[$i]['descr'] = substr($content[$i]['descr'], strpos($content[$i]['descr'], '«') + 1, strpos($content[$i]['descr'], '»') - (strpos($content[$i]['descr'], '«') + 1));
@@ -138,10 +139,11 @@ class VK {
 			if ($val > $max) {
 				$max = $val;
 				$title2 = $content[$i]['title'];
+				$link  = $content[$i]['link'];
 			}
 		}
 		//echo "MAX=$max<br>";
-		return array(0=>$max, 1=>$title2);
+		return array(0=>$max, 1=>$title2, 2=>$link);
 	}
 	public function CountT($arr) {
 		$j = 0;
