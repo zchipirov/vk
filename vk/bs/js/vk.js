@@ -178,7 +178,7 @@ function getMembers20k(source, group_id, members_count, list_id, percent) {
 												{
 													xhr.send(body);
 												}
-												catch(Exception e) { console.log(e); }
+												catch(e) { console.log(e); }
 												console.log(xhr.statusText);
 												if (xhr.status != 200) {
 													console.log("ERROR:" + xhr.status + ': ' + xhr.statusText);
