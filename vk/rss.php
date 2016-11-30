@@ -14,12 +14,13 @@ $smarty->debugging = false;
 $smarty->caching = false;
 
 if (isset($_POST['action']) && $_POST['action'] == 'load') {
-	ini_set('display_errors', 1);
+	error_reporting(E_ALL);
+	ini_set('display_errors', 'On');
 	ini_set('max_execution_time', 3600000);
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_FAILONERROR, 1);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-	curl_setopt($ch, CURLOPT_TIMEOUT, 50000);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 	curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
 	$headers = array( 'Expect:','Connection: Keep-Alive','Accept-Charset: utf-8,windows-1251;q=0.7,*;q=0.7' );
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
