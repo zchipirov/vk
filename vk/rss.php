@@ -19,7 +19,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'load') {
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_FAILONERROR, 1);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-	curl_setopt($ch, CURLOPT_TIMEOUT, 500);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 50000);
 	curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
 	$headers = array( 'Expect:','Connection: Keep-Alive','Accept-Charset: utf-8,windows-1251;q=0.7,*;q=0.7' );
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
