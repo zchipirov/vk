@@ -14,6 +14,7 @@ $smarty->debugging = false;
 $smarty->caching = false;
 
 if (isset($_POST['action']) && $_POST['action'] == 'load') {
+	ini_set('display_errors', 1);
 	ini_set('max_execution_time', 3600000);
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_FAILONERROR, 1);
